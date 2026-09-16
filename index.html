@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elementary Spaces — A Guide to Sky Darmos's Quantum Gravity</title>
+<meta name="description" content="An illustrated guide to the six theories in 'The Complete Guide to Quantum Gravity' by Sky Darmos — independent research linking quantum mechanics, cosmology, and consciousness.">
+<meta name="theme-color" content="#3D5A6E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="nav-row">
+    <a class="wordmark" href="#top">Elementary Spaces <small>a guide to Sky Darmos's quantum gravity</small></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle menu"><span></span></button>
+    <nav class="primary-nav" id="primaryNav">
+      <a href="#theories">Theories</a>
+      <a href="#problems">Problems</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#concepts">Concepts</a>
+      <a href="#formulae">Formulae</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero section-dark" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="hero-eyebrow">An independent theory of everything, in progress since 2003</p>
+      <h1>Elementary spaces, built into a theory of everything</h1>
+      <p class="dek">"The Complete Guide to Quantum Gravity" is physicist Sky Darmos's independent framework
+        linking quantum mechanics, cosmology, and consciousness — six interlocking theories built over
+        two decades, on the claim that space itself is made of overlapping spherical surfaces.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#theories">Explore the six theories</a>
+        <a class="btn btn-outline" href="#problems">See what it claims to solve</a>
+      </div>
+
+      <div class="framing-box">
+        <strong>A note on what this is.</strong> This site explains a theory, not a consensus. The book is
+        self-published, independent research, built up over twenty years of one person's work, and it has
+        not been peer-reviewed. Several of its central claims — a universe roughly 42 trillion years old,
+        gravity that depends on chemical composition, and literal psychokinesis and telepathy — contradict
+        the standard model of cosmology and particle physics, and reach further than even parapsychology's
+        own contested literature does. What follows is a guide to one researcher's ambitious, internally
+        consistent attempt at a unified theory, presented on its own terms.
+      </div>
+    </div>
+
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="300" cy="300" r="270" fill="none" stroke="#F0EAE0" stroke-opacity="0.08"/>
+        <circle cx="300" cy="300" r="205" fill="none" stroke="#F0EAE0" stroke-opacity="0.10"/>
+        <circle cx="300" cy="300" r="140" fill="none" stroke="#F0EAE0" stroke-opacity="0.13"/>
+        <g class="orbit-ring">
+          <ellipse cx="300" cy="300" rx="248" ry="118" fill="none" stroke="#8B7D6B" stroke-opacity="0.55" stroke-dasharray="1 9" transform="rotate(-20 300 300)"/>
+          <circle cx="518" cy="248" r="6" fill="#A8CFC0" transform="rotate(-20 300 300)"/>
+        </g>
+        <circle cx="255" cy="255" r="92" fill="#5b8fa8" fill-opacity="0.4"/>
+        <circle cx="362" cy="242" r="66" fill="#A8CFC0" fill-opacity="0.45"/>
+        <circle cx="330" cy="368" r="82" fill="#D9C9A8" fill-opacity="0.55"/>
+        <circle cx="222" cy="368" r="52" fill="#5b8fa8" fill-opacity="0.35"/>
+        <circle cx="255" cy="255" r="92" fill="none" stroke="#F0EAE0" stroke-opacity="0.4"/>
+        <circle cx="362" cy="242" r="66" fill="none" stroke="#F0EAE0" stroke-opacity="0.4"/>
+        <circle cx="330" cy="368" r="82" fill="none" stroke="#F0EAE0" stroke-opacity="0.4"/>
+        <circle cx="222" cy="368" r="52" fill="none" stroke="#F0EAE0" stroke-opacity="0.4"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROBLEMS
+     ============================================================ -->
+<section id="problems">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What the theory claims to address</p>
+      <h2>Twenty-four long-standing problems</h2>
+      <p>Every entry below gets a full chapter in the book. This is the one-line version of each proposed
+        resolution — the book's own claim, not an independent verification of it — grouped by field.</p>
+    </div>
+
+    <div class="filter-row" role="group" aria-label="Filter problems by field">
+      <button class="filter-btn" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter-btn" data-filter="cosmology" aria-pressed="false">Cosmology</button>
+      <button class="filter-btn" data-filter="quantum" aria-pressed="false">Quantum foundations</button>
+      <button class="filter-btn" data-filter="gravity" aria-pressed="false">Gravity</button>
+      <button class="filter-btn" data-filter="particle" aria-pressed="false">Particle physics</button>
+      <button class="filter-btn" data-filter="consciousness" aria-pressed="false">Consciousness</button>
+    </div>
+
+    <div class="problem-list" id="problemList">
+      <!-- rows injected as static HTML, one per problem -->
+      <div class="problem-row" data-cat="quantum">
+        <span class="tag tag-quantum">Quantum foundations</span>
+        <span class="problem-name">The measurement problem</span>
+        <span class="problem-solution">Measurement is built into the wavefunction itself — it's the collective knowledge of every conscious observer. See <a href="#swi">Similar-Worlds Interpretation</a>.</span>
+      </div>
+      <div class="problem-row" data-cat="quantum">
+        <span class="tag tag-quantum">Quantum foundations</span>
+        <span class="problem-name">The Einstein–Podolsky–Rosen paradox</span>
+        <span class="problem-solution">Entangled spins are already antipodal in every one of the temporarily indistinguishable worlds we occupy — no signal needs to travel. See <a href="#swi">SWI</a>.</span>
+      </div>
+      <div class="problem-row" data-cat="cosmology">
+        <span class="tag tag-cosmology">Cosmology</span>
+        <span class="problem-name">The accelerated expansion problem</span>
+        <span class="problem-solution">Black hole entropy grows with the square of mass, and expansion exists to keep entropy density constant — acceleration falls out for free. See <a href="#eec">Entropic Expansion</a>.</span>
+      </div>
+      <div class="problem-row" data-cat="cosmology">
+        <span class="tag tag-cosmology">Cosmology</span>
+        <span class="problem-name">The Hubble tension</span>
+        <span class="problem-solution">There's no single expansion rate to disagree about — the rate itself depends on local entropy, so different methods were never measuring the same thing.</span>
+      </div>
+      <div class="problem-row" data-cat="cosmology">
+        <span class="tag tag-cosmology">Cosmology</span>
+        <span class="problem-name">The missing matter problem (dark matter)</span>
+        <span class="problem-solution">In a universe this old, roughly 90% of matter has simply burned out — ordinary stellar remnants, not an undiscovered particle. See <a href="#eec">Entropic Expansion</a>.</span>
+      </div>
+      <div class="problem-row" data-cat="gravity">
+        <span class="tag tag-gravity">Gravity</span>
+        <span class="problem-name">The vacuum catastrophe</span>
+        <span class="problem-solution">Gravity is always local, never global, so the enormous energy of the vacuum has nothing to pull against and can't tear the universe apart.</span>
+      </div>
+      <div class="problem-row" data-cat="gravity">
+        <span class="tag tag-gravity">Gravity</span>
+        <span class="problem-name">The black hole information paradox</span>
+        <span class="problem-solution">No true event horizon ever forms, and photons carry no gravity to lose — so there's nothing for Hawking radiation to carry away. See <a href="#chromo">Chromogravity</a>.</span>
+      </div>
+      <div class="problem-row" data-cat="cosmology">
+        <span class="tag tag-cosmology">Cosmology</span>
+        <span class="problem-name">Background dependence</span>
+        <span class="problem-solution">Space isn't a stage matter sits on — every particle carries its own quantum of space, so geometry and matter are the same substance. See <a href="#spd">Space Particle Dualism</a>.</span>
+      </div>
+      <div class="problem-row" data-cat="cosmology">
+        <span class="tag tag-cosmology">Cosmology</span>
+        <span class="problem-name">The flatness problem</span>
+        <span class="problem-solution">In a borderless universe, gravity pulling from every direction cancels out — flatness needs no fine-tuning, and inflation becomes unnecessary.</span>
+      </div>
+      <div class="problem-row" data-cat="cosmology">
+        <span class="tag tag-cosmology">Cosmology</span>
+        <span class="problem-name">The horizon problem</span>
+        <span class="problem-solution">The early universe was never a special low-entropy state — entropy density has always been the same constant it is today.</span>
+      </div>
+      <div class="problem-row" data-cat="gravity">
+        <span class="tag tag-gravity">Gravity</span>
+        <span class="problem-name">Chronology protection &amp; the singularity problem</span>
+        <span class="problem-solution">Space can't bend into a wormhole loop, because nothing ever truly bends — granular density differences stand in for curvature, and no true horizon forms.</span>
+      </div>
+      <div class="problem-row" data-cat="particle">
+        <span class="tag tag-particle">Particle physics</span>
+        <span class="problem-name">The hierarchy problem</span>
+        <span class="problem-solution">Gravity looks vanishingly weak because it's diluted by the sheer density of the quantum vacuum's virtual particles — not because it's a separate, mismatched force.</span>
+      </div>
+      <div class="problem-row" data-cat="cosmology">
+        <span class="tag tag-cosmology">Cosmology</span>
+        <span class="problem-name">The holographic principle</span>
+        <span class="problem-solution">Three-dimensional space is literally built from overlapping two-dimensional spherical surfaces, so a lower-dimensional description was never a coincidence. See <a href="#spd">SPD</a>.</span>
+      </div>
+      <div class="problem-row" data-cat="consciousness">
+        <span class="tag tag-consciousness">Consciousness</span>
+        <span class="problem-name">The mind–body problem</span>
+        <span class="problem-solution">Consciousness is a relation between experiences, not a substance in the brain — closer to a Platonic set than to a signal. See <a href="#cst">Conscious Set Theory</a>.</span>
+      </div>
+      <div class="problem-row" data-cat="quantum">
+        <span class="tag tag-quantum">Quantum foundations</span>
+        <span class="problem-name">The causality problem</span>
+        <span class="problem-solution">Quantum randomness is replaced with non-computable determinism — free, meaningful choice rather than dice, following from Gödel's incompleteness theorem.</span>
+      </div>
+      <div class="problem-row" data-cat="particle">
+        <span class="tag tag-particle">Particle physics</span>
+        <span class="problem-name">The generations of matter &amp; the Koide formula</span>
+        <span class="problem-solution">Muons and tauons are merged elementary spaces of electrons — their masses fall out of how many electron-spaces combine. See <a href="#cmd">Charge Mass Dualism</a>.</span>
+      </div>
+      <div class="problem-row" data-cat="cosmology">
+        <span class="tag tag-cosmology">Cosmology</span>
+        <span class="problem-name">The M–sigma relation</span>
+        <span class="problem-solution">Every supermassive black hole grew from a primordial black hole on the same clock as its host galaxy, so the two were never going to be independent.</span>
+      </div>
+      <div class="problem-row" data-cat="cosmology">
+        <span class="tag tag-cosmology">Cosmology</span>
+        <span class="problem-name">The arrow of time &amp; the entropy problem</span>
+        <span class="problem-solution">The universe's entropy density is fixed at a constant, maintained by expansion — time has a direction because expansion does. See <a href="#eec">Entropic Expansion</a>.</span>
+      </div>
+      <div class="problem-row" data-cat="cosmology">
+        <span class="tag tag-cosmology">Cosmology</span>
+        <span class="problem-name">CMB anomalies &amp; non-Copernican structures</span>
+        <span class="problem-solution">An emergent universe, retro-causally shaped by observation on Earth, would leave exactly this kind of asymmetry stamped on the microwave background.</span>
+      </div>
+      <div class="problem-row" data-cat="cosmology">
+        <span class="tag tag-cosmology">Cosmology</span>
+        <span class="problem-name">The missing local expansion</span>
+        <span class="problem-solution">Expansion is entropic and non-homogeneous, so it's far too small to detect near a dense, low-entropy region like our own galaxy.</span>
+      </div>
+      <div class="problem-row" data-cat="cosmology">
+        <span class="tag tag-cosmology">Cosmology</span>
+        <span class="problem-name">The supernova luminosity &amp; quasar redshift problems</span>
+        <span class="problem-solution">Intergalactic distances are around three times larger than assumed, which restores the inverse-square law and explains why remote supernovae looked dim.</span>
+      </div>
+      <div class="problem-row" data-cat="gravity">
+        <span class="tag tag-gravity">Gravity</span>
+        <span class="problem-name">The trouble with big-G</span>
+        <span class="problem-solution">Newton's constant was never universal — measured gravity depends on the chemical composition of whatever you're weighing. See <a href="#chromo">Chromogravity</a>.</span>
+      </div>
+      <div class="problem-row" data-cat="gravity">
+        <span class="tag tag-gravity">Gravity</span>
+        <span class="problem-name">The neutron star–black hole mass gap</span>
+        <span class="problem-solution">The gap narrows to almost nothing once masses are recalculated from baryon count instead of the equivalence principle. See <a href="#chromo">Chromogravity</a>.</span>
+      </div>
+      <div class="problem-row" data-cat="consciousness">
+        <span class="tag tag-consciousness">Consciousness</span>
+        <span class="problem-name">The Fermi paradox</span>
+        <span class="problem-solution">We're alone: consciousness only exists where it's entangled with ours, so there's no independent alien observer anywhere to detect.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     THEORIES
+     ============================================================ -->
+<section id="theories" class="section-tint">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The framework, piece by piece</p>
+      <h2>Six theories, one account of space, matter, and mind</h2>
+      <p>Each idea was developed on its own, then folded into a single framework. They build on each
+        other roughly in this order — open any one for the core idea in plain language.</p>
+    </div>
+
+    <div class="theory-grid">
+
+      <article class="theory-card" id="swi">
+        <div class="theory-top">
+          <svg class="theory-icon" width="52" height="52" viewBox="0 0 52 52" aria-hidden="true">
+            <circle cx="20" cy="20" r="14" fill="#5b8fa8" fill-opacity="0.35" stroke="#3D5A6E" stroke-opacity="0.3"/>
+            <circle cx="27" cy="24" r="14" fill="#A8CFC0" fill-opacity="0.35" stroke="#3D5A6E" stroke-opacity="0.3"/>
+            <circle cx="23" cy="30" r="14" fill="#D9C9A8" fill-opacity="0.45" stroke="#3D5A6E" stroke-opacity="0.3"/>
+          </svg>
+          <span class="year-badge">2003</span>
+        </div>
+        <span class="theory-kicker">Similar-Worlds Interpretation</span>
+        <h3>We exist in every world we can't tell apart</h3>
+        <p>Instead of one observer collapsing one reality, consciousness is a moving "cloud" across every
+          version of the universe that currently looks the same. Each measurement shrinks the cloud.
+          Entanglement stops being spooky: paired particles simply keep opposite spins in every one of
+          the shared worlds, with nothing needing to travel between them.</p>
+        <details class="expand">
+          <summary>Read the core idea</summary>
+          <div class="expand-body">
+            <p>Standard quantum mechanics treats a superposition as a mystery of a single particle being
+              "everywhere at once." SWI reframes it: the whole universe exists as a cloud of near-identical
+              states in phase space, and our consciousness sits inside all of them simultaneously, for as
+              long as they stay indistinguishable. A measurement doesn't choose between hidden values — it
+              shrinks the set of worlds that count as "us."</p>
+            <p>This is the interpretive foundation the rest of the framework sits on: Space Particle
+              Dualism explains <em>why</em> those states form wave-like probability patterns, and Conscious
+              Set Theory explains what "consciousness" is doing the observing.</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="theory-card" id="spd">
+        <div class="theory-top">
+          <svg class="theory-icon" width="52" height="52" viewBox="0 0 52 52" aria-hidden="true">
+            <circle cx="19" cy="26" r="15" fill="#5b8fa8" fill-opacity="0.4" stroke="#3D5A6E" stroke-opacity="0.35"/>
+            <circle cx="33" cy="26" r="15" fill="#D9C9A8" fill-opacity="0.55" stroke="#3D5A6E" stroke-opacity="0.35"/>
+          </svg>
+          <span class="year-badge">2005</span>
+        </div>
+        <span class="theory-kicker">Space Particle Dualism</span>
+        <h3>Space is made of overlapping spheres</h3>
+        <p>Every particle carries its own "elementary space" — a two-dimensional spherical surface whose
+          size scales with its mass-energy. Billions of overlapping elementary spaces, mostly from virtual
+          particles in the vacuum, weave together into the three-dimensional space we experience. Gravity
+          becomes a density difference in this granular fabric, not curved spacetime.</p>
+        <details class="expand">
+          <summary>Read the core idea</summary>
+          <div class="expand-body">
+            <p>Point particles are notoriously hard to reconcile with general relativity's curved
+              geometry. SPD instead gives every particle an extended, complex-valued spherical surface,
+              built by analogy to a black hole's event horizon, but scaled to the strength of
+              electromagnetism rather than gravity. More mass nearby means more overlapping spheres, which
+              means more paths lead toward it — and that surplus of paths is what we experience as
+              gravitational attraction.</p>
+            <p>The same oscillating, complex-valued surfaces also give particles their wave-like probability
+              patterns, which is how SPD connects back to the Similar-Worlds Interpretation and eventually
+              revises the Born rule itself.</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="theory-card" id="cmd">
+        <div class="theory-top">
+          <svg class="theory-icon" width="52" height="52" viewBox="0 0 52 52" aria-hidden="true">
+            <circle cx="26" cy="26" r="16" fill="none" stroke="#3D5A6E" stroke-opacity="0.4" stroke-width="1.5"/>
+            <ellipse cx="26" cy="26" rx="21" ry="9" fill="none" stroke="#8B7D6B" stroke-opacity="0.6" stroke-dasharray="1 4" transform="rotate(-25 26 26)"/>
+            <circle cx="41.5" cy="15.5" r="4" fill="#5b8fa8" transform="rotate(-25 26 26)"/>
+          </svg>
+          <span class="year-badge">2023</span>
+        </div>
+        <span class="theory-kicker">Charge Mass Dualism</span>
+        <h3>Mass is a side effect of charge</h3>
+        <p>An electron's mass turns out to match the energy stored in its own electromagnetic field almost
+          exactly — mass isn't fundamental, it's what charge looks like from a distance. Extending the same
+          logic to the strong force predicts the muon and tauon masses from merged electron elementary
+          spaces, matching measured values to better than 99.9%.</p>
+        <details class="expand">
+          <summary>Read the core idea</summary>
+          <div class="expand-body">
+            <p>The idea traces back to 1881 and J.J. Thomson, who first suggested that a charged particle's
+              inertia comes from the energy of its own field. Charge Mass Dualism revives that
+              "electromagnetic mass" idea and extends it: if two or three electron-charges merge within
+              one classical electron radius — emitting one or two positrons to conserve charge — the result
+              is, respectively, a muon or a tauon.</p>
+            <p>Because gravity is itself a side effect of charge in this framework (see Chromogravity), this
+              chapter is really the missing link between particle masses and gravity's own strength.</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="theory-card" id="eec">
+        <div class="theory-top">
+          <svg class="theory-icon" width="52" height="52" viewBox="0 0 52 52" aria-hidden="true">
+            <circle cx="26" cy="26" r="6" fill="#5b8fa8" fill-opacity="0.6"/>
+            <circle cx="26" cy="26" r="13" fill="none" stroke="#A8CFC0" stroke-opacity="0.7" stroke-width="1.5"/>
+            <circle cx="26" cy="26" r="20" fill="none" stroke="#D9C9A8" stroke-opacity="0.9" stroke-width="1.5"/>
+          </svg>
+          <span class="year-badge">2013</span>
+        </div>
+        <span class="theory-kicker">Entropic Expansion Cosmology</span>
+        <h3>The universe expands to keep entropy constant</h3>
+        <p>Black holes are where almost all of the universe's entropy lives, and their entropy grows with
+          the square of their mass. If overall entropy <em>density</em> has to stay constant, space itself
+          has to expand — faster and faster, exactly tracking that square-law growth. No dark energy
+          required, and the "Big Bang" becomes a low-density border rather than a singular explosion.</p>
+        <details class="expand">
+          <summary>Read the core idea</summary>
+          <div class="expand-body">
+            <p>Conventional cosmology treats the early universe as needing a special, fine-tuned low-entropy
+              starting point. Here, the entropy density of the universe never changes — the "Big Bang" is
+              just the low-density, high-temperature border where black holes were smallest, not a moment
+              when the laws were different.</p>
+            <p>Working the numbers back from today's entropy density gives a post-decoupling age of roughly
+              42 trillion years, far older than the standard 13.8 billion — a claim the book supports with
+              its own analysis of white dwarf cooling times, supernova brightness, and galaxy redshift
+              surveys.</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="theory-card" id="cst">
+        <div class="theory-top">
+          <svg class="theory-icon" width="52" height="52" viewBox="0 0 52 52" aria-hidden="true">
+            <circle cx="20" cy="26" r="14" fill="#A8CFC0" fill-opacity="0.45" stroke="#3D5A6E" stroke-opacity="0.3"/>
+            <circle cx="32" cy="26" r="14" fill="#D9C9A8" fill-opacity="0.55" stroke="#3D5A6E" stroke-opacity="0.3"/>
+            <circle cx="26" cy="26" r="3.2" fill="#3D5A6E"/>
+          </svg>
+          <span class="year-badge">2004</span>
+        </div>
+        <span class="theory-kicker">Conscious Set Theory</span>
+        <h3>A feeling is a set, not a substance</h3>
+        <p>Borrowing from Gottlob Frege's set-theoretic definition of numbers, this theory defines a
+          feeling — like the warmth of red, or the meaning of a word — as the set of every experience
+          anyone has ever had of it. That shared, nonlocal "world of experience" is also where the book
+          locates telepathy, psychokinesis, and remote viewing, treating them as measurable consequences
+          of a mind that isn't confined to one brain.</p>
+        <details class="expand">
+          <summary>Read the core idea</summary>
+          <div class="expand-body">
+            <p>Frege defined the number "three" as the set of every group of three things. Conscious Set
+              Theory applies the same move to qualia: the feeling of seeing red is the set of every
+              experience of red anyone has ever had, not a signal sitting in one skull. Because these sets
+              aren't tied to a single nervous system, the theory treats synchronicity, telepathy, and
+              psychokinesis as ordinary — if statistically subtle — consequences of a shared, nonlocal
+              "world of experience."</p>
+            <p>This is the part of the framework furthest from mainstream science on its own terms: the
+              book leans on parapsychology research (particularly Dean Radin's) that most physicists, and
+              many parapsychologists, consider unresolved or contested.</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="theory-card" id="chromo">
+        <div class="theory-top">
+          <svg class="theory-icon" width="52" height="52" viewBox="0 0 52 52" aria-hidden="true">
+            <circle cx="26" cy="26" r="19" fill="none" stroke="#3D5A6E" stroke-opacity="0.35" stroke-width="1.5"/>
+            <circle cx="26" cy="16" r="4.2" fill="#5b8fa8"/>
+            <circle cx="17" cy="33" r="4.2" fill="#A8CFC0"/>
+            <circle cx="35" cy="33" r="4.2" fill="#8B7D6B"/>
+          </svg>
+          <span class="year-badge">2017</span>
+        </div>
+        <span class="theory-kicker">Chromogravity &amp; Electrogravity</span>
+        <h3>Gravity depends on what you're weighing</h3>
+        <p>If gravity is a side effect of charge, then it should scale with quark count (chromogravity)
+          rather than mass, plus a much shorter-range contribution from electric charge (electrogravity).
+          That means Newton's "constant" isn't constant — it should read slightly differently for iron,
+          water, and lead. The book tests this directly against a century of Cavendish, pendulum, and
+          free-fall experiments.</p>
+        <details class="expand">
+          <summary>Read the core idea</summary>
+          <div class="expand-body">
+            <p>Nuclear binding energy means a kilogram of iron and a kilogram of water contain slightly
+              different numbers of protons and neutrons. If gravity tracks quark count rather than mass
+              directly, every element should have its own gravitational constant, differing by roughly one
+              part in ten thousand.</p>
+            <p>That's a testable, falsifiable claim, and the book's later chapters are essentially a data
+              project: reanalyzing historical measurements of big-G, the Eötvös experiment, pendulum trials,
+              and free-fall drops, arguing that the scatter researchers usually treat as measurement error
+              actually tracks chemical composition.</p>
+          </div>
+        </details>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TIMELINE
+     ============================================================ -->
+<section id="timeline" class="section-dark">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Two decades of one researcher's work</p>
+      <h2>From a train-station idea to a data project</h2>
+      <p>The book organizes its own development into six phases, moving from pure concept toward
+        increasingly specific, checkable predictions.</p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="tl-item">
+        <span class="tl-year">2003</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <span class="tl-phase">Phase 1 — Conceptual</span>
+          <h4>The Similar-Worlds Interpretation</h4>
+          <p>The founding idea — "we exist in all worlds that are temporarily indistinguishable to us" —
+            comes together at a railway station in Pforzheim, Germany.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <span class="tl-year">2005</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <span class="tl-phase">Phase 1 — Conceptual</span>
+          <h4>Space Particle Dualism</h4>
+          <p>On a car ride to a beach in Skala, Greece, gravity is reimagined as density differences in a
+            space built from overlapping particle-spheres.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <span class="tl-year">2006</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <span class="tl-phase">Phase 1 — Conceptual</span>
+          <h4>SWI and SPD unify</h4>
+          <p>The wave-like probability patterns of quantum mechanics are explained by oscillating,
+            complex-valued elementary spaces — tying the two founding ideas into one theory.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <span class="tl-year">2013</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <span class="tl-phase">Phase 1 — Conceptual</span>
+          <h4>Entropic expansion proposed</h4>
+          <p>A correspondence between local entropy increase and cosmic expansion suggests the universe
+            grows to keep entropy density constant.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <span class="tl-year">2016</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <span class="tl-phase">Phase 2 — Computational</span>
+          <h4>The real size of elementary spaces</h4>
+          <p>Calculating the density of granular space pins down how large an elementary space actually
+            is — and starts resolving the hierarchy problem.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <span class="tl-year">2017</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <span class="tl-phase">Phase 2 — Computational</span>
+          <h4>Chromogravity introduced</h4>
+          <p>Gravity is reframed as depending on baryon count rather than mass — the first version of
+            composition-dependent gravity.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <span class="tl-year">2019</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <span class="tl-phase">Phase 3 — Cosmology evidence</span>
+          <h4>The "golden year of cosmology"</h4>
+          <p>The post-decoupling age of the universe is calculated at roughly 42 trillion years and cross-checked
+            against white dwarf ages, supernova luminosities, and non-luminous matter.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <span class="tl-year">2020–22</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <span class="tl-phase">Phase 4 — Gravity evidence</span>
+          <h4>Free-fall and Cavendish experiments</h4>
+          <p>Direct freefall and Cavendish-balance experiments begin testing composition-dependent gravity,
+            and the neutron star–black hole mass gap is recalculated away.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <span class="tl-year">2023</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <span class="tl-phase">Phase 5 — Particle physics evidence</span>
+          <h4>Charge Mass Dualism &amp; the muon mass</h4>
+          <p>Modeling the muon and tauon as merged electron elementary spaces predicts their masses to
+            better than 99.9% accuracy.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <span class="tl-year">2024–26</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <span class="tl-phase">Phase 6 — Astrophysics evidence &amp; ongoing work</span>
+          <h4>Planetary precession, Kepler ratios, and a revised Born rule</h4>
+          <p>Composition-dependent effects are traced through planetary perihelion precession and Kepler's
+            third law, while the Born rule itself is rewritten as a squared half-wave rectification.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONCEPTS
+     ============================================================ -->
+<section id="concepts">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Slow down for these five</p>
+      <h2>Ideas worth a plain-language pass</h2>
+      <p>A handful of concepts do most of the work across all six theories. Open any of these for the
+        short version, without the equations.</p>
+    </div>
+
+    <div class="concept-grid">
+
+      <div class="concept-card">
+        <h3>What is a superposition, here?</h3>
+        <p class="concept-teaser">Not "everywhere at once" — a cloud of near-identical worlds.</p>
+        <details class="expand">
+          <summary>Read the explanation</summary>
+          <div class="expand-body">
+            <p>In most descriptions of quantum mechanics, a superposition is treated as a single particle
+              somehow occupying multiple states at once, which is famously hard to picture. This framework
+              reframes it: think of every possible state of the entire universe as a point in an enormous
+              space of possibilities. A superposition is a small cloud of nearby points — worlds so similar
+              that nothing yet distinguishes them.</p>
+            <p>Consciousness sits inside every world in that cloud simultaneously. A measurement doesn't
+              pick a hidden value out of thin air; it shrinks the cloud down until only the worlds
+              consistent with what you just observed remain.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="concept-card">
+        <h3>What is granular space?</h3>
+        <p class="concept-teaser">Space built from overlapping spherical surfaces, not a smooth backdrop.</p>
+        <details class="expand">
+          <summary>Read the explanation</summary>
+          <div class="expand-body">
+            <p>Every particle — mostly the virtual particles constantly appearing and vanishing in the
+              vacuum — carries its own small, two-dimensional spherical surface, sized to its energy. Pack
+              enough of these "elementary spaces" together and their overlaps weave into the smooth,
+              three-dimensional space we move through.</p>
+            <p>Near a massive object, more of these surfaces pile up, which means more possible paths lead
+              toward it. That surplus of paths is what shows up, at everyday scales, as gravitational
+              pull — geometry and matter turn out to be the same stuff.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="concept-card">
+        <h3>How does black hole entropy drive expansion?</h3>
+        <p class="concept-teaser">Entropy grows as mass², so the universe has to keep pace.</p>
+        <details class="expand">
+          <summary>Read the explanation</summary>
+          <div class="expand-body">
+            <p>A black hole's entropy is proportional to the square of its mass, so as black holes across
+              the universe slowly grow, total entropy grows even faster. The proposal is that the average
+              entropy <em>density</em> of the universe never changes — it's held constant by the expansion
+              of space itself.</p>
+            <p>Because entropy grows with the square of mass, the expansion needed to keep density constant
+              also has to accelerate — matching the observed acceleration without needing to invoke a
+              separate dark energy.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="concept-card">
+        <h3>Consciousness as a relation, not a substance</h3>
+        <p class="concept-teaser">A feeling is the set of every experience of it, not a signal in a brain.</p>
+        <details class="expand">
+          <summary>Read the explanation</summary>
+          <div class="expand-body">
+            <p>Borrowing Gottlob Frege's trick for defining numbers — "three" is the set of every group of
+              three things — this theory defines a feeling the same way. The warmth of the color red isn't
+              stored anywhere; it's the set of every experience of red that has ever happened, which is why
+              it can feel the same to two different people.</p>
+            <p>That "world of experience" isn't confined to one skull, which is the theoretical basis the
+              book uses for treating telepathy and psychokinesis as measurable, if statistically weak,
+              phenomena rather than impossibilities.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="concept-card">
+        <h3>Composition-dependent gravity</h3>
+        <p class="concept-teaser">A kilogram of lead and a kilogram of water shouldn't fall quite alike.</p>
+        <details class="expand">
+          <summary>Read the explanation</summary>
+          <div class="expand-body">
+            <p>If gravity tracks the number of quarks in an object rather than its mass, then two objects
+              of identical mass but different chemical makeup — say, iron versus water — should experience
+              very slightly different gravitational pull, because nuclear binding energy means they don't
+              contain quite the same number of protons and neutrons per kilogram.</p>
+            <p>This directly contradicts Einstein's equivalence principle, one of general relativity's most
+              tested foundations. The book's later chapters reanalyze historical big-G measurements,
+              pendulum trials, and free-fall drops looking for exactly this signature.</p>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FORMULAE
+     ============================================================ -->
+<section id="formulae" class="section-tint">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">For readers who want the mathematics</p>
+      <h2>A sample of the core equations</h2>
+      <p>None of the ideas above require this to follow along. These are a handful of the framework's
+        defining formulas and constants, taken directly from the book's own reference chapter.</p>
+    </div>
+
+    <div class="formula-grid">
+
+      <div class="formula-card">
+        <span class="formula-name">Elementary space radius (2005)</span>
+        <div class="formula-katex" data-katex="R_E = \dfrac{2\,G_E\,E}{c^{4}}"></div>
+        <p class="formula-desc">The radius of a particle's elementary space, scaling with its energy.</p>
+      </div>
+
+      <div class="formula-card">
+        <span class="formula-name">Elementary space constant (2016)</span>
+        <div class="formula-katex" data-katex="G_E = \dfrac{k_e\,e^{2}}{m_p^{2}}"></div>
+        <p class="formula-desc">Gravity's constant rescaled to electromagnetic strength — sets the size of elementary spaces.</p>
+      </div>
+
+      <div class="formula-card">
+        <span class="formula-name">Granular dimensionality (2005 / 2015)</span>
+        <div class="formula-katex" data-katex="D = 2 + \left(1 - \dfrac{1}{\sqrt{n}}\right)"></div>
+        <p class="formula-desc">How close to three dimensions a patch of granular space feels, given <em>n</em> nearby connections.</p>
+      </div>
+
+      <div class="formula-card">
+        <span class="formula-name">Time–redshift equation (2021)</span>
+        <div class="formula-katex" data-katex="t_0 \approx z \times 39{,}625{,}004{,}647 \text{ yr}"></div>
+        <p class="formula-desc">Converts redshift to light-travel time under entropic expansion — the basis for the 42-trillion-year age estimate.</p>
+      </div>
+
+      <div class="formula-card">
+        <span class="formula-name">Law of chromogravity (2018)</span>
+        <div class="formula-katex" data-katex="F = G_{|\mathbb{Y}|}\,\dfrac{|\mathbb{Y}|_1\,|\mathbb{Y}|_2}{r^{2}}"></div>
+        <p class="formula-desc">Newton's law of gravity rewritten in terms of quark count instead of mass.</p>
+      </div>
+
+      <div class="formula-card">
+        <span class="formula-name">Revised Born rule (2025 / 2026)</span>
+        <div class="formula-katex" data-katex="P = 4\left(\Re(z)^{+}\right)^{2}"></div>
+        <p class="formula-desc">Detection probability as a squared, clipped half-wave — replacing <span data-katex="P=|z|^2"></span> from standard quantum mechanics.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <p class="eyebrow">About the author</p>
+      <h2>Sky Darmos</h2>
+      <p class="lede">Born on an olive plantation in Greece to a Greek father and a German mother, Darmos
+        traces the framework's first ideas to a solar-system drawing in the sand on a New Year's night, and
+        to two specific journeys: a train platform in Pforzheim, Germany, in 2004, and a car ride to a beach
+        near Skala, Greece, in 2005.</p>
+      <p>Between 2007 and 2012 the work paused entirely for an unrelated six-year detour into etymology —
+        a comparative study of German and Chinese cognates — before returning to physics in Macao in 2012.
+        The book has been revised continuously since a first short draft in 2014, moving through what the
+        author calls six phases: conceptual, computational, and then four rounds of gathering evidence, from
+        cosmology through gravity, particle physics, and astrophysics.</p>
+      <p>The manuscript is dedicated to Sir Roger Penrose, cited throughout as the primary influence,
+        alongside John Archibald Wheeler, Paul Davies, and several independent gravity researchers whose
+        experimental data the book reanalyzes directly.</p>
+    </div>
+
+    <div class="quote-strip" aria-label="Epigraphs quoted in the book">
+      <blockquote class="epigraph">
+        <p>"The atoms or elementary particles themselves are not real; they form a world of potentialities
+          rather than one of things or facts."</p>
+        <cite>Werner Heisenberg</cite>
+      </blockquote>
+      <blockquote class="epigraph">
+        <p>"It was not possible to formulate the laws of quantum mechanics in a fully consistent way
+          without reference to consciousness."</p>
+        <cite>Eugene Wigner</cite>
+      </blockquote>
+      <blockquote class="epigraph">
+        <p>"We are not only participators in creating the here and near, but also the far away and long
+          ago."</p>
+        <cite>John Archibald Wheeler</cite>
+      </blockquote>
+      <blockquote class="epigraph">
+        <p>"A scientific world-view which does not profoundly come to terms with the problem of conscious
+          minds can have no serious pretensions of completeness."</p>
+        <cite>Roger Penrose</cite>
+      </blockquote>
+      <blockquote class="epigraph">
+        <p>"I regard consciousness as fundamental. I regard matter as derivative from consciousness."</p>
+        <cite>Max Planck</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ENDORSEMENTS
+     ============================================================ -->
+<section class="section-tint" id="endorsements">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Correspondence, not peer review</p>
+      <h2>What readers and researchers have said</h2>
+    </div>
+
+    <p class="caveat">These are excerpts from personal correspondence and reader comments collected by the
+      author over the years — not published, peer-reviewed evaluations of the theory. They're included here
+      for context on how the work has been received, alongside people's job titles as described in the
+      book itself.</p>
+
+    <div class="endorse-grid">
+      <div class="endorse-card">
+        <p>"Sky has breakthrough after breakthrough. In my opinion he is worth several PhDs."</p>
+        <span class="endorse-who"><strong>Ludovic Krundel</strong> — French cybernetician, PhD</span>
+      </div>
+      <div class="endorse-card">
+        <p>"Sky Darmos has done the community a great service by tabulating the results of a large number
+          of experiments."</p>
+        <span class="endorse-who"><strong>Ephraim Fischbach</strong> — American physicist</span>
+      </div>
+      <div class="endorse-card">
+        <p>"I have been highlighting the variations in the measurements of big-G ever since my 1994 book
+          came out. ... At last there might be a rational explanation."</p>
+        <span class="endorse-who"><strong>Rupert Sheldrake</strong> — British biologist and parapsychologist</span>
+      </div>
+      <div class="endorse-card">
+        <p>"Building up a theory of gravity from scratch is a very impressive feat. Most people only modify
+          existing theories to accommodate the data."</p>
+        <span class="endorse-who"><strong>Carol Y. Scarlett</strong> — particle physicist</span>
+      </div>
+      <div class="endorse-card">
+        <p>"His works seem to be ahead of time and contradict many existing well-established theories as
+          well."</p>
+        <span class="endorse-who"><strong>Prof. Santosh K. Karn</strong> — Indian physicist</span>
+      </div>
+      <div class="endorse-card">
+        <p>"With his skills it ought to be possible to work at an institute for theoretical physics."</p>
+        <span class="endorse-who"><strong>Prof. Konrad Kleinknecht</strong> — German physicist</span>
+      </div>
+    </div>
+
+    <details class="more-endorse">
+      <summary>Read more correspondence</summary>
+      <div class="endorse-grid">
+        <div class="endorse-card">
+          <p>"I admire his ability to do sophisticated physics so simply."</p>
+          <span class="endorse-who"><strong>Rupert Sheldrake</strong> — British biologist and parapsychologist</span>
+        </div>
+        <div class="endorse-card">
+          <p>"I applaud his continual refining of his work. That is the sign of a truth-seeking intellect. I
+            find it to be quite rare."</p>
+          <span class="endorse-who"><strong>Stephan A. Schwartz</strong> — American parapsychologist</span>
+        </div>
+        <div class="endorse-card">
+          <p>"He has thought about a great many physical problems in a clear but unconventional way. I find
+            it stimulating."</p>
+          <span class="endorse-who"><strong>Rupert Sheldrake</strong> — British biologist and parapsychologist</span>
+        </div>
+        <div class="endorse-card">
+          <p>"His compilation of data is interesting and potentially useful for the community."</p>
+          <span class="endorse-who"><strong>Ephraim Fischbach</strong> — American physicist</span>
+        </div>
+        <div class="endorse-card">
+          <p>"I complitely share with him the view that G as a universal constant has not been demonstrated
+            and, moreover, it depends on the elements it is referred to."</p>
+          <span class="endorse-who"><strong>Giacomo De Toma</strong> — Italian physics professor</span>
+        </div>
+        <div class="endorse-card">
+          <p>"His recent results regarding the Eötvös data are very interesting, and could have a real
+            impact on this field."</p>
+          <span class="endorse-who"><strong>Ephraim Fischbach</strong> — American physicist</span>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer section-dark">
+  <div class="wrap">
+    <div class="footer-row">
+      <a class="wordmark" href="#top" style="color:var(--cream)">Elementary Spaces</a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#theories">Theories</a>
+        <a href="#problems">Problems</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#concepts">Concepts</a>
+        <a href="#formulae">Formulae</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+    <p class="footer-note">An independent companion guide to <em>The Complete Guide to Quantum Gravity</em>
+      by Sky Darmos. Not peer-reviewed, not affiliated with any research institution, and not an assessment
+      of the theory's validity — a map for navigating what the book itself claims. Individual theory pages,
+      a full problems index, and an extended formula reference are planned as separate pages; see the
+      project documentation for scope.</p>
+  </div>
+</footer>
+
+<script defer src="js/script.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+
+</body>
+</html>
