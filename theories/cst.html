@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conscious Set Theory — Elementary Spaces</title>
+<meta name="description" content="A deep dive into Sky Darmos's Conscious Set Theory: consciousness as a Frege-style set of experience, a five-level taxonomy of psychokinesis, the book's account of near-death experience and reincarnation, and its most extreme claims — contact with the deceased and a proposed path to faster-than-light communication.">
+<meta name="theme-color" content="#3D5A6E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body style="--theory-accent: var(--acc-cst);">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="nav-row">
+    <a class="wordmark" href="../index.html#top">Elementary Spaces <small>a guide to Sky Darmos's quantum gravity</small></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle menu"><span></span></button>
+    <nav class="primary-nav" id="primaryNav">
+      <a href="../index.html#theories">Theories</a>
+      <a href="../index.html#problems">Problems</a>
+      <a href="../index.html#timeline">Timeline</a>
+      <a href="../index.html#concepts">Concepts</a>
+      <a href="../index.html#formulae">Formulae</a>
+      <a href="../index.html#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================================================
+     SUBHERO
+     ============================================================ -->
+<section class="hero subhero section-dark" id="top">
+  <div class="wrap">
+    <p class="breadcrumb">
+      <a href="../index.html#top">Elementary Spaces</a><span class="sep">/</span><a href="../index.html#theories">Theories</a><span class="sep">/</span><span class="current" aria-current="page">Conscious Set Theory</span>
+    </p>
+
+    <div class="hero-grid" style="margin-top:2rem;">
+      <div>
+        <p class="hero-eyebrow">Theory 5 of 6 &middot; conceived 6 October 2004, extended through 25 May 2026</p>
+        <h1>A feeling is a set, not a substance</h1>
+        <p class="dek">Space Particle Dualism and the Similar-Worlds Interpretation both give consciousness a
+          central, load-bearing role without ever saying what it actually is. This chapter tries to answer
+          that: consciousness isn't a substance sitting in the brain, but — borrowing Gottlob Frege's trick for
+          defining numbers — literally a set of every relevant experience anyone has ever had of something.
+          That single move is used to derive nine preconditions for consciousness, a physics-flavored taxonomy
+          of psychokinesis, an account of near-death experience and reincarnation, and, in the book's own most
+          extreme material, claims of contact with the deceased and a proposed path to faster-than-light
+          messaging. This page covers all of it, and the caveats get stronger as it goes.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#core-idea">Read the core idea</a>
+          <a class="subhero-back" href="../index.html#theories">&larr; Back to the six theories</a>
+        </div>
+
+        <div class="framing-box compact">
+          <strong>A note on what's below.</strong> Severity climbs as this page goes on. The opening idea —
+          consciousness as a Frege-style set of experiences — is unconventional philosophy of mind, argued in
+          the same register as the rest of this site. From there the chapter moves through psychokinesis claims
+          resting on named, individually tested practitioners; a mechanism for reincarnation and for Rupert
+          Sheldrake's morphic resonance stretched across cosmic eons — the material Entropic Expansion
+          Cosmology's own closing section pointed here rather than covering itself; and, in its final and most
+          extreme section, claimed contact with named deceased individuals through electronic devices, plus a
+          proposed engineering path to psychokinesis-enabled faster-than-light communication. Each section is
+          flagged at the severity its own claims warrant — this page ends up going further than any other on
+          the site.
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="180" fill="none" stroke="#F0EAE0" stroke-opacity="0.08"/>
+          <circle cx="200" cy="200" r="130" fill="none" stroke="#F0EAE0" stroke-opacity="0.11"/>
+          <circle cx="200" cy="200" r="150" fill="none" stroke="#D9C9A8" stroke-opacity="0.55" stroke-width="1.5"/>
+          <circle cx="200" cy="200" r="112" fill="none" stroke="#A8CFC0" stroke-opacity="0.65" stroke-width="1.5"/>
+          <circle cx="200" cy="200" r="74" fill="none" stroke="#5b8fa8" stroke-opacity="0.75" stroke-width="1.5"/>
+          <circle cx="200" cy="200" r="36" fill="#5b8fa8" fill-opacity="0.5"/>
+          <circle cx="200" cy="46" r="5.5" fill="#A8CFC0" fill-opacity="0.9"/>
+          <circle cx="344" cy="242" r="5.5" fill="#D9C9A8" fill-opacity="0.95"/>
+          <circle cx="86" cy="292" r="5.5" fill="#A8CFC0" fill-opacity="0.9"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ON-PAGE TOC
+     ============================================================ -->
+<nav class="toc-nav" aria-label="On this page">
+  <div class="wrap toc-row">
+    <a class="toc-link" href="#core-idea">The core idea</a>
+    <a class="toc-link" href="#preconditions">Preconditions</a>
+    <a class="toc-link" href="#psychokinesis-taxonomy">Psychokinesis &amp; thermodynamics</a>
+    <a class="toc-link" href="#telekinets">Practitioners &amp; levitation</a>
+    <a class="toc-link" href="#conscious-sets-esp">Near-death &amp; reincarnation</a>
+    <a class="toc-link" href="#remote-viewing">Remote-viewing archaeology</a>
+    <a class="toc-link" href="#worldviews-and-morphic-resonance">Worldviews &amp; morphic resonance</a>
+    <a class="toc-link" href="#nonlocal-realm-physics">The nonlocal realm</a>
+    <a class="toc-link" href="#quantum-oracles-and-evp">Quantum oracles &amp; EVP</a>
+    <a class="toc-link" href="#superluminal-communication">Superluminal communication</a>
+    <a class="toc-link" href="#development-notes">Development notes</a>
+  </div>
+</nav>
+
+<!-- ============================================================
+     CORE IDEA
+     ============================================================ -->
+<section id="core-idea" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Where the theory starts</p>
+      <h2>Consciousness as a Frege-style set</h2>
+    </div>
+
+    <div class="prose">
+      <p>Gottlob Frege defined a number like "three" not as an object in its own right, but as the set of
+        every group of three things that exists — an alternative to Georg Cantor's own construction, which
+        builds numbers out of nested sets of the empty set. Conscious Set Theory applies Frege's move to
+        qualia instead of numbers: the feeling of the color red isn't a signal stored in one person's visual
+        cortex, it's the set of every experience of red that anyone has ever had. Two people's experiences of
+        red feel alike for the same reason two different groups of three apples are both "three" — they're
+        drawing on the same underlying set, not separately manufacturing a private copy of the feeling.</p>
+
+      <h3>Four worlds</h3>
+      <p>The book borrows, and extends, philosopher Karl Popper's three "worlds" — the physical, the
+        mathematical/abstract, and the mental — plus Popper's own later addition of a fourth, the world of
+        culture. Here they become: <strong>world-1</strong>, physical objects and particles; <strong>world-2</strong>,
+        the relations between world-1 objects (a thermostat's wiring, a camera's optics); <strong>world-3</strong>,
+        symbolic or representational relations, which a camera or a book has plenty of but which carry no
+        Qualia on their own; and <strong>world-4</strong>, the "world of collective experience" itself — close to
+        Popper's own world of culture, but not dependent on a surviving physical record the way Popper's is.
+        Burning every copy of a book erases its content from Popper's world-3; on this account, it doesn't
+        touch world-4's content at all, because nothing about that content was ever stored there physically in
+        the first place.</p>
+
+      <h3>Four kinds of relation</h3>
+      <p>A second distinction, leaned on repeatedly later in this chapter: <strong>type-1</strong> relations
+        hold between physical bodies in the present moment; <strong>type-2</strong> relations hold between one
+        person's own thoughts; <strong>type-3</strong> relations hold between a handful of people's thoughts —
+        rare, and the basis of ordinary telepathy claims; and <strong>type-4</strong> relations hold across
+        <em>everyone's</em> experience at once — the basis of Qualia themselves, and, on the book's account,
+        of mathematical truth too, which it treats as continuous with Qualia rather than as a separate kind of
+        fact.</p>
+
+      <p>Why does any of this require consciousness to be non-algorithmic rather than merely complex? The
+        book's answer runs through Kurt Gödel's 1930 incompleteness theorem — any formal system powerful
+        enough to do arithmetic contains truths it can't prove from within itself, so an algorithm alone can
+        never reach genuine understanding or a felt flow of time. That's the same "incomputable but
+        deterministic" definition of consciousness already introduced on
+        <a href="swi.html#why-consciousness">the Similar-Worlds Interpretation's page</a> — this chapter
+        reuses it rather than re-deriving it, and builds the rest of its own argument on top.</p>
+
+      <p>A short aesthetics aside, worth a single mention: the book also tries to explain why some experiences
+        feel good and others bad in these same terms — harmony as unusually rich internal relations between a
+        set's elements, pain as a signal deliberately kept poor in relations so it can't be mistaken for
+        anything else, and humor or paradox as pleasurable specifically because a "reductio ad absurdum" acts
+        as a kind of anti-relation, connecting two things by showing they can't be connected. It's a minor
+        thread rather than a load-bearing part of the chapter.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PRECONDITIONS
+     ============================================================ -->
+<section id="preconditions" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What has to be true for something to be conscious</p>
+      <h2>Nine preconditions for consciousness</h2>
+      <p>The book turns the Frege-style definition above into a checklist: nine conditions a physical system
+        needs to meet before it can be a party to a Qualia-bearing set at all. Each one is chosen because it
+        cleanly excludes some class of system that clearly isn't conscious.</p>
+    </div>
+
+    <div class="prose">
+      <ol>
+        <li><strong>Information processing</strong> — excludes plants.</li>
+        <li><strong>Quantum coherence</strong> — excludes ordinary computers.</li>
+        <li><strong>Large entangled quantum superpositions, or holism</strong> — rules out Objective Reduction
+          theories that collapse the wavefunction locally rather than across the whole brain.</li>
+        <li><strong>Memory</strong> — excludes certain fish.</li>
+        <li><strong>A non-algorithmic response pattern</strong> — excludes insects and computers.</li>
+        <li><strong>Sensitivity of information processing to microscopic quantum states</strong> — the
+          opposite of the resilience good engineering aims for, which is exactly why it excludes computers.</li>
+        <li><strong>An inventory of already-useful algorithms</strong>, built up through both Darwinian and
+          Lamarckian evolution — the book adds, speculatively, that "some guidance through collective
+          consciousness based upon the evolution in former universes is also conceivable" — excludes plants.</li>
+        <li><strong>Pre-conditioned algorithms for emotional reactions</strong>, tied directly to Qualia —
+          excludes insects.</li>
+        <li><strong>An information filter separating conscious from subconscious processing</strong> —
+          excludes computers.</li>
+      </ol>
+
+      <p>Two of these conditions connect directly to material already on this site. Condition 3 is where the
+        book takes a position on Roger Penrose and Stuart Hameroff's Orchestrated Objective Reduction: it
+        credits their microtubule research as genuinely useful — superposition-preserving structures that
+        could help enlarge coherence across the brain — while rejecting their specific collapse mechanism,
+        putting it plainly: <em>"Hameroff's microtubule theory is good, but it does in no way require OR as a
+        basis."</em> That's consistent with, not a reversal of, <a href="swi.html#comparing-interpretations">the
+        Similar-Worlds Interpretation's own verdict on Orch-OR</a>. And the timing figures behind conditions 2,
+        5, and 6 reuse the same numbers already established there: signals stay in superposition for roughly
+        half a second, while the brain's overall coherent state resolves about 20 times a second — the same
+        20 Hz conscious / 40 Hz subconscious split <a href="swi.html#why-consciousness">introduced on SWI's
+        page</a>, not a new estimate.</p>
+
+      <p>For testing whether some other system meets these conditions at all, the book points back to the
+        same tool proposed for exactly this purpose elsewhere on this site: watch for a roughly half-second
+        conscious reaction time distinct from pure reflex speed, or run
+        <a href="swi.html#testing-eraser">the quantum-eraser test already described on SWI's page</a> against
+        the candidate system directly, rather than inferring consciousness from behavior alone.</p>
+
+      <details class="expand">
+        <summary>Two anecdotes for "non-algorithmic response pattern"</summary>
+        <div class="expand-body">
+          <p>The book illustrates condition 5 with two of the author's own observations, offered as
+            illustrations rather than evidence: a bee trapped in a van that repeatedly tried the same closed
+            window instead of the open door beside it, and a worm that, blocked by a small obstacle, took the
+            same wrong turn nine times in a row before finally trying the other direction. Both are read as
+            evidence that insects and simple invertebrates run a fixed algorithm rather than genuinely
+            responding to what's actually in front of them — but they're the author's own first-person
+            observations, not a controlled study.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PSYCHOKINESIS TAXONOMY
+     ============================================================ -->
+<section id="psychokinesis-taxonomy" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Where physics leaves room for a nudge</p>
+      <h2>Psychokinesis, thermodynamics, and five levels of intervention</h2>
+    </div>
+
+    <p class="caveat">The physics argument in this section — that quantum mechanics only ever supplies
+      probabilities, never laws, for which outcome actually occurs — is the same reasoning already applied to
+      lab-bench psychokinesis on <a href="swi.html#nonlocal-pk">the Similar-Worlds Interpretation's page</a>.
+      The specific named practitioners and their claimed feats are held for the next section, where the
+      caveat gets more specific.</p>
+
+    <div class="prose">
+      <p>Classically, a shattered teacup reassembling itself on a table is possible, strictly speaking — every
+        law of physics permits it — it's just so astronomically unlikely that it "never happens." The book's
+        argument is that an observer nudging a quantum outcome is exactly the same kind of event: quantum
+        mechanics gives probabilities, not laws, for which outcome occurs, so a mind steering the dice slightly
+        violates nothing physical, it just makes an already-unlikely outcome somewhat less rare than pure
+        chance would.</p>
+
+      <h3>How fast could a mind actually push something?</h3>
+      <p>Working from the Maxwell&ndash;Boltzmann distribution, the book calculates the mean thermal particle
+        speed for nitrogen (470.5 m/s) and for iron (337.4 m/s, or 1,214.64 km/h) as the raw material any
+        psychokinetic effect would have to redirect. Mapping Dean Radin's own reported 51% average success
+        rate at influencing a quantum random-number generator onto a 0&ndash;100% scale — where a 50% chance
+        result counts as 0% of maximum speed and a 100% result would count as 100% — puts a real, reported
+        effect at about 2% of that maximum: for iron, 337.4 &times; 0.02 &asymp; <strong>6.748 m/s
+        (24.2928 km/h)</strong>. That figure becomes the book's working "theoretical maximum" psychokinetic
+        shifting speed, reused again in the levitation figures below.</p>
+
+      <h3>How big a drop in entropy does that actually require?</h3>
+      <p>Counting every atom in a one-kilogram object (roughly 10<sup>25</sup> of them) and asking how unlikely
+        it is for 2% of them to end up nudged toward one direction gives an entropy drop of
+        <span class="inline-formula" data-katex="\Delta S \approx \log_{10}(0.02 \times 10^{25}) \approx 23.3\,k"></span>.
+        But the book argues that's the wrong count to use if the psychokinesis is being aimed at something
+        only being watched rather than touched directly: counting only the neurons doing the perceiving — a
+        visual field is "displayed" at something like 1&ndash;7 megapixels, one neuron per pixel — gives a far
+        smaller
+        <span class="inline-formula" data-katex="\Delta S \approx \log_{10}(0.02 \times 4\times10^{6}) \approx 5\,k"></span>.
+        The book's own reading: psychokinesis might be genuinely <em>easier</em> to exert on something seen
+        through a screen or from a distance than on something touched up close, because only the perceiving
+        neurons need "coordinating," not every atom in the target itself.</p>
+
+      <h3>A specific number for the random-number-generator studies</h3>
+      <p>A willed action is modeled as taking about a second to form, then being released into one of the
+        40 subconscious frames per second already established elsewhere on this site (the same figure as
+        <a href="swi.html#why-consciousness">SWI's own 20/40 Hz split</a>, not a new one) — giving
+        <span class="inline-formula" data-katex="z_{RNG} = \tfrac{1}{2} + \tfrac{1}{2 f_{SC}} = \tfrac{1}{2} + \tfrac{1}{80} = 0.5125"></span>,
+        a 51.25% predicted success rate that lines up closely with the roughly 51% Radin reports. Using the
+        20 Hz conscious rate instead of the 40 Hz subconscious one gives 52.5%. A related figure for physical
+        dice-tossing, 51.2% per Radin, sits slightly above the RNG number.</p>
+
+      <h3>Five levels, by what they cost thermodynamically</h3>
+      <p>The book sorts every psychokinesis claim it discusses into five levels, graded by how large an
+        entropy drop each one requires and how precisely timed the intervention has to be:</p>
+
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <caption>The book's five-level taxonomy of psychokinesis, derived from thermodynamics alone</caption>
+          <thead>
+            <tr>
+              <th scope="col">Level</th>
+              <th scope="col">Description</th>
+              <th scope="col">Entropy drop</th>
+              <th scope="col">Timing requirement</th>
+              <th scope="col">Success rate</th>
+              <th scope="col">Practitioners</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="num">0</td>
+              <td>Binary/multi-way chaotic systems where every outcome shares the same likelihood (a psi-wheel's spin direction, air currents)</td>
+              <td>None</td>
+              <td>Must act before random drift starts</td>
+              <td class="num">~90% (with training)</td>
+              <td>Sky Darmos (self-reported); Michael Grubb (aerokinesis)</td>
+            </tr>
+            <tr>
+              <td class="num">1</td>
+              <td>A single quantum decision at the moment of measurement (binary micro-PK, random-number generators)</td>
+              <td>None</td>
+              <td>Must act at the exact moment of measurement</td>
+              <td class="num">~51% (odds against chance 1:10<sup>12</sup>)</td>
+              <td>Uri Geller (Geiger counters); mostly unnamed test subjects</td>
+            </tr>
+            <tr>
+              <td class="num">2</td>
+              <td>A chaotic system with a small number of distinct outcomes (dice), as it settles</td>
+              <td>Reduced 6&times; for one die, 36&times; for two</td>
+              <td>Must act shortly before the final state</td>
+              <td class="num">51.2% (odds against chance 1:10<sup>9</sup>)</td>
+              <td>Mostly unnamed test subjects</td>
+            </tr>
+            <tr>
+              <td class="num">3</td>
+              <td>Shifting, bending, or scattering objects using their own thermal energy (macro-PK)</td>
+              <td>Enormous</td>
+              <td>No precise moment required</td>
+              <td class="num">~90%, over 15 sec&ndash;2 hrs</td>
+              <td>Nina Kulagina, Benedikt Maurer, Jean Pierre Girard, others</td>
+            </tr>
+            <tr>
+              <td class="num">4</td>
+              <td>Levitation &mdash; sustaining an object in a very unlikely state, not just briefly reaching it</td>
+              <td>Same as Level 3, but held open rather than allowed to relax</td>
+              <td>No precise moment required</td>
+              <td class="num">Same as Level 3</td>
+              <td>Extremely rare</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="data-table-note">Success rates and odds are the book's own figures, drawn chiefly from Dean Radin's published studies. Named practitioners for Levels 3&ndash;4 are covered in the next section.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TELEKINETS
+     ============================================================ -->
+<section id="telekinets" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">From taxonomy to named claims</p>
+      <h2>Practitioners, levitation, and Uri Geller</h2>
+    </div>
+
+    <p class="caveat">The names below are specific, real, individually tested people — not a general appeal to
+      "psychokinesis research" as a genre. Some were tested by government or skeptic organizations (the
+      Stanford Research Institute, the CIA, the BND, GWUP); others rest only on the book's own personal
+      correspondence with the practitioner. "Tested by" a named organization is not the same claim as
+      "independently replicated" or "peer-reviewed," and for most of what follows, the book's own account is
+      the only source. Separately: the author's own psi-wheel experiments, described further down, are a
+      first-person, self-reported anecdote, not lab data of any kind — a further notch below even the tested
+      claims above, and flagged as such where it appears.</p>
+
+    <div class="prose">
+      <h3>Uri Geller</h3>
+      <p>Geller was tested by Russell Targ and Harold Puthoff at the Stanford Research Institute, and, per the
+        book, by the CIA. Physicists David Bohm and John Taylor also investigated him; so, informally, did
+        Richard Feynman, who came away unconvinced but reported no evidence of fraud. Physicist Jack Sarfatti's
+        own verdict, from a demonstration at Birkbeck College, is more direct: he judged that Geller
+        <em>"demonstrated genuine psychoenergetic ability at Birkbeck... beyond the doubt of any reasonable
+        man."</em> The book also reports that roughly two dozen scientific papers concluded Geller was
+        genuine, and that Geller's own website lists endorsements from "60 scientists, 32 trick-magicians and
+        13 celebrities" — that last figure is Geller's own self-published claim, not something this book or
+        this page independently verifies.</p>
+
+      <p>John Taylor is the book's own cautionary counter-example: initially convinced by Geller, Taylor spent
+        years trying and failing to find an electromagnetic or "fifth force" explanation for what he'd seen,
+        and eventually concluded that his own resulting doubt rested on the lack of an explanation, not on any
+        actual evidence of fraud. The book keeps that nuance rather than smoothing it away.</p>
+
+      <h3>Nina Kulagina</h3>
+      <p>Kulagina (Russia, 1926&ndash;1990) was tested by, in the book's phrase, "hundreds of scientists,
+        domestic and foreign," over roughly two decades, until her health declined and her reported ability
+        declined with it. She often suffered headaches and spinal pain after performing — which the book reads
+        as entropy displaced into the practitioner's own body rather than genuinely destroyed, not as an
+        unrelated side effect.</p>
+
+      <h3>Benedikt Maurer</h3>
+      <p>Maurer (Germany), with two decades of claimed practice, was tested by German intelligence (the BND)
+        and by GWUP, a skeptics' organization — passing a magnet-detection test by correctly identifying which
+        of ten boxes hid a magnet, nine times out of thirteen. The binomial odds of that by pure chance:
+        <strong>P(X&ge;9) &asymp; 4.906&times;10<sup>-7</sup></strong>, roughly one in two million. Maurer
+        himself attributes part of his own effects to unusual electromagnetic activity in his own body rather
+        than psychokinesis proper — the book treats that as a real, separate, non-nonlocal phenomenon and says
+        so plainly, the same kind of honest confound other pages on this site have flagged in their own
+        sources.</p>
+
+      <h3>Jean Pierre Girard</h3>
+      <p>Girard (France) has had his metal-bending and object-shifting witnessed by several named physicists
+        and materials scientists — Zbigniew Wolkowski, M. Troubl&eacute;, Raymond Villetange, C. Bogdanski, and
+        R. D. Mattuck among them — including a repeat demonstration at Utrecht in 1997.</p>
+
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <caption>Named practitioners the book cites, and who tested them</caption>
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Tested by</th>
+              <th scope="col">Feats</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Benedikt Maurer</td><td>BND (twice); Prof. Walter von Lucadou; GWUP</td><td>Shifting, scattering, bending, rotating; unusual body electromagnetism</td></tr>
+            <tr><td>Silvio Meier</td><td>B. Waelti; University of Freiburg</td><td>Bending, shifting</td></tr>
+            <tr><td>Claus Rahn</td><td>Physics Institute, University of Munich</td><td>Rotating, bending, shifting</td></tr>
+            <tr><td>Nina Kulagina</td><td>The KGB, over 20+ years</td><td>Shifting</td></tr>
+            <tr><td>Uri Geller</td><td>Mossad, the CIA, the Stanford Research Institute, MI5, MI6</td><td>Bending</td></tr>
+            <tr><td>Jean Pierre Girard</td><td>C. M. Crussard, J. Bouvaist, J. B. Hasted, D. Robertson</td><td>Bending thick metal, shifting; one instance of brief levitation</td></tr>
+            <tr><td>Michael Grubb</td><td>Only his own students</td><td>Aerokinesis only</td></tr>
+            <tr><td>Nicholas Yanni</td><td>ASIS</td><td>Shifting</td></tr>
+          </tbody>
+        </table>
+        <p class="data-table-note">"Tested by" names an organization or individual who ran a specific trial, not independent replication or peer review. A longer list of untested practitioners with only online video as evidence is in the book itself; it's left off this page for the same reason.</p>
+      </div>
+
+      <h3>Levitation</h3>
+      <p>Girard's own levitation demonstration reached about 0.1 m, implying an initial speed of 1.4 m/s —
+        20.7% of the 6.748 m/s theoretical maximum derived above. Maurer claims five lifetime levitation
+        events, only two filmed, one a small hop and one he estimates himself, unverified and not fully
+        released on video, at roughly 0.6 m — implying 3.4 m/s, 50.8% of the theoretical maximum. The book is
+        explicit that true, <em>sustained</em> levitation — an object held suspended rather than briefly rising
+        and falling — "has not yet been demonstrated under laboratory conditions," which is worth keeping as
+        the book's own restraint about its own strongest claim in this section.</p>
+
+      <h3>A personal experiment</h3>
+      <p>The author describes his own psi-wheel experiments — a balanced aluminum vane resting under a glass
+        hub, isolated from air currents — claiming a 90&ndash;100% success rate across many trials at choosing
+        which way it would rotate, some recorded on video. This is presented here exactly as the book presents
+        it: self-reported, not independently tested by any outside party, and distinct in kind from the
+        Kulagina/Geller/Maurer material above, all of which involved at least one third-party testing
+        organization.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONSCIOUS SETS, NDE, REINCARNATION
+     ============================================================ -->
+<section id="conscious-sets-esp" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What a Platonic set survives</p>
+      <h2>Conscious sets, near-death experience, and reincarnation</h2>
+    </div>
+
+    <p class="caveat">This section reaches further than ordinary philosophy of mind: it extends the
+      Frege-style set model above into specific claims about near-death experience and reincarnation — literal
+      claims about what, if anything, of a person continues after death. This is also where the book's
+      account, promised but not delivered on <a href="eec.html#end-and-beginning">Entropic Expansion
+      Cosmology's own closing section</a>, actually gets worked out.</p>
+
+    <div class="prose">
+      <p>A person, on this model, is a Platonic set <strong>&#x1D40D;</strong> — the full collection of every
+        conscious experience anyone has ever had of them. Two useful subsets: <strong>&#x1D40D;<sub>self</sub></strong>,
+        one's own self-experience, and <strong>&#x1D40D;<sub>watch</sub></strong>, everyone currently perceiving
+        them.</p>
+
+      <h3>Near-death experience</h3>
+      <p>Brain death, on this account, only removes access to &#x1D40D;<sub>self</sub> — not to
+        &#x1D40D;<sub>watch</sub> or to the full set &#x1D40D; itself, which keep "evolving" through the
+        perceptions of everyone still observing the person, including the medical staff trying to revive them.
+        The book offers this as the mechanism behind reports of near-death patients later recalling what
+        doctors and nurses were doing or saying during their own clinical death, and behind the
+        floating-above-oneself, "enlightenment"-like feeling some survivors describe — read here as a
+        momentary access to the fuller set &#x1D40D; rather than just the ordinarily-available
+        &#x1D40D;<sub>self</sub>.</p>
+
+      <h3>Reincarnation</h3>
+      <p>Rather than defining a person by fixed facts — birthplace, name, parentage, all of which can change
+        or turn out to be wrong — the book defines a person as <em>"a collection of successive self-similar
+        sets"</em>: a temporal chain &#x1D40D;<sub>0</sub>, &#x1D40D;<sub>1</sub>, &#x1D40D;<sub>2</sub>,
+        &hellip; A newly born person can become the next link in an existing chain if they turn out to be the
+        most self-similar continuation available, which would give them partial — mostly felt rather than
+        consciously known — access to the prior link's full Platonic set. The book calls genuinely checkable
+        cases rare, citing (at footnote weight) a compilation of children's claimed past-life memories that
+        were reportedly confirmed against real deceased people's biographical details; this page keeps that at
+        the same footnote weight the book gives it, rather than building it into a case study.</p>
+
+      <p class="caveat">The two anecdotes below are the author's own, first-person, self-reported experiences —
+        not lab data, not independently witnessed, and not part of the book's evidentiary case the way the
+        tested practitioners in the previous section are. They're included because the book uses them to
+        illustrate a probability argument, not as evidence in their own right.</p>
+
+      <h3>Two personal anecdotes</h3>
+      <p>A "collective clock effect": waking up seconds before an alarm, with no alarm actually set. The book
+        calculates the odds of a random 5-second window lining up with a full day's wake time by chance at
+        5.78&times;10<sup>-5</sup> (0.0057%) — "should happen only once in 54 years" — yet, per the author,
+        it happens often; the book illustrates this with an anecdote about a friend, called "Haiming," waking
+        at precisely 8:00 am with no alarm.</p>
+
+      <p>A synchronicity-in-thought anecdote: the author describes a woman re-contacting him at almost the
+        exact moment he happened to be telling friends a story about her, and calculates the odds of that
+        timing by chance at roughly 7&times;10<sup>-4</sup> (0.07%) — a five-minute window against about
+        seventeen waking hours a day over a week. This page keeps the anecdote generic, without the specific
+        personal framing the book gives it, since it concerns a private individual who isn't otherwise part of
+        this story.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     REMOTE VIEWING
+     ============================================================ -->
+<section id="remote-viewing" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">A parapsychologist's own field record</p>
+      <h2>Schwartz, the Mobius group, and remote-viewing archaeology</h2>
+    </div>
+
+    <p class="caveat">This is the kind of claim already covered elsewhere on this site under the standard
+      contested-evidence caveat used for Radin- and Schwartz-style parapsychology research — extended here,
+      not escalated further. What follows is what the book's own taxonomy calls a type-3 relation: a link
+      between a handful of people's thoughts, not everyone's.</p>
+
+    <div class="prose">
+      <p>This section covers the biography and case studies of parapsychologist Stephan A. Schwartz and his
+        "Mobius" research group.</p>
+
+      <h3>Project Deep Quest</h3>
+      <p>Psychics Ingo Swann and Hella Hammid independently located a sunken wooden ship near Santa Catalina
+        Island, California — an area where 4,000 prior dives by USC's Institute for Marine and Coastal Studies
+        had failed to find anything. A robot-arm research submarine confirmed the wreck. The search was
+        monitored by a named neutral observer, Dr. Anne Kahle of NASA's Jet Propulsion Laboratory, and
+        oceanographer Don Walsh commented afterward that there was "no way" the team could have known about the
+        wreck by ordinary means.</p>
+
+      <h3>The Alexandria project (1977&ndash;1988)</h3>
+      <p>Eleven psychics located candidate sites; Hella Hammid and George McMullen were specifically sent to
+        three unexpected markings on a map. The results included a water channel matching one documented
+        roughly two hundred years earlier by scientists accompanying Napoleon, whose entrance had since been
+        lost; a site at Nabi Daniel where McMullen, and independently Hammid, each described what they took to
+        be a tomb-like structure they associated with Alexander the Great — worth noting explicitly that
+        further excavation there was blocked (it would have required tearing down part of a mosque), so this
+        was never confirmed one way or the other; and a Byzantine building buried in the Marea desert, where
+        the book reports that 80% of what the remote viewers described was later confirmed accurate by
+        archaeologists on site. Discoveries credited to the broader project also reportedly include Cleopatra's
+        Palace, Marc Antony's Timonium, and ruins of the Lighthouse of Pharos.</p>
+
+      <p>A separate three-day submarine test, conducted deep enough for seawater to shield out
+        extremely-low-frequency radio signals, is described as ruling out ELF transmission as an explanation
+        for the observed effects.</p>
+
+      <h3>The "2050 project" (1978&ndash;1996)</h3>
+      <p>A long-running survey asked remote-viewers to describe conditions in the year 2050. The book's own
+        reading of the results is measured rather than triumphant: several apparent hits (AIDS, an
+        "anti-terror war") reflect things that had already begun to emerge by the time of the sessions, even
+        if not yet widely or publicly known — meaning they don't require anything beyond ordinary, if nonlocal,
+        <em>present</em>-tense information access. This page keeps that hedge intact rather than presenting
+        the project's predictions as confirmed foresight.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WORLDVIEWS & MORPHIC RESONANCE
+     ============================================================ -->
+<section id="worldviews-and-morphic-resonance" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Comparing frameworks, then reaching across eons</p>
+      <h2>Nine worldviews, and morphic resonance across eons</h2>
+    </div>
+
+    <p class="caveat">The material below extends Rupert Sheldrake's own contested framework of morphic
+      resonance across cosmic eons, layered onto the book's own speculative periodic cosmology from
+      <a href="eec.html#end-and-beginning">Entropic Expansion Cosmology</a> — two independently unconventional
+      ideas combined into one. This is the mechanism EEC's own closing section pointed to and declined to
+      develop; see that page's "last observer" puzzle for where the question was first raised.</p>
+
+    <div class="prose">
+      <p>Before reaching for that mechanism, the book first places its own framework against nine others,
+        by what each would have to say about six kinds of anomalous cognition:</p>
+    </div>
+
+    <p class="caveat">The comparison table below is the book's own characterization of nine other worldviews'
+      stance on telepathy, remote viewing, and precognition — not a neutral survey each framework's own
+      originator would necessarily recognize or endorse. The asterisked cells describe what a framework would
+      <em>allow</em>, not what its author personally claimed.</p>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <caption>Worldviews and their properties, by the book's own reckoning</caption>
+        <thead>
+          <tr>
+            <th scope="col">Worldview</th>
+            <th scope="col">Mathematical understanding</th>
+            <th scope="col">Telepathy</th>
+            <th scope="col">Remote viewing &amp; memory</th>
+            <th scope="col">Transgenerational remote viewing</th>
+            <th scope="col">Quantum remote viewing</th>
+            <th scope="col">Precognition</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Materialism</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
+          <tr><td>Tegmark's mathematical universe</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
+          <tr><td>Dualism</td><td>No</td><td>Yes</td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
+          <tr><td>Trialism / Popper's world of culture</td><td>No</td><td>Yes*</td><td>Yes*</td><td>No</td><td>No</td><td>No</td></tr>
+          <tr><td>Penrose's trialism</td><td>Yes</td><td>Yes*</td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
+          <tr><td>Conscious set theory</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td><td>Only trends and tendencies</td></tr>
+          <tr><td>Schwartz's nonlocal realm</td><td>Unclear</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Unclear</td><td>Yes</td></tr>
+          <tr><td>Radin's nonlocal realm</td><td>Unclear</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+          <tr><td>Akasha records</td><td>Unclear</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Unclear</td><td>Yes</td></tr>
+          <tr><td>Sheldrake's morphic resonance</td><td>No</td><td>Yes</td><td>No*</td><td>No</td><td>No</td><td>No</td></tr>
+        </tbody>
+      </table>
+      <p class="data-table-note">* Not acknowledged by the originator of the theory — the book is describing what the framework would allow, not a personal endorsement by Popper or Penrose. The asterisk on Sheldrake's "Remote viewing &amp; memory" cell is the book's own. The same chapter says Sheldrake explains telepathy as morphic resonance between people and memory as morphic resonance with oneself, so this page reads that asterisk as marking a cell where Sheldrake himself would likely not accept the book's "No" — but the book's footnote doesn't spell that out.</p>
+    </div>
+
+    <div class="prose">
+      <h3>Morphic resonance across eons</h3>
+      <p>Rupert Sheldrake's own morphic resonance (1981) is introduced here as the overlap between different
+        people's contents within the world of experience — ordinary synchronicity where the overlap is
+        moderate, telepathy where it's very strong. The book then extends the same idea between cosmic eons:
+        if the past is genuinely infinite, as Entropic Expansion Cosmology's own periodic cosmology proposes,
+        and morphic resonance is a real physical law rather than something confined to genetics, then a new
+        eon's starting quantum state could inherit patterns from the eon that just ended — the way, per the
+        book's own analogy, a person doesn't consciously remember a past life but might still "inherit
+        preferences" from one. That's the book's own answer to the question <a
+        href="eec.html#end-and-beginning">EEC's closing section raised and declined to resolve</a>: what
+        happens to a cosmic eon once its last conscious observer dies. This page is where that mechanism was
+        always meant to land.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     NONLOCAL REALM & PHYSICS
+     ============================================================ -->
+<section id="nonlocal-realm-physics" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Two examples already on this site</p>
+      <h2>Why physics itself needs the nonlocal realm</h2>
+    </div>
+
+    <p class="caveat">Both examples below are already covered, and already caveated, elsewhere on this site —
+      this section only uses them to make a narrower philosophical point about where information has to
+      "live." See the linked sections for the physics itself.</p>
+
+    <div class="prose">
+      <p>The book's argument here is short: ordinary physics, on its own terms, already needs somewhere for
+        information to be "remembered" that isn't a physical trace anyone could point to — which is exactly
+        what it calls the nonlocal realm (its own term for the world of experience, treated as identical with
+        the full wavefunction of the universe).</p>
+
+      <p><strong>Black hole entropy.</strong> A black hole's precise entropy — which, per
+        <a href="eec.html#core-idea">Entropic Expansion Cosmology</a>, governs how much the universe expands —
+        isn't something you could read off the horizon by looking at it from outside. On this account, it's
+        remembered, not physically encoded anywhere accessible.</p>
+
+      <p><strong>Beam splitters.</strong> A photon threading a cascade of beam splitters has to "remember"
+        which path it took in order to arrive only at the correct detector once its path information is
+        checked — the same territory covered by <a href="swi.html#testing-eraser">the quantum-eraser mechanics
+        already described on SWI's page</a>.</p>
+
+      <p>The book also gives a brief, respectful nod to a named correspondent's competing idea: physicist
+        Steve Dufourny's "pan-codism," which holds that a particle's own internal structure encodes its history
+        directly, is described as a more radical mechanist alternative the book considers and sets aside — a
+        minor citation, not a load-bearing part of this chapter's own argument.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     QUANTUM ORACLES & EVP
+     ============================================================ -->
+<section id="quantum-oracles-and-evp" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Where the book's own claims reach furthest</p>
+      <h2>Quantum oracles, and the electronic voice phenomenon</h2>
+    </div>
+
+    <div class="prose">
+      <h3>The brain as a "quantum oracle"</h3>
+      <p>The book pictures neural pathways forming the way a crystal grows — many possible paths available at
+        each branching point, with only the ones that cascade all the way through to an actual conscious
+        result ever getting "selected," in retrospect. It calls the resulting picture a quantum oracle: an
+        entity that, on its own account, can resolve the halting problem. That's a deliberately informal
+        borrowing of the term — not the formal computer-science definition of an oracle machine.</p>
+
+      <p>The retrocausal flavor of that picture — a later conscious outcome reaching back to shape which
+        earlier pathway actually happened — is the same "abundance of future observation" idea already
+        introduced, and already caveated, on
+        <a href="eec.html#entanglement-fermi-paradox">Entropic Expansion Cosmology's own page</a>. It isn't
+        reintroduced here as a new claim, just carried over to explain how a single brain's own pathways might
+        get selected.</p>
+    </div>
+
+    <p class="caveat">This is the most extreme claim on this site — not a statistical pattern at cosmic scale,
+      but a specific claim of contact with named, real, deceased people, sourced to third-party recordings the
+      book quotes rather than to anything independently tested. As with every parapsychology claim elsewhere
+      on this site, this isn't accepted by mainstream science, and it's contested even within parapsychology's
+      own literature.</p>
+
+    <div class="prose">
+      <h3>Electronic voice phenomenon</h3>
+      <p>Building on that picture, the book treats electronic-voice-phenomenon ("spirit box") devices as a
+        real-world channel for messages from people who have died. It reports on recording sessions run by two
+        paranormal-investigation YouTubers, Steve Huff and Eman Rodriguez, and quotes a brief 2020 comment from
+        a third investigator, Phillip Page, about his own equipment.</p>
+
+      <p>The book describes Huff's sessions as beginning shortly after the death of the actor and comedian
+        Robin Williams, and separately as including sessions the investigators associated with the musician
+        Michael Jackson; Rodriguez's own sessions used a voice generator set to approximate Robin Williams'
+        voice. Across both sets of sessions, the book reports the resulting audio as short phrases the
+        investigators themselves described as responsive and emotionally resonant — that's a description of
+        what the book claims was recorded, not something this page is in a position to evaluate.</p>
+
+      <p>None of this is independently verified, and this page won't try to adjudicate it. What can be said
+        plainly: electronic-voice-phenomenon recordings rely on stretches of noise or fragmented audio that
+        listeners interpret as speech, a pattern well documented outside parapsychology as ordinary auditory
+        pattern-matching, and no recording of this kind has been accepted by mainstream science as evidence of
+        communication with the deceased.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SUPERLUMINAL COMMUNICATION
+     ============================================================ -->
+<section id="superluminal-communication" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">From messaging to an engineering proposal</p>
+      <h2>Twin oracles, and a path to superluminal communication</h2>
+    </div>
+
+    <p class="caveat">Everything below inherits the caveat weight of the psychokinesis claims earlier on this
+      page, and adds one more: it proposes a practical way around the <strong>no-communication theorem</strong>,
+      a well-established result in quantum information theory holding that entanglement alone can never
+      transmit information faster than light. The book isn't disputing that theorem's mathematics — it's
+      proposing that trained psychokinesis supplies a genuinely non-random bias the theorem's own proof
+      assumes doesn't exist. That's a much larger claim than anything else on this page, and it rests on every
+      psychokinesis claim made earlier actually being real and controllable.</p>
+
+    <div class="prose">
+      <p>The book's proposal is a pair of entangled "twin quantum oracles" — most concretely, entangled
+        electron spins — measured non-invasively through the Faraday effect rather than a "sharp"
+        Stern&ndash;Gerlach-style measurement, specifically so the measurement itself doesn't destroy the
+        entanglement it depends on. A sufficiently skilled psychokinetic practitioner would bias the outcome on
+        one side; if that bias is real, it should show up as a detectable pattern on the entangled partner's
+        side too, however far away it is.</p>
+
+      <p>The book is careful to distinguish this from ordinary telepathy claims, and specifically from Dean
+        Radin's own suggestion that entanglement might underlie brain-to-brain telepathy — a suggestion the
+        book calls underspecified, on the grounds that human thought is carried by neurons rather than single
+        particles, and that any brain-to-brain entanglement, even if it existed, wouldn't survive the body's
+        ordinary turnover of its own atoms.</p>
+
+      <p>A parallel idea, "superluminal video transmission": a camera whose individual pixels only display
+        when they match an entangled partner pixel, with an observer's own alleged micro-psychokinetic bias
+        toward emotionally resonant images proposed to make a meaningful picture more likely to emerge than
+        plain noise.</p>
+    </div>
+
+    <p class="caveat">The interstellar-colonization framing below is the single most speculative sentence in
+      this section — infrastructure for a civilization that doesn't yet have a working psychokinesis-based
+      communication channel at any range, let alone across light-years.</p>
+
+    <div class="prose">
+      <p>Both ideas are framed explicitly as future infrastructure for interstellar colonization — a way to
+        communicate with colonies light-years away without waiting years for an ordinary signal to make the
+        round trip.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DEVELOPMENT NOTES
+     ============================================================ -->
+<section id="development-notes" class="section-dark">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Dated, the way the book dates everything</p>
+      <h2>How this theory grew, in the book's own notes</h2>
+      <p>Every idea in the book carries the date it was first conceived. A sample of this one's history, from
+        the founding insight to the most recent revision:</p>
+    </div>
+
+    <div class="timeline mini-timeline">
+      <div class="tl-item">
+        <span class="tl-year">6 Oct 2004</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Identity theory rejected</h4>
+          <p>The founding insight: one brain-state cannot simply equal one conscious state — the puzzle this
+            whole chapter is built to resolve.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">22 Oct 2004</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>A temporally extended world of experience</h4>
+          <p>First sketch of a "world of experience" that isn't confined to a single moment or a single
+            brain.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">20 Jan 2006</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Fregean set theory adopted</h4>
+          <p>Frege's set-based definition of numbers is adopted as the formal basis for defining Qualia.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">9 Apr 2015</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>From "conscious relations" to "conscious sets"</h4>
+          <p>A shift in emphasis that gives the theory its current name.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">16 Nov 2016</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Binary psychokinesis proposed</h4>
+          <p>Level-0 psychokinesis — nudging a chaotic system with equally likely outcomes — first proposed.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">9 Jun 2017</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>The "collective clock" effect proposed</h4>
+          <p>An attempt to quantify the odds behind waking up seconds before an unset alarm.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">25 Oct 2017</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>First encounter with Stephan Schwartz's research</h4>
+          <p>The beginning of this chapter's engagement with remote-viewing archaeology.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">6 Sep 2019</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Black hole entropy needs the nonlocal realm</h4>
+          <p>Realizing that black hole entropy — and so cosmic expansion — requires the nonlocal realm to have
+            "memory": the link back to Entropic Expansion Cosmology.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">15 Jan &ndash; 5 Nov 2020</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Quantum oracles, then twin oracles</h4>
+          <p>The brain-as-quantum-oracle framing developed first, then extended to entangled "twin oracles."</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">30 Aug 2021</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>A non-sharp measurement scheme</h4>
+          <p>The Faraday-effect measurement approach for twin oracles, developed with Dean Radin, Matti
+            Pitk&auml;nen, and Ashraf Elkady.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">25 May 2026</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Most recent revision</h4>
+          <p>Refining the psychokinesis odds and success-rate figures used throughout this chapter's taxonomy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-dark">
+  <div class="wrap page-footer-nav">
+    <a class="pfn-back" href="../index.html#theories">
+      <span class="pfn-label">All theories</span>
+      &larr; Back to the six theories
+    </a>
+    <a href="chromo.html">
+      <span class="pfn-label">Next theory &middot; 2017</span>
+      Chromogravity &amp; Electrogravity &rarr;
+    </a>
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer section-dark">
+  <div class="wrap">
+    <div class="footer-row">
+      <a class="wordmark" href="../index.html#top" style="color:var(--cream)">Elementary Spaces</a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="../index.html#theories">Theories</a>
+        <a href="../index.html#problems">Problems</a>
+        <a href="../index.html#timeline">Timeline</a>
+        <a href="../index.html#concepts">Concepts</a>
+        <a href="../index.html#formulae">Formulae</a>
+        <a href="../index.html#about">About</a>
+      </nav>
+    </div>
+    <p class="footer-note">An independent companion guide to <em>The Complete Guide to Quantum Gravity</em>
+      by Sky Darmos. Not peer-reviewed, not affiliated with any research institution, and not an assessment
+      of the theory's validity — a map for navigating what the book itself claims.</p>
+  </div>
+</footer>
+
+<script defer src="../js/script.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+
+</body>
+</html>

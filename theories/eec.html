@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entropic Expansion Cosmology — Elementary Spaces</title>
+<meta name="description" content="A deep dive into Sky Darmos's Entropic Expansion Cosmology: why black-hole entropy growth forces the universe to expand, the derivation of a 42-trillion-year age of the cosmos, and five independent lines of evidence the book offers for it.">
+<meta name="theme-color" content="#3D5A6E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body style="--theory-accent: var(--acc-eec);">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="nav-row">
+    <a class="wordmark" href="../index.html#top">Elementary Spaces <small>a guide to Sky Darmos's quantum gravity</small></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle menu"><span></span></button>
+    <nav class="primary-nav" id="primaryNav">
+      <a href="../index.html#theories">Theories</a>
+      <a href="../index.html#problems">Problems</a>
+      <a href="../index.html#timeline">Timeline</a>
+      <a href="../index.html#concepts">Concepts</a>
+      <a href="../index.html#formulae">Formulae</a>
+      <a href="../index.html#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================================================
+     SUBHERO
+     ============================================================ -->
+<section class="hero subhero section-dark" id="top">
+  <div class="wrap">
+    <p class="breadcrumb">
+      <a href="../index.html#top">Elementary Spaces</a><span class="sep">/</span><a href="../index.html#theories">Theories</a><span class="sep">/</span><span class="current" aria-current="page">Entropic Expansion Cosmology</span>
+    </p>
+
+    <div class="hero-grid" style="margin-top:2rem;">
+      <div>
+        <p class="hero-eyebrow">Theory 4 of 6 &middot; first proposed 19 May 2013</p>
+        <h1>The universe expands to keep entropy constant</h1>
+        <p class="dek">Space Particle Dualism and the Similar-Worlds Interpretation supply the machinery;
+          this chapter puts it to work on cosmology. Black hole entropy grows with the square of mass, so if
+          the universe's entropy <em>density</em> is to stay fixed forever, space itself has to expand —
+          faster and faster, to keep pace. Run that single idea all the way through, and it produces the
+          book's most consequential number: a universe not 13.8 billion years old, but roughly 42 trillion.
+          This page covers the mechanism, the derivation of that figure, and five independent lines of
+          evidence the book offers in its support.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#core-idea">Read the core idea</a>
+          <a class="subhero-back" href="../index.html#theories">&larr; Back to the six theories</a>
+        </div>
+
+        <div class="framing-box compact">
+          <strong>A note on what's below.</strong> The core mechanism — entropy density, not total entropy,
+          held constant — is argued in mainstream terms and yields checkable numbers. But its headline
+          conclusion rejects one of modern cosmology's best-measured quantities, the age of the universe,
+          outright, rather than leaving an open question unresolved. Partway down, the section on
+          entanglement and the Fermi paradox goes further than anything elsewhere on this site: it extends
+          contested parapsychology claims from a lab experiment up to the large-scale structure of the
+          observable universe. The closing section leans on Rupert Sheldrake's morphic resonance and a
+          reincarnation-like continuity between cosmic eons. Both are flagged again, more strongly, where
+          they come up.
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="180" fill="none" stroke="#F0EAE0" stroke-opacity="0.08"/>
+          <circle cx="200" cy="200" r="130" fill="none" stroke="#F0EAE0" stroke-opacity="0.11"/>
+          <circle cx="200" cy="200" r="34" fill="#5b8fa8" fill-opacity="0.55"/>
+          <circle cx="200" cy="200" r="78" fill="none" stroke="#A8CFC0" stroke-opacity="0.75" stroke-width="2.5"/>
+          <circle cx="200" cy="200" r="122" fill="none" stroke="#D9C9A8" stroke-opacity="0.85" stroke-width="2.5"/>
+          <circle cx="200" cy="200" r="160" fill="none" stroke="#A8CFC0" stroke-opacity="0.4" stroke-width="1.5"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ON-PAGE TOC
+     ============================================================ -->
+<nav class="toc-nav" aria-label="On this page">
+  <div class="wrap toc-row">
+    <a class="toc-link" href="#core-idea">The core idea</a>
+    <a class="toc-link" href="#local-expansion">Local expansion</a>
+    <a class="toc-link" href="#dark-matter-burned-out">Burned-out dark matter</a>
+    <a class="toc-link" href="#primordial-black-holes">Primordial black holes</a>
+    <a class="toc-link" href="#black-holes-without-hawking">Black holes without Hawking radiation</a>
+    <a class="toc-link" href="#entanglement-fermi-paradox">Entanglement &amp; the Fermi paradox</a>
+    <a class="toc-link" href="#post-decoupling-age">The age of the CMB</a>
+    <a class="toc-link" href="#full-age-of-the-universe">The full age of the universe</a>
+    <a class="toc-link" href="#old-universe-consequences">Living in an old universe</a>
+    <a class="toc-link" href="#testing-it-supernovae">Testing it: supernovae</a>
+    <a class="toc-link" href="#testing-it-stellar-fossils">Testing it: stellar fossils</a>
+    <a class="toc-link" href="#end-and-beginning">The end and the beginning</a>
+  </div>
+</nav>
+
+<!-- ============================================================
+     CORE IDEA
+     ============================================================ -->
+<section id="core-idea" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Where the theory starts</p>
+      <h2>A constant, not a beginning</h2>
+    </div>
+
+    <div class="prose">
+      <p>Standard cosmology treats the early universe's low entropy as a brute fact that has to be assumed
+        rather than explained: the universe simply started in an exceptionally special, low-entropy state,
+        and everything since has been entropy climbing back toward a more ordinary value. Entropic Expansion
+        Cosmology tries to make that special starting condition disappear altogether, by proposing that it's
+        entropy <em>density</em> — entropy per unit of volume — that's fixed, not total entropy, and never
+        was anything else.</p>
+
+      <p>Almost all of the universe's entropy lives in black holes, and a black hole's entropy grows with the
+        <em>square</em> of its mass. As black holes across the universe slowly grow — by accretion, by merging
+        with one another — total cosmic entropy climbs far faster than a fixed volume could absorb while
+        keeping its density constant. The book's proposal is that space itself expands to compensate, and
+        because entropy is growing quadratically, the expansion needed to keep pace has to accelerate too —
+        matching the observed acceleration of cosmic expansion without needing a separate dark-energy field
+        to drive it.</p>
+
+      <h3>What "entropy" means here</h3>
+      <p>The chapter borrows a definition from earlier in the book: <a href="swi.html#core-idea">the
+        Similar-Worlds Interpretation</a> already treats a superposition as a small cloud of worlds too
+        similar to be told apart. Entropy, on this same picture, is recast as a literal count of how many such
+        indistinguishable worlds a given macroscopic state corresponds to — not a separate statistical
+        bookkeeping device bolted on afterward, but the same cloud, measured. A high-entropy state is one
+        consistent with an enormous number of indistinguishable micro-arrangements; a low-entropy one, very
+        few. That redefinition is what lets the chapter treat "entropy density" as a physically real,
+        world-counting quantity rather than a purely thermodynamic abstraction.</p>
+
+      <h3>A problem that stops needing solving</h3>
+      <p>One immediate payoff: the horizon problem. Standard cosmology has to explain why distant regions of
+        the cosmic microwave background, which — under ordinary expansion history — never had time to
+        exchange light and settle into thermal agreement, nonetheless show nearly identical temperatures; the
+        usual fix is a brief period of faster-than-light inflation early on, smoothing everything out before
+        normal expansion resumed. Under entropic expansion there's nothing to smooth out in the first place:
+        entropy density has always held its constant value, so the universe was never in the special,
+        far-from-equilibrium state inflation is invoked to erase. The problem doesn't get solved so much as it
+        never arises.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     LOCAL EXPANSION
+     ============================================================ -->
+<section id="local-expansion" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Checking the mechanism nearby</p>
+      <h2>Local expansion, and why it should be nearly invisible</h2>
+    </div>
+
+    <div class="prose">
+      <p>If expansion is entropy density catching up with black-hole growth, it should be strongest where
+        entropy is growing fastest and weakest where it isn't — and a dense, gravitationally bound region like
+        our own galaxy cluster is exactly where growth, and so expansion, should be smallest. That's a
+        falsifiable difference from standard cosmology, which treats the expansion rate as the same
+        everywhere, including inside gravitationally bound systems, just usually too small there to notice.</p>
+
+      <p>The book runs that difference against data in a few ways. A 225-galaxy redshift survey of the local
+        group checks for "outlaw" galaxies — ones whose measured redshift is anomalously low, as would happen
+        if a small, uniform local expansion were being partly cancelled out by the galaxy's own peculiar
+        motion toward us. Standard, homogeneous expansion predicts some outlaws should turn up; entropic
+        expansion, with local expansion suppressed by the region's low entropy growth, predicts essentially
+        none — and the survey finds none. Decades of tracked trajectory data from the Pioneer 10/11 probes and
+        Voyager 1, along with long-baseline observations of comets and close binary star systems, are checked
+        the same way, for any secular drift consistent with even a very small uniform expansion acting inside
+        the solar system or a bound stellar pair; none is found, which the book treats as consistent with —
+        not proof of — an expansion rate that's suppressed almost to nothing in dense, low-entropy
+        surroundings.</p>
+
+      <h3>Is "expansion" even a separate thing from recession velocity?</h3>
+      <p>Standard cosmology usually distinguishes cosmological redshift — space itself stretching, described
+        as "metric expansion" — from an ordinary Doppler shift caused by objects actually moving apart. The
+        book pushes back on treating that as a deep physical distinction rather than a choice of coordinates:
+        the two descriptions are mathematically interchangeable, so insisting that only the metric-expansion
+        picture applies, and only above some large cosmological scale, is itself an assumption rather than a
+        settled result. That's the chapter's justification for treating a small amount of genuine local
+        expansion as a live possibility worth testing at all, rather than ruling it out by definition the way
+        a strict metric-expansion-only reading would.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DARK MATTER AS BURNED-OUT STARS
+     ============================================================ -->
+<section id="dark-matter-burned-out" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Reinterpreting the missing mass</p>
+      <h2>Dark matter, recast as burned-out stars</h2>
+    </div>
+
+    <div class="prose">
+      <p>Galaxy rotation curves stay flat well past the point where visible matter alone should let them
+        fall off, which is standard cosmology's central piece of evidence for an unseen particle species. In a
+        universe tens of trillions of years old, the book argues, there's a far more mundane explanation
+        available: stellar populations have had time to run through hundreds of generations, and the great
+        majority of stars that have ever formed have simply burned out — white dwarfs, neutron stars, and
+        stellar-mass black holes, contributing plenty of gravitating mass and no light at all.</p>
+
+      <p>The same reframing extends to two other puzzles. So-called "dark matter galaxies" — objects like
+        VIRGOHI21, detected only through their gravitational and radio-emission signature, with no visible
+        starlight — become ordinary galaxies whose entire stellar population has already burned out, not a
+        new class of object built from exotic matter. And cosmic voids, the vast, apparently empty regions
+        between galaxy clusters, become galaxy clusters that have simply exhausted their gas supply and gone
+        fully dark, rather than genuine gaps in the universe's structure.</p>
+
+      <h3>Matching the number against the Milky Way</h3>
+      <p>Worked through for our own galaxy, the book's refined estimate puts 89.7&ndash;94.5% of the Milky
+        Way's mass in non-luminous form, narrowing to almost exactly the commonly cited ~90% figure once the
+        gas fraction used in the calculation is set to 10% rather than 15%. That pins the Milky Way's total
+        mass at roughly 0.8&times;10<sup>12</sup> solar masses and implies a star-formation rate of only about
+        0.05&ndash;0.09 new stars per year — far below the standard model's directly-fitted rate of roughly 7
+        per year — which is exactly what you'd expect if star formation has been running continuously, but
+        slowly, across hundreds of generations spread over tens of trillions of years rather than compressed
+        into 13.8 billion.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PRIMORDIAL BLACK HOLES
+     ============================================================ -->
+<section id="primordial-black-holes" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Where galaxies' seeds come from</p>
+      <h2>Primordial black holes, from a crystal of exotic matter</h2>
+    </div>
+
+    <div class="prose">
+      <p><a href="spd.html#core-idea">Space Particle Dualism's own account</a> of exotic matter — particles
+        with both parts of their complex mass-energy negative — gives it negative inertial mass, which means
+        it repels its own kind rather than attracting it. That repulsion, on the book's account, locks exotic
+        matter into a single rigid, universe-spanning lattice: a Wigner crystal, and the very first structure
+        to exist. Ordinary matter is then drawn toward the lattice points, flipping the local net mass
+        positive and triggering the crystal's collapse into what becomes a sea of primordial black holes —
+        the seeds every later galaxy grew around.</p>
+
+      <p>The book calculates a minimum mass for these primordial black holes directly: setting a black hole's
+        own volume equal to the volume that many neutrons would occupy at ordinary nuclear density gives a
+        threshold of about 9.80&times;10<sup>30</sup> kg, or roughly 4.9 solar masses — below that, there
+        simply isn't enough matter, packed at realistic density, to close a horizon around it in the first
+        place.</p>
+
+      <h3>Why protons outnumber neutrons nine to one</h3>
+      <p>The present-day universe's matter is overwhelmingly protons rather than neutrons, by roughly nine to
+        one. The book's proposed explanation ties back to that same collapse: neutrons, needed in
+        disproportionate numbers to encapsulate and neutralize exotic-matter lattice points as the crystal
+        broke apart, were selectively consumed in the process, leaving free protons in the surplus that
+        defines today's ratio — a byproduct of how the crystal came apart, rather than a separately-tuned
+        initial condition.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BLACK HOLES WITHOUT HAWKING RADIATION
+     ============================================================ -->
+<section id="black-holes-without-hawking" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Revisiting two of general relativity's strangest predictions</p>
+      <h2>Black holes without Hawking radiation, and no true singularity</h2>
+    </div>
+
+    <div class="prose">
+      <p>General relativity's black holes come with two famously strange features: a genuine event horizon,
+        a one-way surface nothing can cross back out of, and (once quantum effects are added) a slow leak of
+        Hawking radiation that should eventually evaporate them entirely. The book rejects both, for related
+        reasons rooted in the rest of this framework.</p>
+
+      <p>On <a href="chromo.html#two-gravities">Chromogravity's</a> account, gravity is sourced by quark count
+        rather than by mass or energy as such — and photons, carrying no quarks, exert no gravity and can
+        carry none away either. Hawking radiation is overwhelmingly photons, so if gravity is genuinely
+        quark-sourced, there's no mechanism left for that radiation to actually shrink a black hole's
+        gravitating mass, whatever else it might carry off. What forms instead of a true event horizon is only
+        an <em>apparent</em>, or coherence, horizon — a boundary in how information can be exchanged, not a
+        literal one-way membrane in space itself. The book points to Eternally Collapsing Objects and
+        Magnetospheric Eternally Collapsing Objects — a horizonless alternative to black holes proposed by
+        Robertson and Leiter — and to observed magnetic fields around compact objects like the quasar
+        Q0957+561 as the kind of evidence a true, surface-less event horizon shouldn't easily allow for, since
+        a horizon has nothing for a magnetic field to actually anchor to.</p>
+
+      <p>The same "only differences matter" principle used <a href="swi.html#giving-up-spacetime">on the
+        Similar-Worlds Interpretation's page</a> to explain why a perfectly uniform vacuum energy exerts no
+        pull rules out a true Big Bang singularity the same way: if it's density <em>differences</em>, not
+        density itself, that cause time dilation and curvature, then an early universe of enormous but
+        perfectly uniform density would curve nothing at all, however extreme its raw density might have been
+        — removing the reason to expect an infinitely curved starting point in the first place.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ENTANGLEMENT & THE FERMI PARADOX
+     ============================================================ -->
+<section id="entanglement-fermi-paradox" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Where the evidence gets most extreme</p>
+      <h2>Entanglement, the Fermi paradox, and cosmic-scale observation</h2>
+    </div>
+
+    <p class="caveat">This section goes further than anything else on this site. <a
+      href="swi.html#nonlocal-pk">The Similar-Worlds Interpretation's page</a> already flagged claims of a
+      mind nudging a single photon in a lab as resting on contested parapsychology evidence, chiefly Dean
+      Radin's. Here the book extends the same kind of claim from a lab bench up to the large-scale structure
+      of the observable universe itself — galaxy-distribution patterns, the cosmic microwave background's own
+      anomalies. That's a difference of scale, not just of degree, and it deserves to be named plainly rather
+      than treated as a routine continuation of the earlier chapter's claims.</p>
+
+    <div class="prose">
+      <p>The chapter's least extreme piece is a fairly ordinary entanglement argument, not a parapsychology
+        claim, and it's the book's proposed answer to the Fermi paradox: why, in a universe this large and
+        this old, we haven't detected any trace of another civilization. On this framework, consciousness
+        only entangles with, and only ever collapses the wavefunction for, the parts of the universe already
+        causally and quantum-mechanically linked to it. An independent alien civilization, if one exists,
+        would sit inside its own separate "island of entanglement" — permanently outside ours, and so
+        permanently undetectable to us, not because it's far away but because there's no shared collapse
+        event connecting the two islands at all. It's this mechanism the homepage's own Fermi-paradox line
+        ("We're alone: consciousness only exists where it's entangled with ours") is pointing at.</p>
+
+      <p class="caveat">Everything past this point leans on the same contested parapsychology evidence
+        already flagged on the SWI page, now applied at cosmological scale. Treat what follows as the book's
+        own extreme edge, not as independent confirmation of anything.</p>
+
+      <p>Three further, considerably more extreme claims build on that entanglement idea:</p>
+      <ul>
+        <li><strong>CMB and large-scale-structure anomalies.</strong> Observed patterns like the microwave
+          background's "axis of evil" alignment, and large-scale concentric-shell-like structure in galaxy
+          distributions, are reframed as consequences of observation centered on Earth, within this
+          framework — rather than as unexplained statistical curiosities the standard model has to shrug off.</li>
+        <li><strong>"Abundance of future observation."</strong> The book's own name for a proposed retrocausal
+          effect: regions of the universe that will be observed more, at some point in the future, are
+          predicted to show higher structure and density now, with the causal arrow running backward from
+          that future observation to the present structure.</li>
+        <li><strong>Cosmokinesis.</strong> An extension of the same Radin-style psychokinesis claims discussed
+          on the SWI page — the roughly 51%-versus-chance random-number-generator studies — up to cosmological
+          scale, with intention or observation proposed to nudge photon density within the cosmic microwave
+          background itself.</li>
+      </ul>
+
+      <p>The book itself frames three of the cosmic microwave background's observed acoustic-oscillation
+        periodicities as unexplained by ordinary sound waves in the early plasma, leaving room for
+        speculative mechanisms like these — but "unexplained by one mechanism" is a much weaker claim than
+        "explained by this one," and none of the three claims above have any standing outside the book's own
+        argument.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     THE AGE OF THE CMB — CENTERPIECE
+     ============================================================ -->
+<section id="post-decoupling-age" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">From mechanism to a headline number</p>
+      <h2>The age of the CMB: deriving 42 trillion years</h2>
+    </div>
+
+    <div class="prose">
+      <p>This is the chapter's centerpiece, and the number the rest of the site already leans on: the
+        homepage's own timeline and formula-card entries, and Charge Mass Dualism's aside about a
+        "16-trillion-year dark epoch," both assume the figure this section derives.</p>
+
+      <p>The starting ingredients are conventional: the 2019 Riess et al. measurement of the Hubble constant,
+        <span class="inline-formula" data-katex="H_0 = 74.03 \pm 1.42\ \text{km/s/Mpc}"></span>, and a
+        decoupling temperature of 2,900 K, corresponding to a redshift of <span class="inline-formula"
+        data-katex="z_{\text{CMB}} = 1{,}063"></span>. What's unconventional is the expansion history connecting
+        those numbers to an age: because entropic expansion's rate depends on entropy density rather than
+        following the standard model's own cooling curve, converting a redshift into an actual light-travel
+        time requires a completely different distance-redshift relationship, worked out in this chapter as a
+        new constant:
+        <span class="inline-formula" data-katex="\Delta x_z = 39{,}625{,}004{,}647\ \text{lyr}"></span>. That
+        constant is exactly what the homepage's own "Time&ndash;redshift equation" formula card already shows
+        as <span class="inline-formula" data-katex="t_0 \approx z \times 39{,}625{,}004{,}647\ \text{yr}"></span> —
+        this section is where that card's derivation actually happens. Running the decoupling redshift through
+        it, with a small correction for the initial expansion rate <span class="inline-formula"
+        data-katex="H_i"></span>, gives a post-decoupling age of approximately 4.2130&times;10<sup>13</sup>
+        years; a simpler approximation without that correction gives 4.21456&times;10<sup>13</sup> years — the
+        two agree to the first seven digits, which is why the site elsewhere just calls this
+        <strong>&asymp;42.13 trillion years</strong>.</p>
+
+      <h3>How far away is far away, on this account?</h3>
+      <p>Because the distance-redshift relationship is so different, converting the same observed redshifts
+        into distance gives numbers wildly larger than the standard "assumed" values astronomers usually
+        quote:</p>
+
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <caption>Selected distance records: standard (GR) assumption vs. this chapter's entropic-expansion distance</caption>
+          <thead>
+            <tr>
+              <th scope="col">Object</th>
+              <th scope="col">Redshift (z)</th>
+              <th scope="col">"Assumed" (GR) distance</th>
+              <th scope="col">Entropic-expansion distance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Circinus Galaxy (closest Seyfert)</td><td class="num">0.00142</td><td class="num">0.013 Gly</td><td class="num">56.3 million ly</td></tr>
+            <tr><td>3C 273 (closest quasar)</td><td class="num">0.158</td><td class="num">2.443 Gly</td><td class="num">6.26 Gly</td></tr>
+            <tr><td>ULAS J1342+0928 (most distant quasar)</td><td class="num">7.54</td><td class="num">13.1 Gly</td><td class="num">298.8 Gly</td></tr>
+            <tr><td>GN-z11</td><td class="num">11.09</td><td class="num">13.4 Gly</td><td class="num">439.4 Gly</td></tr>
+            <tr><td>JADES-GS-z14-0 (most distant galaxy known)</td><td class="num">14.18</td><td class="num">13.5 Gly</td><td class="num">561.9 Gly</td></tr>
+          </tbody>
+        </table>
+        <p class="data-table-note">Gly = billion light-years. Redshifts as reported for each object; the two distance columns are the same redshift run through two different distance-redshift relationships.</p>
+      </div>
+
+      <p>The farthest galaxy ever observed, on this reading, sits about 562 billion light-years away rather
+        than 13.5 &mdash; and even that is a small fraction of the whole picture. Set against a roughly
+        42-trillion-year CMB age, the book's own framing line is blunt: <strong>we've seen roughly 1% of the
+        universe's history.</strong> Everything astronomy has ever directly observed, on this account, is a
+        thin recent sliver.</p>
+
+      <h3>A critique of the standard model's own first second</h3>
+      <p>The chapter closes this section with a pointed methodological complaint rather than a new number:
+        most of what's popularly presented as "the early universe" — cosmic inflation, baryogenesis, the
+        quark-gluon epoch — is really a set of claims about extreme, untested high-energy particle physics,
+        compressed into a fraction of a second, and then marketed to the public as established cosmological
+        history rather than as speculative particle theory. Whatever one makes of the 42-trillion-year figure
+        itself, the book argues that distinction — particle physics dressed up as settled cosmology — is worth
+        keeping in mind when reading almost any popular account of the universe's first moments, on either
+        side of this disagreement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     THE FULL AGE OF THE UNIVERSE
+     ============================================================ -->
+<section id="full-age-of-the-universe" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Past decoupling, to the very beginning</p>
+      <h2>The full age of the universe: 58 trillion years</h2>
+    </div>
+
+    <div class="prose">
+      <p>The post-decoupling figure above only covers time since the cosmic microwave background formed. To
+        reach a full age, the book needs an independent way to measure entropy density directly, rather than
+        working forward from a known temperature — and turns to a survey of roughly 60 supermassive black
+        holes, charting each one's mass, redshift, and implied entropy density.</p>
+
+      <p>That survey alone gives a wide range: depending on how a gap in the data — a "redshift desert" with
+        essentially no charted supermassive black holes between z&nbsp;=&nbsp;0.5 and z&nbsp;=&nbsp;2 — is
+        handled, the implied initial temperature ranges from 3,418 to 11,712 K, and the full age of the
+        universe correspondingly from about 49.66 to 170.3 trillion years. That's the method's honest
+        uncertainty band on its own, before anything else narrows it down. (An even earlier, now-superseded
+        estimate, from before this survey existed, put the figure at roughly 1.08&times;10<sup>17</sup> years
+        — the book itself flags that number as wrong once the supermassive-black-hole survey refined the
+        method.)</p>
+
+      <p>One tentative pattern inside that same survey: average redshift scales with black-hole mass class —
+        <span class="inline-formula" data-katex="\bar z \approx 2.13"></span> for black holes around
+        10<sup>10</sup> solar masses, versus <span class="inline-formula" data-katex="\bar z \approx 0.0076"></span>
+        for black holes around 10<sup>6</sup> solar masses. The book offers this as tentative evidence for
+        anisotropic, entropy-driven expansion tracking mass directly, while being explicit that an ordinary
+        observational selection effect — heavier black holes being easier to detect at greater distances in
+        the first place — is an equally live alternative explanation it hasn't ruled out.</p>
+
+      <h3>Narrowing the range with baryonic acoustic oscillations</h3>
+      <p>To pick one value out of that wide range, the chapter turns to baryonic acoustic oscillations — the
+        faint periodic imprint of early sound waves, still visible in how galaxies are distributed today.
+        Setting the initial temperature to <span class="inline-formula" data-katex="T_i = 4{,}021\ \text{K}"></span>
+        predicts a BAO periodicity of 404,410,004 light-years, extremely close to the smallest observed BAO
+        periodicity reported by Hartnett &amp; Hirano (2008) of 404,175,047 light-years. That match is what
+        the book settles on as its final figure: a full age of approximately 5.843&times;10<sup>13</sup>
+        years, or <strong>&asymp;58 trillion years</strong> — the same number behind Charge Mass Dualism's
+        aside about a 16-trillion-year gap between the CMB's formation and today (58 minus 42).</p>
+
+      <p class="caveat">Worth naming plainly, since it's a different kind of weakness than the
+        "successive-correction-chain" caveat used elsewhere on this site (see Charge Mass Dualism's muon and
+        tauon mass predictions): this is a <strong>tuned match</strong>, not an independent prediction. T<sub>i</sub>
+        = 4,021 K wasn't derived from anything else — it was chosen specifically because it reproduces one
+        observed number almost exactly. A single parameter fit to a single data point is a different, and in
+        some ways simpler, weakness than several parameters fit in sequence, but it's still weaker evidence
+        than a genuine blind prediction at the same precision. The honest starting point is really the wide,
+        independently-derived 49.7&ndash;170 trillion-year range from the supermassive-black-hole survey alone;
+        BAO is being used here to pick one value out of that range after the fact, not to test the method from
+        outside it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     LIVING IN AN OLD UNIVERSE
+     ============================================================ -->
+<section id="old-universe-consequences" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What else has to be true, if the age is real</p>
+      <h2>Living in an old universe: two consistency checks</h2>
+    </div>
+
+    <div class="prose">
+      <p>A 42- or 58-trillion-year age isn't free-standing — it has to fit alongside other things astronomers
+        already measure. The book runs two such checks.</p>
+
+      <h3>Where does a redshifted photon's lost energy go?</h3>
+      <p>Cosmological redshift means a photon loses energy as it travels across an expanding universe — a
+        fact standard cosmology already accepts, and doesn't always agree on how to interpret, since energy
+        conservation is normally defined relative to a fixed frame that an expanding universe doesn't
+        straightforwardly provide. The book argues from an absolute-frame perspective that this loss is real
+        and irreversible — energy actually leaves the observable system, rather than being conserved in some
+        subtler bookkeeping sense — and treats that one-way loss as consistent with, and evidence for, a
+        genuinely one-directional flow of cosmic time, rather than as a bookkeeping puzzle to be explained
+        away.</p>
+
+      <h3>Do the heavy elements have enough time to form?</h3>
+      <p>Iron and elements heavier than it are made almost exclusively in supernovae and other violent
+        stellar deaths, so their present-day abundance is a clock of sorts: enough stellar generations have to
+        have lived and died to produce what we observe. In only 13.8 billion years, fitting the observed
+        abundance requires a fairly brisk, tightly scheduled sequence of stellar generations. A universe tens
+        of trillions of years old removes that time pressure entirely — there's ample time for the observed
+        abundance to accumulate at a far more leisurely pace, which the book treats as a point in the old-age
+        model's favor rather than a coincidence needing its own separate explanation.</p>
+
+      <h3>Where are the first-generation stars?</h3>
+      <p>Standard cosmology predicts that the universe's very first stars — metal-free, built purely from
+        primordial hydrogen and helium — should still be detectable somewhere, and none has ever been
+        conclusively found. On the old-universe reading, that's not a problem with early star-formation
+        theory at all: with tens of trillions of years having passed, every star from that original,
+        metal-free population has long since burned out or been chemically enriched by earlier generations of
+        supernovae, leaving nothing pristine left to find.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTING IT: SUPERNOVAE
+     ============================================================ -->
+<section id="testing-it-supernovae" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">From formula to a direct data comparison</p>
+      <h2>Testing it: Type Ia supernova luminosities</h2>
+    </div>
+
+    <div class="prose">
+      <p>Type Ia supernovae are one of cosmology's standard candles: they're thought to detonate at a
+        consistent mass — the Chandrasekhar limit — and so should reach a fairly consistent peak brightness,
+        which lets astronomers infer distance from how bright one looks. That consistency gives the book a
+        direct test: recompute the implied distance to a large sample of supernovae under each of the two
+        distance-redshift relationships, and see which produces more physically sensible brightness values.</p>
+
+      <p>Filtering a sample of 8,830 Type Ia supernovae down to a usable set, the book finds their average
+        peak magnitude comes out to &minus;18.851 under standard GR distances — dimmer than the theoretical
+        minimum brightness of a single white dwarf detonation, around &minus;19.3, which is a physical
+        impossibility for an event that's supposed to be one. Recomputed under this chapter's entropic
+        distances, the same sample averages &minus;21.2627, comfortably brighter than that floor. More
+        strikingly, 46.42% of the sample comes out "impossible" — dimmer than the theoretical minimum — under
+        GR distances, versus only about 2% under entropic distances.</p>
+
+      <p>Plotted directly, distance against apparent magnitude, the entropic-distance data sits tightly along
+        the inverse-square law's expected line across the whole sample. The GR-distance data tracks it well at
+        low redshift but drifts increasingly off it beyond about z&nbsp;&asymp;&nbsp;0.2, opening a gap of
+        roughly 7 billion light-years between where the two trendlines predict a magnitude-25 object should
+        sit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTING IT: STELLAR FOSSILS
+     ============================================================ -->
+<section id="testing-it-stellar-fossils" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Four checks against the oldest things we can actually measure</p>
+      <h2>Testing it: white dwarfs, black dwarfs, and two lone objects</h2>
+    </div>
+
+    <div class="prose">
+      <h3>White dwarfs: an age nothing exceeds</h3>
+      <p>White dwarfs cool at a well-understood, predictable rate, which makes their measured temperature a
+        direct age clock. Filtering the Montreal White Dwarf Database down to 33,851 entries above the
+        hydrogen-fusion mass floor of 0.075 solar masses, the book finds that 33,808 of them — 99.87% — are
+        older than the standard model's 13.8-billion-year age for the universe, which is already an
+        uncomfortable number for the standard picture. Against the 42-trillion-year figure derived above,
+        by contrast, <strong>zero</strong> exceed it.</p>
+
+      <p>Two objects sit well apart from the rest of the sample: SDSS J142402.68+061206.5, at 35.4 trillion
+        years, and SDSS J161213.77+163906.3, at 35.7 trillion years — 85% of the full post-decoupling age.
+        Both sit roughly 13 trillion years older than the next-oldest cluster of white dwarfs in the sample,
+        which the book reads as evidence that ordinary star formation lagged well behind decoupling by a
+        substantial margin, rather than as two misclassified outliers to be set aside.</p>
+
+      <p>A separate minimum-mass check cuts the other way against the standard model: under a 13.8-billion-year
+        age, only 36% of the white dwarfs in the database are even massive enough to have had time to form at
+        all — implying the other 64% "shouldn't exist" on that timeline. Under the 42-trillion-year age, the
+        minimum mass needed drops to just 0.062 solar masses, and essentially every white dwarf on record is
+        consistent with having had time to form.</p>
+
+      <h3>Black dwarfs: a near-term falsifiable prediction</h3>
+      <p>A black dwarf is what a white dwarf becomes once it finally finishes cooling to the temperature of
+        its surroundings — invisible in ordinary light, but only if the universe is old enough for any to have
+        formed at all; under the standard 13.8-billion-year age, none should exist anywhere yet. The book
+        catalogues 16 documented candidates: invisible companions inferred from their gravitational effect on
+        a visible partner star in double-star systems, each too massive to be a planet and too cold to be an
+        ordinary white dwarf.</p>
+
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <caption>Black-dwarf candidate excerpt (full catalogue: 16 documented candidates)</caption>
+          <thead>
+            <tr>
+              <th scope="col">System</th>
+              <th scope="col">Predicted temperature</th>
+              <th scope="col">Apparent magnitude</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>HD 188112&ndash;b</td><td class="num">&asymp;882 K</td><td class="num">26.38</td><td>Within reach of Hubble-class telescopes; not yet directly imaged</td></tr>
+          </tbody>
+        </table>
+        <p class="data-table-note">HD 188112&ndash;b is the headline candidate: the book frames a direct detection as an immediate, near-term test that current instruments could plausibly settle.</p>
+      </div>
+
+      <p>The book is direct about what a confirmed detection would mean: it would become the first directly
+        observed black dwarf, and — in its own words — hand "the standard model of cosmology yet another
+        death blow." A separate consistency check inside the same database finds that of 27 white dwarfs
+        carrying a binary ("a/b") designation, 24 (89%) have an invisible companion — close to the roughly 90%
+        non-luminous-matter figure calculated earlier in this page for the Milky Way as a whole.</p>
+
+      <h3>The coldest known neutron star</h3>
+      <p>PSR J2144&minus;3933, at 1.97&nbsp;&plusmn;&nbsp;0.04 solar masses, has never been detected
+        optically at all — only an upper limit on its temperature, 42,000 K, is known. Standard pulsar-cooling
+        theory predicts a working lifespan of roughly 10 million years; the temperature limit alone implies a
+        minimum age of about 2.945&times;10<sup>12</sup> years, on the order of 3 trillion. As an aside, the
+        book quotes the discovery team's own puzzlement (M. D. Young, 1999) over a different, separately
+        anomalously slow-cooling pulsar — a reminder, on the book's reading, of how incompletely pulsar aging
+        is really understood even inside the standard picture.</p>
+
+      <h3>The cosmic neutrino background's temperature</h3>
+      <p>The book predicts a cosmic neutrino background temperature of 1.96385&nbsp;&plusmn;&nbsp;0.00057 K,
+        against standard Big Bang cosmology's own, independently derived prediction of 1.95 K. The book is
+        candid that the near-agreement here is "purely coincidental" — the two models reach their numbers
+        through entirely different mechanisms (electron-positron annihilation heating, versus a simple ratio
+        of neutrino-to-photon decoupling times) — and it says so plainly rather than presenting the match as
+        confirmation of anything. It's a small, honest moment worth noting on its own terms.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     THE END AND THE BEGINNING
+     ============================================================ -->
+<section id="end-and-beginning" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Closing speculation, at the edges of an eon</p>
+      <h2>The end and the beginning</h2>
+    </div>
+
+    <p class="caveat">This is the second-highest caveat bar on this page, after the entanglement section
+      above. Both pieces below reach outside mainstream science, and the first leans on ideas — morphic
+      resonance and a reincarnation-like continuity between cosmic eons — that this site's future Conscious
+      Set Theory page (Chapter 5) is where the book actually tries to unpack the mechanism, rather than here.</p>
+
+    <div class="prose">
+      <h3>The last observer, and the next eon's first</h3>
+      <p>If a conscious observer's own entanglement is what keeps a region of the universe determinate, what
+        happens once the very last conscious observer in a given cosmic eon dies? The book's answer reaches
+        forward into material this page won't try to fully unpack: it proposes that the last observer of one
+        eon and the first observer of the next are linked by <em>morphic resonance</em> — biologist Rupert
+        Sheldrake's proposed nonlocal tendency for patterns to recur — so that the next eon's starting quantum
+        state isn't arbitrary, but inherited from the one that just ended. The book repeatedly points ahead to
+        where this gets developed properly ("see chapter 5.1," "reincarnation will be discussed in chapter
+        5.4"), and this page follows that same lead: the puzzle and the proposed link are stated here because
+        they're this chapter's own material, but the mechanism itself is left for the Conscious Set Theory
+        page to cover, the same way Charge Mass Dualism's page pointed to Chromogravity rather than re-deriving
+        the W/Z-boson mass question itself.</p>
+
+      <h3>A more concrete companion: why the Moon looks the way it does</h3>
+      <p>A second, less extreme piece of speculation closes the chapter with something closer to a testable
+        number. The book proposes that life appears as early as it's geologically possible for it to appear,
+        reasoning that the pre-conscious past of a planet only becomes "real," on this framework's own terms,
+        retroactively — once some later consciousness actually emerges to entangle with it. That reframes the
+        usual "rare Earth" observations — the Moon's apparent size matching the Sun's to about 97.25%
+        precision, Earth's unusually low orbital eccentricity, its magnetic field, a Jupiter-sized
+        debris-sweeper further out in the solar system — not as anthropic selection (we notice these
+        coincidences only because we're here to notice them) but as evidence of the same morphic resonance
+        between eons proposed above: conditions tuned, across cycles, to let consciousness arise as promptly
+        as physically possible each time. It's a more concrete, number-anchored claim than the "last observer"
+        puzzle above, but it rests on exactly the same speculative mechanism.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DEVELOPMENT NOTES
+     ============================================================ -->
+<section id="development-notes" class="section-dark">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Dated, the way the book dates everything</p>
+      <h2>How this theory grew, in the book's own notes</h2>
+      <p>Every idea in the book carries the date it was first conceived. A sample of this one's history, from
+        the founding hypothesis to the most recent age re-derivation:</p>
+    </div>
+
+    <div class="timeline mini-timeline">
+      <div class="tl-item">
+        <span class="tl-year">19 May 2013</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Entropic expansion first proposed</h4>
+          <p>The founding hypothesis: expansion as the universe's way of keeping entropy density constant
+            against black holes' quadratic entropy growth.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">17 Sep 2013</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>A membrane, not a horizon</h4>
+          <p>Black holes' boundary is first modeled as an apparent membrane rather than a true event
+            horizon.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">28 Feb 2014</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>The "no alien" prediction</h4>
+          <p>First statement of the entanglement-based Fermi paradox answer: independent civilizations sit in
+            permanently separate islands of entanglement.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">10 Oct 2014</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Quasar redshifts, a first attempt</h4>
+          <p>An early attempt to explain quasar redshift via black-hole entropy, later folded into the full
+            distance-redshift derivation.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">15 Feb&ndash;13 Mar 2019</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>The post-decoupling age, worked out in full</h4>
+          <p>The complete derivation behind the &asymp;42.13-trillion-year figure, and the distance-redshift
+            constant the homepage's own formula card shows.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">26 Jun 2019</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Abundance of future observation</h4>
+          <p>The retrocausal hypothesis proposed: regions observed more in the future show higher structure
+            now.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">17 Jul 2019</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>A full age, from entropy density</h4>
+          <p>The first full-age derivation from a supermassive-black-hole survey, ahead of the BAO refinement
+            that would follow.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">19 Aug 2020</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>White dwarfs proposed as a clock</h4>
+          <p>First proposal to use white-dwarf cooling ages across the Montreal database as a direct test of
+            the universe's true age.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">17 Apr 2021</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>A systematic black-dwarf survey</h4>
+          <p>Cataloguing every known black-dwarf candidate, including HD 188112&ndash;b, the page's featured
+            near-term prediction.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2 Aug 2023</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>The coldest neutron star, aged</h4>
+          <p>Calculating PSR J2144&minus;3933's minimum age from its temperature ceiling alone.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">14 Dec 2025</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>The full age, re-derived from BAO</h4>
+          <p>The most recent revision: narrowing the supermassive-black-hole survey's wide range down to the
+            &asymp;58-trillion-year figure used elsewhere on the site, via baryonic acoustic oscillations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-dark">
+  <div class="wrap page-footer-nav">
+    <a class="pfn-back" href="../index.html#theories">
+      <span class="pfn-label">All theories</span>
+      &larr; Back to the six theories
+    </a>
+    <a href="cst.html">
+      <span class="pfn-label">Next theory &middot; 2004</span>
+      Conscious Set Theory &rarr;
+    </a>
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer section-dark">
+  <div class="wrap">
+    <div class="footer-row">
+      <a class="wordmark" href="../index.html#top" style="color:var(--cream)">Elementary Spaces</a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="../index.html#theories">Theories</a>
+        <a href="../index.html#problems">Problems</a>
+        <a href="../index.html#timeline">Timeline</a>
+        <a href="../index.html#concepts">Concepts</a>
+        <a href="../index.html#formulae">Formulae</a>
+        <a href="../index.html#about">About</a>
+      </nav>
+    </div>
+    <p class="footer-note">An independent companion guide to <em>The Complete Guide to Quantum Gravity</em>
+      by Sky Darmos. Not peer-reviewed, not affiliated with any research institution, and not an assessment
+      of the theory's validity — a map for navigating what the book itself claims.</p>
+  </div>
+</footer>
+
+<script defer src="../js/script.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+
+</body>
+</html>

@@ -28,6 +28,29 @@
     });
   });
 
+  // On-page TOC scroll-spy (subpages only — no-op when there's no .toc-nav)
+  var tocLinks = document.querySelectorAll('.toc-link');
+  if (tocLinks.length){
+    var tocMap = [];
+    tocLinks.forEach(function(link){
+      var id = link.getAttribute('href').slice(1);
+      var section = document.getElementById(id);
+      if (section) tocMap.push({ section:section, link:link });
+    });
+    if ('IntersectionObserver' in window && tocMap.length){
+      var tocObserver = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (!entry.isIntersecting) return;
+          var match = tocMap.find(function(m){ return m.section === entry.target; });
+          if (!match) return;
+          tocLinks.forEach(function(l){ l.classList.remove('is-active'); });
+          match.link.classList.add('is-active');
+        });
+      }, { rootMargin:'-45% 0px -50% 0px', threshold:0 });
+      tocMap.forEach(function(m){ tocObserver.observe(m.section); });
+    }
+  }
+
   // KaTeX rendering for every [data-katex] node
   function renderMath(){
     if (typeof katex === 'undefined') { return setTimeout(renderMath, 150); }

@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chromogravity &amp; Electrogravity — Elementary Spaces</title>
+<meta name="description" content="A deep dive into Sky Darmos's Chromogravity &amp; Electrogravity: gravity sourced by quark count rather than mass, why the book says Newton's constant depends on what you weigh, and the Cavendish, freefall, Eötvös, planetary-orbit and pulsar data it offers in support.">
+<meta name="theme-color" content="#3D5A6E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body style="--theory-accent: var(--acc-chromo);">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="nav-row">
+    <a class="wordmark" href="../index.html#top">Elementary Spaces <small>a guide to Sky Darmos's quantum gravity</small></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle menu"><span></span></button>
+    <nav class="primary-nav" id="primaryNav">
+      <a href="../index.html#theories">Theories</a>
+      <a href="../index.html#problems">Problems</a>
+      <a href="../index.html#timeline">Timeline</a>
+      <a href="../index.html#concepts">Concepts</a>
+      <a href="../index.html#formulae">Formulae</a>
+      <a href="../index.html#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================================================
+     SUBHERO
+     ============================================================ -->
+<section class="hero subhero section-dark" id="top">
+  <div class="wrap">
+    <p class="breadcrumb">
+      <a href="../index.html#top">Elementary Spaces</a><span class="sep">/</span><a href="../index.html#theories">Theories</a><span class="sep">/</span><span class="current" aria-current="page">Chromogravity &amp; Electrogravity</span>
+    </p>
+
+    <div class="hero-grid" style="margin-top:2rem;">
+      <div>
+        <p class="hero-eyebrow">Theory 6 of 6 &middot; conceived 19 May 2017, extended through 25 May 2026</p>
+        <h1>Gravity depends on what you're weighing</h1>
+        <p class="dek">Space Particle Dualism made gravity a side effect of charge; Charge Mass Dualism made
+          mass one too. This chapter takes the consequence seriously: if gravity counts quarks, not
+          kilograms, then a kilogram of iron and a kilogram of water shouldn't pull quite alike, and
+          Newton's constant isn't constant. The book builds a rewritten law of gravity on that idea and
+          tests it against two centuries of big-G measurements, drop-tower and pendulum experiments,
+          Mercury's orbit, neutron stars and binary pulsars. This page separates the published data the
+          book re-analyses from experiments others ran and experiments the author ran himself &mdash; and
+          ends with what the book proposes but nobody has built.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#core-idea">Read the core idea</a>
+          <a class="subhero-back" href="../index.html#theories">&larr; Back to the six theories</a>
+        </div>
+
+        <div class="framing-box compact">
+          <strong>A note on what's below.</strong> The book's central claim contradicts the equivalence
+          principle, one of the most precisely tested principles in physics. Unlike earlier pages, most of
+          this chapter's claims are quantitative and checkable, so the quality of the analysis &mdash; not
+          just the idea &mdash; is what to watch. This page marks which tests were run by others and which
+          by the author himself. Severity is highest where the book reclassifies well-studied objects
+          (binary pulsars) and where it moves from analysis to proposed engineering, both near the end.
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="180" fill="none" stroke="#F0EAE0" stroke-opacity="0.08"/>
+          <circle cx="200" cy="200" r="130" fill="none" stroke="#F0EAE0" stroke-opacity="0.11"/>
+          <path d="M263.1 109.9 A110 110 0 1 0 299.7 153.5" fill="none" stroke="#F0EAE0" stroke-opacity="0.35" stroke-width="2"/>
+          <circle cx="200" cy="128" r="24" fill="#5b8fa8"/>
+          <circle cx="146" cy="222" r="17" fill="#A8CFC0"/>
+          <circle cx="254" cy="222" r="14" fill="#8B7D6B"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ON-PAGE TOC
+     ============================================================ -->
+<nav class="toc-nav" aria-label="On this page">
+  <div class="wrap toc-row">
+    <a class="toc-link" href="#core-idea">The core idea</a>
+    <a class="toc-link" href="#two-gravities">Two gravities</a>
+    <a class="toc-link" href="#laws">The laws rewritten</a>
+    <a class="toc-link" href="#cavendish">Cavendish &amp; big-G</a>
+    <a class="toc-link" href="#freefall-pendulums">Freefall &amp; pendulums</a>
+    <a class="toc-link" href="#author-experiments">The author's experiments</a>
+    <a class="toc-link" href="#eotvos">Eötvös</a>
+    <a class="toc-link" href="#mass-gap">Mass gap</a>
+    <a class="toc-link" href="#pulsars">Binary pulsars</a>
+    <a class="toc-link" href="#planetary-orbits">Planetary orbits</a>
+    <a class="toc-link" href="#evidence-ledger">Evidence at a glance</a>
+    <a class="toc-link" href="#relativity-loose-ends">Relativity's loose ends</a>
+    <a class="toc-link" href="#altering-gravity">Altering gravity</a>
+    <a class="toc-link" href="#development-notes">Development notes</a>
+  </div>
+</nav>
+
+<!-- ============================================================
+     CORE IDEA
+     ============================================================ -->
+<section id="core-idea" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Where the theory starts</p>
+      <h2>Inertia and gravity come apart</h2>
+    </div>
+
+    <p class="caveat">The equivalence principle &mdash; that inertial and gravitational mass are equal, so
+      everything falls alike &mdash; is among the most precisely tested principles in physics. The best
+      current test, the MICROSCOPE satellite, compared titanium and platinum alloys in orbit and reported
+      no violation in its 2022 final results, at a few parts in 10<sup>15</sup>. The book's claimed
+      material differences are of order 10<sup>-3</sup>&ndash;10<sup>-2</sup>; this chapter does not
+      discuss MICROSCOPE. What it does argue is why balance-type experiments (including the classic
+      E&ouml;tv&ouml;s ones) can't reveal the effect &mdash; described below &mdash; and it looks for the
+      effect in other data.</p>
+
+    <div class="prose">
+      <p>In <a href="spd.html#core-idea">Space Particle Dualism</a> gravity is a side effect of charge
+        (strong hypercharge, chiefly), and in <a href="cmd.html#core-idea">Charge Mass Dualism</a> mass is
+        too. One consequence is immediate: a photon carries no charge, so it has no gravitational mass,
+        contrary to general relativity. That forces a distinction the book insists on. <strong>Inertial
+        mass</strong> is what a balance measures, and it changes with energy; <strong>gravitational
+        mass</strong> is what sources a gravitational field. The two are usually treated as one number,
+        and the book points out that this is an assumption: before Newton, nobody knew that mass had
+        anything to do with gravity at all.</p>
+
+      <p>Electric charge doesn't grow when a particle speeds up, so on this account gravity shouldn't grow
+        either when an electron is accelerated. That raises a practical question: which parts of an atom's
+        inertial mass are purely energetic, and so not tied to any gravitating charge? Electron kinetic
+        energy is negligible, and electron masses themselves are negligible next to the nucleons'. The
+        large one is <strong>binding energy</strong> &mdash; the &ldquo;mass defect&rdquo; that makes a
+        nucleus weigh less than its separate protons and neutrons.</p>
+
+      <p>Iron has the highest mass defect per nucleon of any element. Its 26 protons and 30 neutrons, taken
+        separately, would weigh 56.44938 atomic mass units; an iron atom weighs 55.845. That is a defect of
+        <span class="inline-formula" data-katex="\text{mass defect} = 1 - \dfrac{m_{\mathrm{Fe}}}{26\,m_p + 30\,m_n} \approx 1.07\%"></span>.
+        If gravity tracks the number of nucleons (that is, quarks) rather than the weight on a balance, a
+        kilogram of iron gravitates about 1% more than a kilogram of hydrogen, and gravity between hydrogen
+        atoms comes out roughly 1% weaker than Newton's formula predicts from their mass. The book's claim is
+        that there is strong evidence this is so; the rest of this page is that evidence.</p>
+
+      <h3>Why big-G would look inconstant</h3>
+      <p>Cavendish's 1798 experiment gave a value equivalent to 6.74&times;10<sup>-11</sup> in modern units,
+        and every measurement since has differed from it and from the others &mdash; even as precision
+        improved, the scatter between laboratories stayed far larger than their stated error bars. The
+        book's reading is that measured G is a geometric mean of the source-mass and test-mass values,
+        each material having its own (see <a href="#cavendish">the Cavendish section</a>). Earlier
+        explanations, such as G varying over time, failed: a 2015 analysis by Schlamminger, Gundlach and
+        Newman found no periodicity, and three torsion balances of the same material at one site gave the
+        same value across ten years.</p>
+
+      <p>Why hasn't anyone noticed a material dependence? The book's answer is that the differences are
+        small (about 0.1&ndash;1%); most experiments vary only the test masses; and the E&ouml;tv&ouml;s
+        experiment &mdash; the one Einstein pointed to as evidence for the equivalence principle &mdash;
+        compares two masses on a single balance, which the book says cannot show the effect (see
+        <a href="#eotvos">below</a>). It also notes that Heyl (1926&ndash;30) and Pontikis (1971) each saw
+        composition differences and didn't pursue them.</p>
+
+      <details class="expand">
+        <summary>Where Fischbach's "fifth force" fits</summary>
+        <div class="expand-body">
+          <p>In 1986, Ephraim Fischbach and colleagues found that E&ouml;tv&ouml;s's own results correlated
+            with baryon number per unit mass. They framed this as a medium-range fifth force added on top
+            of the equivalence principle, and had to multiply the expected effect by an arbitrary coupling
+            to match. The book agrees the correlation is real, but argues the effect expected under
+            chromogravity is about a million times larger than what E&ouml;tv&ouml;s measured, and that the
+            residual is explained by how a torsion balance is built &mdash; see
+            <a href="#eotvos">the E&ouml;tv&ouml;s section</a>.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TWO GRAVITIES
+     ============================================================ -->
+<section id="two-gravities" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Two forces, two ranges</p>
+      <h2>Two gravities &mdash; and why neutrinos don't have one</h2>
+    </div>
+
+    <p class="caveat">This is a rewrite of what gravity counts, and it stands or falls with the evidence in the
+      sections that follow, not with the elegance of the rewrite.</p>
+
+    <div class="prose">
+      <p>G-values below are in units of 10<sup>-11</sup> m<sup>3</sup>&nbsp;kg<sup>-1</sup>&nbsp;s<sup>-2</sup>
+        unless noted. The most precise laboratory measurements of G &mdash; Gundlach's in 2000 and two from
+        the Huazhong University group in 2018 &mdash; all used stainless-steel masses, giving 6.674215(92),
+        6.674184(78) and 6.674484(78). Their average is 6.67429(17), against the CODATA recommendation of
+        6.67430(15), and the mode and median of all steel measurements is 6.6742. Leaving out the second
+        Huazhong value, which uses a different method and disagrees with Gundlach's, gives the book's
+        &ldquo;steel&rdquo; value of 6.674200(22). Grade-304 stainless steel is 0.08% carbon, 2% manganese,
+        0.045% phosphorus, 0.03% sulphur, 1% silicon, 19% chromium and 9.5% nickel, and that composition
+        lets the book back out a value for iron itself, G<sub>Fe</sub> = 6.674280(22). Newton's constant
+        is, on this account, the mass-gravity constant of iron.</p>
+
+      <p>From iron the book works down to hydrogen by counting nucleons rather than weighing them:
+        <span class="inline-formula" data-katex="G_H = G_{\mathrm{Fe}}\,\dfrac{m_{\mathrm{Fe}}}{n_p^{\mathrm{Fe}}\,m_p + n_n^{\mathrm{Fe}}\,m_n}"></span>,
+        with isotope-weighted iron (inertial mass 55.845144 u, gravitational 56.358288 u). The refined
+        results are G<sub>H</sub> = 6.613511, G<sub>p</sub> = 6.617210 and G<sub>n</sub> = 6.608201 &mdash;
+        the neutron has the same quark count as a proton but more mass, so less gravity per kilogram, about
+        1% below iron. For any other element,
+        <span class="inline-formula" data-katex="G_X = G_H\,\dfrac{n_p^{X} m_p + n_n^{X} m_n}{\gamma\, m_X}"></span>,
+        where &gamma; is an in-frame Lorentz factor for internal or thermal motion. Adding electrons adds
+        inertia without adding quarks, so it lowers G per kilogram; removing them raises it.</p>
+
+      <p><strong>Electrogravity</strong> is gravity sourced by electric charge instead of quark count, and it
+        is far weaker: <span class="inline-formula" data-katex="G_e = \alpha\,G_p"></span>, about
+        4.83&times;10<sup>-13</sup> in the same units. The book argues only chromogravity is long-range.
+        Virtual gluons carry colour charge and emit further gluons, so their &ldquo;journey&rdquo;
+        continues past a single virtual particle's lifetime; virtual photons and W and Z bosons don't do
+        that. Taking the lowest energy a virtual particle can have while its elementary space still
+        reaches the Planck length, E<sub>min</sub> = 3.957848975&times;10<sup>-28</sup> J, gives
+        <span class="inline-formula" data-katex="\Delta t = \dfrac{\hbar}{2E_{\min}},\quad s = c\,\Delta t \approx 40\ \text{m}"></span>.
+        The book's ranges are therefore infinite for chromogravity, about 40 m for electrogravity, and
+        about 10<sup>-15</sup>&ndash;10<sup>-16</sup> m for the weak force.</p>
+
+      <p>One consequence is that <strong>neutrinos exert no gravity</strong>. They have inertial mass but
+        no quarks, no electric charge, and a weak-force range far too short to matter (they are also too
+        fast to clump). The book takes this as an illustration of how different inertial and gravitational
+        mass are. It then restates gravity as a <em>cardinal</em> force, one that counts charges and is
+        indifferent to their sign or colour. Its constants, in m<sup>3</sup>&nbsp;kg&nbsp;s<sup>-2</sup>:
+        G<sub>B</sub> = 1.8513020&times;10<sup>-64</sup> per baryon; the chromogravity constant
+        <span class="inline-formula" data-katex="G_{|\mathbb{Y}|} = G_p\left(\dfrac{m_p}{3}\right)^{2} = 2.0570022\times10^{-65}\ \text{m}^3\,\text{kg}\,\text{s}^{-2}"></span>
+        per quark (a ninth of G<sub>B</sub>); and the electrogravity constant
+        G<sub>|Q|</sub> = 1.3509603&times;10<sup>-66</sup>. Absolute charges are counted: a proton is 5/3,
+        a neutron 4/3, an electron 1; a baryon carries three quarks and a meson two, so mesons gravitate
+        too. The book predicts that once accepted, chromogravity will simply be called gravity, and
+        Newton's G will be known as the mass-gravity constant of iron. Electrogravity, it adds, matters
+        mainly for exotic matter, since electron gases repel far too strongly for it to be measured.</p>
+
+      <p>Photons carry no quarks and so exert no gravity, though as <a href="#laws">the next section</a>
+        explains, they still feel it. <a href="eec.html#black-holes-without-hawking">Entropic Expansion
+        Cosmology's page</a> already builds its argument against Hawking radiation on exactly this point.</p>
+
+      <details class="expand">
+        <summary>The true masses of the Earth, Moon and Sun</summary>
+        <div class="expand-body">
+          <p>Inertial masses inferred from gravity change once composition is accounted for. The book's
+            method uses atomic rather than mass abundances, the gravitational-to-inertial ratio for each
+            element, and G<sub>Fe</sub> as the baseline. Its own results: Earth 5.9722 &rarr;
+            5.9748&times;10<sup>24</sup> kg (+0.043%); Moon 7.347&times;10<sup>22</sup> kg (+0.068%); Sun
+            1.98847&times;10<sup>30</sup> &rarr; (2.00389 &plusmn; 0.00007)&times;10<sup>30</sup> kg
+            (+0.78%). The Sun changes most because it is almost entirely hydrogen and helium. The book adds
+            that a direct test, detonating a bomb on the Moon and watching its orbit, is unnecessary
+            because laboratory tests exist.</p>
+        </div>
+      </details>
+
+      <details class="expand">
+        <summary>Rewriting the Planck units</summary>
+        <div class="expand-body">
+          <p>Replacing G with the chromogravity constant, the book builds a new Planck-like length that
+            isn't arbitrary. Three statements follow. A photon can't become a black hole in this
+            framework, because its elementary space outgrows its wavelength, so the Planck length loses its
+            usual &ldquo;photon into micro-black-hole&rdquo; reading. The shortest length one can measure
+            directly with a single photon is the critical wavelength, 9&times;10<sup>-17</sup> m, the figure
+            on <a href="spd.html#testing-it">the Space Particle Dualism page</a>. And elementary spaces
+            should <em>not</em> be thought of as scaled-up black holes, because black holes here depend on
+            quark count while elementary spaces depend on energy; the factor of 2 in the elementary-space
+            radius formula is re-justified as part of a Planck-like unit.</p>
+          <p>That last point is a later revision. <a href="spd.html#core-idea">The Space Particle Dualism
+            page</a> and the homepage card still describe elementary spaces by analogy with a black hole's
+            event horizon, which was the book's earlier framing.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     THE LAWS, REWRITTEN
+     ============================================================ -->
+<section id="laws" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What changes, and what doesn't</p>
+      <h2>The laws, rewritten in quarks</h2>
+    </div>
+
+    <p class="caveat">Nothing here changes a prediction for everyday gravity except by the ~1% (and smaller)
+      composition effects the rest of the page examines. Whether those effects exist is the question.</p>
+
+    <div class="prose">
+      <p>Newton's law becomes
+        <span class="inline-formula" data-katex="F = G_{|\mathbb{Y}|}\,\dfrac{|\mathbb{Y}|_1\,|\mathbb{Y}|_2}{r^{2}}"></span>,
+        with quark counts in place of masses. For baryons there is a practical mass form, using G<sub>H</sub>
+        and a baryon-number-to-mass correction; mesons and tetraquarks use the quark form; isotopes use the
+        isotope-weighted form. Electrogravity has the same shape,
+        <span class="inline-formula" data-katex="F = G_{|\mathbb{Q}|}\,\dfrac{|\mathbb{Q}|_1\,|\mathbb{Q}|_2}{r^{2}}"></span>,
+        with a 40 m cut-off.</p>
+
+      <p>Escape velocity then depends on composition, not on mass:
+        <span class="inline-formula" data-katex="v_{\text{esc}} = \sqrt{\dfrac{2\,G_{|\mathbb{Y}|}\,|\mathbb{Y}|}{R}\cdot\dfrac{n_q}{m}},\qquad k_X = \dfrac{n_q}{m}"></span>.
+        What matters is <em>k</em><sub>X</sub>, the quarks-per-kilogram ratio of the falling object (an
+        iron atom has 168 quarks, 56 nucleons times three). Removing electrons raises the escape velocity;
+        removing nucleons lowers it. So there is no single Schwarzschild radius, only one per composition,
+        and the same goes for gravitational acceleration. The book notes the comparison with
+        electromagnetism, where escape velocity depends on the charge-to-mass ratio: the rewritten
+        equations look odd next to Newton's but ordinary next to Coulomb's.</p>
+
+      <p>A short historical aside: the book argues that the equivalence principle rests on what it calls
+        Galileo's educated guess. Viviani's biography places the Pisa experiments in 1589&ndash;92, and the
+        book says an earlier version of Galileo's law &mdash; that bodies of the <em>same material</em>
+        falling through the same medium fall at the same speed &mdash; is exactly this theory's law for
+        objects made of quarks.</p>
+
+      <p>On relativity, the book claims that the Lorentz and Schwarzschild factors cancel, so the
+        non-relativistic results above stay valid. Its method treats the Schwarzschild factor as having the
+        same structure as the Lorentz factor with the escape velocity as the speed, and expands it as a
+        series rather than solving kinetic energy equals potential energy directly, which it says gives a
+        wrong answer. Force, potential energy and acceleration grow without limit as the escape velocity
+        approaches the speed of light. Light bending is a check the two theories nearly share: general
+        relativity gives 1.751&Prime; for light grazing the Sun, this framework 1.749&Prime; using the Sun's
+        quark count, against a best cited measurement (a 1973 eclipse) of 1.66 &plusmn; 0.1&Prime;. The book
+        says plainly that this is too coarse to discriminate.</p>
+
+      <p>Two more things belong here because the book walks them back or tests them itself. Gravitational
+        time dilation, for a while in October 2024, was suspected to be composition-dependent; on 23 October
+        2024 the book concluded it is not, because dilation tracks vacuum density &mdash; the uniform growth
+        of elementary spaces described in the earlier pages &mdash; rather than gravitational acceleration.
+        Expressed in mass form it reads
+        <span class="inline-formula" data-katex="t' = \dfrac{t}{\sqrt{1 - \dfrac{2\sqrt{G_M\,G_n}\,M}{r\,c^{2}}}}"></span>,
+        where G<sub>M</sub> is the source body's constant and G<sub>n</sub> the neutron's, the neutron being
+        the particle that feels the least gravity. The book also proposed that G varies with altitude,
+        since a stronger background field would raise granular dimensionality and weaken gravity, and then
+        checked 14 measurement sites between 5 m and 2,258 m elevation. It found no correlation. Its
+        explanation is that a uniform rescaling of all elementary spaces in a region is invisible from
+        inside and looks like time dilation from outside. It is a clear case of the book testing one of its
+        own ideas and dropping it.</p>
+
+      <details class="expand">
+        <summary>Photons and electrons feel gravity but don't source it</summary>
+        <div class="expand-body">
+          <p>Quarkless test masses still fall. The book gives them a <em>passive</em> gravitational charge,
+            arising from higher-order Feynman diagrams in which virtual protons and neutrons appear, with
+            a gravitational-to-inertial ratio of about 0.99931 relative to the proton baseline. In absolute
+            terms, photons and electrons behave like free protons and neutrons, which the book says feel
+            about 1% less acceleration than iron. A photon's inertial mass grows with its energy, and so
+            does its passive charge. That a photon can briefly make a quark&ndash;antiquark pair doesn't, on
+            the book's account, violate energy conservation, because virtual pairs cannot move anything
+            real (see <a href="#relativity-loose-ends">the energy-conservation discussion below</a>).
+            Apparent and absolute acceleration coincide for passive charges.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CAVENDISH & BIG-G
+     ============================================================ -->
+<section id="cavendish" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The main test</p>
+      <h2>Two centuries of big-G, re-read</h2>
+    </div>
+
+    <div class="prose">
+      <p>The centrepiece is a meta-analysis of published measurements of G, mostly from Gillies's 2014
+        survey and Kleinevo&szlig;'s 2002 compilation plus other lists and papers. The book sorted each
+        measurement by the composition of its <strong>source masses</strong> and its
+        <strong>test masses</strong>, predicted each result from the composition-dependent values above,
+        and asked whether the <em>ordering</em> of materials matches the ordering of the measured values.
+        It predicts the highest G for iron, steel and copper, and the lowest for light elements and very
+        heavy ones such as water, uranium and lead. Measured G is modelled as
+        <span class="inline-formula" data-katex="G_{\text{measured}} = \sqrt{G_{\text{source}}\,G_{\text{test}}}"></span>,
+        a geometric mean of the individual values.</p>
+
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <caption>Predicted G (10<sup>-11</sup> m<sup>3</sup> kg<sup>-1</sup> s<sup>-2</sup>) by material, by the book's own values. The spread between ordinary solids is about 0.2%; the ranking, not the absolute value, is what the book tests.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Material</th>
+              <th scope="col">Predicted G</th>
+              <th scope="col">Material</th>
+              <th scope="col">Predicted G</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Iron (refined)</td><td class="num">6.674280</td><td>Platinum</td><td class="num">6.668284</td></tr>
+            <tr><td>Stainless steel (measured mode)</td><td class="num">6.674200</td><td>Gold</td><td class="num">6.668185</td></tr>
+            <tr><td>Copper</td><td class="num">6.673995</td><td>Mercury</td><td class="num">6.668090</td></tr>
+            <tr><td>Brass</td><td class="num">6.673973</td><td>Lead</td><td class="num">6.667878</td></tr>
+            <tr><td>Zinc</td><td class="num">6.673932</td><td>Uranium</td><td class="num">6.665765</td></tr>
+            <tr><td>Niobium</td><td class="num">6.673406</td><td>Water</td><td class="num">6.661723</td></tr>
+            <tr><td>Silver</td><td class="num">6.672615</td><td><em>Hydrogen atom</em></td><td class="num"><em>6.613511</em></td></tr>
+            <tr><td>Aluminium</td><td class="num">6.670876</td><td><em>Proton</em></td><td class="num"><em>6.617210</em></td></tr>
+            <tr><td>Glass / silica</td><td class="num">6.669853</td><td><em>Neutron</em></td><td class="num"><em>6.608201</em></td></tr>
+            <tr><td>Tantalum</td><td class="num">6.668949</td><td></td><td></td></tr>
+            <tr><td>Tungsten</td><td class="num">6.668815</td><td></td><td></td></tr>
+          </tbody>
+        </table>
+        <p class="data-table-note">Read down the left column, then the right. The three italic entries are reference particles, not measured materials. Per-element values for every element are in a separate document the book publishes and aren't reproduced here.</p>
+      </div>
+
+      <h3>The headline result, and the rules behind it</h3>
+      <p>The final rules include one value per person or team; all pre-1971 values excluded except Heyl's;
+        any value with a standard deviation of &plusmn;0.01 or more excluded (poor air isolation and
+        spring-scale experiments show up as unusually high values); the intermediate-range &ldquo;fifth
+        force&rdquo; experiments excluded, all of which read unusually high; and non-Cavendish methods
+        excluded. Test-mass composition couldn't be established for four measurements (Dousse 1987, Speake
+        1983, Liu 1987, Oelfke 1984), so it was assumed to match the source. Swing dampers and heavy beams
+        dwarf the test masses, so the book counts the composition of anything that moves with them.</p>
+
+      <p>By the book's own calculation, this leaves <strong>27 data points</strong> after averaging
+        same-material entries, forming 351 pairs, with concordant minus discordant pairs equal to 234 and
+        five ties. That gives Kendall's &tau;<sub>b</sub> &asymp; 0.67 (0.6763 if ties are simply dropped),
+        z &asymp; 4.91, and p &asymp; 4.5&times;10<sup>-7</sup> &mdash; the book's &ldquo;1 in
+        2,233,140.&rdquo; Source-mass composition alone gives 1 in 824, and test-mass composition alone
+        1 in 43, weaker because beams and dampers dilute the test masses. Predicted values typically land
+        within 0.01&ndash;0.1% of measured ones, but since the predicted spread between common solids is only
+        about 0.2% (steel 6.6742 to water 6.6617, by the book's own values), agreement in absolute value is
+        less informative than the ranking. How this number was reached matters, and is set out in the two
+        boxes at the end of this section.</p>
+
+      <h3>Three historical cases the book leans on</h3>
+      <p><strong>Heyl (1926&ndash;30; 1942).</strong> Steel source masses with platinum, glass and gold
+        test masses gave 6.667 &plusmn; 0.012 (platinum, best-of-day), 6.672 &plusmn; 0.004 (platinum,
+        average), 6.671 &plusmn; 0.003 (glass) and 6.672 &plusmn; 0.004 (gold), against the book's
+        predictions of 6.6712, 6.6720 and 6.6712 &mdash; all within error, and at least 99.94% in value.
+        Heyl noticed considerable differences with the nature of the material, couldn't explain them, and
+        repeated the E&ouml;tv&ouml;s experiment for a null result, in the book's telling. The book itself
+        concedes that Heyl's values agree in value but don't show the expected hierarchy, so on their own
+        they &ldquo;don't represent a strong case.&rdquo; It also argues Heyl's early high readings, which
+        fall as the balance settles, inflated the differences in his averages.</p>
+
+      <p><strong>Pontikis (1971 and 1972).</strong> The 1971 paper reports material-specific values that
+        the book says match its predictions, with lead&ndash;lead and mercury&ndash;mercury described as
+        &ldquo;phenomenal&rdquo;; it puts the odds of a chance match at 0.25%. The 1972 paper reports only
+        material-averaged values after an adjustment it doesn't specify, and the book uses the 1972
+        average, not its material values. A general note that applies here and later on this page: where the
+        book criticises named researchers or groups, this page reports what the book points to and no more,
+        and the researchers concerned may have had ordinary methodological reasons the book doesn't
+        consider. The book itself notes, for instance, that Taylor in 1973 discounted Heyl's and Pontikis's
+        quoted deviations because they were statistical only.</p>
+
+      <p><strong>Gundlach and Schlamminger.</strong> The book notes that the E&ouml;t-Wash group's
+        published Cavendish value used steel source masses, and that their equivalence-principle tests
+        varied only the test-mass composition. Gundlach used uranium source masses with lead and copper test
+        masses and reported no difference; the book notes that uranium's predicted G is very low and
+        suggests that is why. Schlamminger's 2002 mercury-tank measurement is the only experiment in the
+        book's data where changing test-mass composition (copper to tantalum) didn't seem to matter, and the
+        tantalum results were later discarded by the authors as less accurate.</p>
+
+      <h3>Why weighing the source masses matters</h3>
+      <p>The book's argument is that <strong>scales</strong> measure weight, which depends on composition
+        and location; <strong>mechanical balances</strong> measure inertial mass and cancel both, because
+        the two pans form one system and the effective g on each side is a mix; <strong>electronic
+        balances with magnetic force restoration</strong> cancel composition dependence but not elevation;
+        and spring and absolute gravimeters can't swap test masses. The consequence it claims is that
+        Cavendish experiments whose source masses are weighed on mechanical balances <em>can</em> show
+        composition effects, while a laboratory that weighs everything on a high-capacity electronic scale
+        would hide them. The same reasoning, it says, explains why E&ouml;tv&ouml;s-type balances give a
+        near-null result. Some of the book's correspondents dispute this argument.</p>
+    </div>
+
+    <p class="caveat">The analysis-flexibility caveat. The book dates every revision of this analysis, which
+      is what makes the following visible. It began with a fixed &ldquo;acceptable range&rdquo; of G values
+      (6.661&ndash;6.6745); on 11 Feb 2024 that range was abolished and replaced by excluding all pre-1971
+      values except Heyl's. Which of Heyl's repeated measurements to use (lowest, most frequent or average)
+      was settled on 15 Feb 2024. Test-mass composition was added only on 26 Feb 2024; the book records that
+      before 2024 it assumed test-mass composition had little effect. The p-values were &ldquo;corrected&rdquo;
+      on 9 May 2026 and recomputed by exact enumeration on 12 May 2026. None of this is hidden &mdash; but it
+      means the headline odds describe the final analysis, not a test fixed in advance. Analyses adjusted as
+      the data were examined are weaker evidence than a prediction made before the data were looked at, even
+      when the final agreement is close. The same caution applies to the E&ouml;tv&ouml;s and planetary-orbit
+      sections below.</p>
+
+    <p class="caveat">The book's odds assume the 27 data points behave like independent draws. Several share a
+      laboratory, an apparatus or a material, and the underlying disagreement between modern G values is real
+      and unresolved &mdash; mainstream metrologists generally attribute it to unrecognised systematic error.
+      That does not show the book is wrong; it is why the ranking should be treated as suggestive and not as a
+      settled discrepancy.</p>
+
+    <div class="prose">
+      <p><strong>Status: the book's own meta-analysis of published values; not peer-reviewed.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FREEFALL & PENDULUMS
+     ============================================================ -->
+<section id="freefall-pendulums" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Experiments run by others</p>
+      <h2>Freefall towers, neutrons, and a pendulum</h2>
+      <p>Unlike a Cavendish balance, freefall and pendulum experiments compare test objects directly, so the
+        book treats them as cleaner tests of composition-dependent gravity.</p>
+    </div>
+
+    <p class="caveat">These are single experimenters or single research groups, none independently repeated,
+      and the book itself calls the first of them &ldquo;not very conclusive.&rdquo; They are experiments run by
+      other people, not by the book's author &mdash; the author's own are kept separate in the next section.</p>
+
+    <div class="prose">
+      <h3>A drop tower in Bremen</h3>
+      <p>In 2004, Szász's experiment at the ZARM drop tower in Bremen put test masses of different materials
+        on a shelf inside an aluminium capsule and dropped it 110 m, about 4.7 seconds of freefall (the
+        book's own video timing gave 4.7 &plusmn; 0.05 s). As reported, lithium and lead lifted off the shelf,
+        while iron and aluminium stayed &mdash; aluminium being the capsule's own material. Carbon lifted off
+        with a delay, about 2 cm at impact, an effective 0.317 cm/s<sup>2</sup> in the book's calculation.
+        Beryllium and boron stayed down, which the book attributes to adhesion, since both have a large
+        surface-to-mass ratio.</p>
+
+      <p>The book lists the confounds itself: air was removed from the tower but not from the capsule; the
+        lithium block hit the wall of its jar; residual magnetism is possible; and a correspondent suggested
+        the two lift-offs came from the release impulse. Its verdict is that the result is &ldquo;not very
+        conclusive,&rdquo; and it recommends repeating the experiment without the capsule.</p>
+
+      <h3>Neutron interferometers</h3>
+      <p>Freefall tests need neutral particles, hence neutrons. Abele and Leeb's meta-analysis of
+        neutron-interferometer gravity experiments, going back to Colella, Overhauser and Werner in 1975,
+        found a consistent discrepancy of 0.8&ndash;1% between the prediction based on Newtonian gravity and
+        the observation, with the predicted value always the larger &mdash; their quoted result is that the
+        theoretical prediction of 59.2 &plusmn; 0.1 radians is 0.8% higher. The book's reading is that
+        G<sub>n</sub> is about 1% below G<sub>Fe</sub>, &ldquo;exactly as found.&rdquo; It gives sign-test
+        odds of 0.5<sup>10</sup>, or 0.098%, for ten experiments all falling in one direction, and notes
+        that since 1988 the discrepancies cluster around 1%. The book also states that the paper's own authors
+        attribute the discrepancy to a systematic error in the measurement equipment. The ten experiments
+        share a technique and crystal interferometers, so they aren't independent draws either.</p>
+
+      <h3>A pendulum in a vacuum tube</h3>
+      <p>Giorgio Toro, an American-Italian experimenter whose self-published write-ups the book cites (one is
+        titled &ldquo;Musings of an amateur on inertia, gravity, light &amp; time&rdquo;), swung a pendulum in
+        a vacuum tube for 16 days in 2023, with two swing directions each used twice. The bobs were iron
+        (carbon steel), copper, aluminium and lead. The book's predicted ordering, Fe&ndash;Cu&ndash;Al&ndash;Pb,
+        was observed exactly, which the book puts at p = 1/24, about 4%. A second round in August 2024 added
+        Plexiglas, which the author had recommended for its very low predicted G; the observed order was
+        Fe&ndash;Cu&ndash;Pb&ndash;Al&ndash;Plexiglas against a predicted Fe&ndash;Cu&ndash;Al&ndash;Pb&ndash;Plexiglas
+        (&tau; = 0.8), giving p = 5/120, about 4.2%. Combined by Fisher's method, the book gives p = 0.0128,
+        &ldquo;1 in 78,&rdquo; and an average agreement in value of 99.95% (99.96% without Plexiglas).
+        Pendulums, unlike balances, respond to composition-dependent g. The book adds that Toro himself was
+        not impressed by the size of his differences, because he didn't know what effect size to expect, and
+        that the first experiment was finished before the author knew of it.</p>
+
+      <p>The differences between materials in Toro's data are of order 10<sup>-5</sup> of the oscillation
+        period or smaller, derived from the ratios the book lists &mdash; small enough that thermal and
+        pressure drifts matter, though the book records that he tracked pressure, temperature, time and date.
+        Nothing here has been independently repeated.</p>
+
+      <p><strong>Status: reported by others; not independently replicated.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     THE AUTHOR'S OWN EXPERIMENTS
+     ============================================================ -->
+<section id="author-experiments" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">First-person, self-reported</p>
+      <h2>The author's own experiments</h2>
+    </div>
+
+    <p class="caveat">Everything in this section was run and reported by the book's author &mdash; so far as
+      the book describes, unblinded and without an independent testing party. It's included because the book
+      presents it as part of its case, and because two of the three experiments come with the author's own
+      candid account of what went wrong. Treat it as description, not as data.</p>
+
+    <div class="prose">
+      <h3>The 2020 Cavendish balance &mdash; a candid failure</h3>
+      <p>In April and May 2020 the author built a torsion balance in an isolation container in a family
+        factory, using water-filled buckets as source masses (four at first, later two, 40 kg in total) with
+        90 cm between the bucket centres, and reading angles with software. Early oscillation amplitudes were
+        an order of magnitude too large. The author first blamed people walking nearby and micro-earthquakes;
+        the real cause was insufficient air sealing, fixed with triple tape and a plastic sheet on 14&ndash;16
+        May 2020. The oscillation period was about 949 seconds (16 minutes), and the value obtained deviates
+        significantly from both the mainstream value and the value this theory predicts, because the period
+        couldn't be measured precisely from a half-hour video.</p>
+
+      <p>The book itself concludes that the experiment is &ldquo;useless for probing composition-dependent
+        gravity,&rdquo; because the source masses were weighed on an electronic scale, which cancels the effect
+        (see <a href="#cavendish">the Cavendish section</a>). Including that admission is an honesty point in
+        the book's favour.</p>
+
+      <h3>Freefall trials (June 2023 &ndash; January 2024)</h3>
+      <p>The author used a Pasco freefall adapter with hollow &ldquo;vending-machine&rdquo; spheres filled with
+        different materials, not in a vacuum. The first lead-versus-steel trials on 17 June 2023 showed a
+        difference in freefall times, about 0.0003 s, that the book says matched the prediction exactly. A
+        magnetic release and, from 3 December 2023, a 2.5 m drop height followed so that standard deviations
+        no longer overlapped. The headline pairing is lead against zinc: zinc fell faster in 17 of 19 trials,
+        then in 38 of 42 overall, over a 1.762 m drop. The lead-filled ball weighed 59.757 g and the faster
+        zinc-filled ball 59.160 g; the book notes that the faster one is the lighter, to rule out excess mass
+        as the explanation.</p>
+
+      <p>Wood against zinc was messier. Initial trials showed the wood ball slower than predicted by 2&ndash;3
+        ms, which the book attributes to elasticity (a loose wood ball scrapes, and a rubber ball later
+        behaved the same). Once the sphere was completely filled, the difference shrank to about 0.5 ms. The
+        first clean run matched the formula for nutrient-rich wood (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
+        plus calcium), and two later runs matched nutrient-poor dry wood
+        (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>). Combining trials by Fisher's method (corrected 25 May
+        2026), the book gives &ldquo;1 in 21.5 billion.&rdquo;</p>
+
+      <p>Design choices the book explains: it uses the shortest rather than the average freefall time,
+        because release delays can only lengthen a drop; single-photogate methods were rejected as
+        insensitive, with two photogates later used to justify averaging; and zinc replaced steel to avoid
+        magnetism at release, on a correspondent's suggestion. The confounds it records are air drag,
+        adhesion, elasticity, dangling washers (traced as the reason standard deviations were small only with
+        round steel spheres) and release impulse; early effect sizes were about 1&ndash;4 ms in standard
+        deviation against differences of about 0.3 ms. The book treats the combined odds as decisive; the
+        counts are real trial tallies, but every trial shared one apparatus, one person and several
+        procedure changes, so the trials cannot be treated as independent draws.</p>
+
+      <h3>Weighing scales (2025)</h3>
+      <p>The book sorts weighing instruments into scales (weight; composition- and place-dependent),
+        mechanical balances (mass; neither), and electronic force-restoration balances (composition cancels,
+        elevation doesn't). It records that the author's earlier, 2024 version assumed all electronic
+        balances were scales, and corrected this between 25 July and 23 August 2025. The author's own tests
+        used a scale with 1-micronewton resolution, a 0.01 g triple-beam balance and, for fun, an iPhone 6s
+        3D-Touch screen with a metal spoon (0.81 g increments); the book says this wasn't yet precise enough
+        to distinguish neighbouring elements, and that a proposed &ldquo;material analyzer&rdquo; would need
+        balance-level resolution.</p>
+
+      <p><strong>Status: self-reported by the author; not independently replicated.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     THE EÖTVÖS EXPERIMENT, REREAD
+     ============================================================ -->
+<section id="eotvos" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">A famous null result</p>
+      <h2>The E&ouml;tv&ouml;s experiment, reread</h2>
+    </div>
+
+    <div class="prose">
+      <p>E&ouml;tv&ouml;s, Pek&aacute;r and Fekete's 1922 torsion-balance experiment compared centrifugal
+        (inertial) and gravitational forces on two masses of different composition hung from one beam. It has
+        been cited for a century as evidence for the equivalence principle, and Einstein cited it too. The book
+        calls it, ironically, the one experiment where no thought-out non-Newtonian theory would predict a
+        directly detectable composition effect: the two sides form one system, since a balance can't tip one
+        way unless the other goes the opposite way, so the effective g on each side is a mix.</p>
+
+      <p>In 1986, Fischbach's reanalysis found a correlation with baryon number per unit mass; the book cites
+        Goldman's remark that E&ouml;tv&ouml;s's quoted error was smaller than the individual uncertainties,
+        &ldquo;determined by the spread between the points.&rdquo; The book reads the composition differences as
+        not having overlapping error bars, and so as refuting the principle outright. Fischbach needed a free
+        coupling constant, the &ldquo;fifth force&rdquo; of around 10<sup>-5</sup> scale, to make the effect
+        fit.</p>
+
+      <p>The book's own mechanism for a residual effect is that one test mass hangs on a string and so sits
+        lower, closer to the Earth, than the standard mass on the other side; that unequal height makes the
+        two compositions contribute unequally. The effect depends on suspension depth and is smaller than the
+        measurement precision (20 July 2024), but small perturbations that grow over time amplify it linearly,
+        which the book says needs very many trials &mdash; and E&ouml;tv&ouml;s ran very many.</p>
+
+      <p>The book's reanalysis of ten material pairs (45 pair comparisons) has three steps, each with its own
+        odds:</p>
+      <ol>
+        <li><strong>Fischbach's method</strong>, on E&ouml;tv&ouml;s's adjusted data: &tau; = 0.75, p = 0.000473,
+          <strong>1 in 2,114</strong>.</li>
+        <li><strong>The raw data</strong>, with the brass containers accounted for and the two sides still
+          treated as independent: &tau; = 0.92, <strong>1 in 333,333</strong>.</li>
+        <li><strong>The book's residual-chromogravity method</strong>, with the sides not independent and
+          suspension depth included: a perfect ranking of all ten pairs, &tau; = 1, p = 1/10!, or
+          <strong>1 in 3,628,800</strong>, which the book calls twice as strong in correlation as Fischbach's.
+          A residual scale factor of about 100 remains, which the book explains through linear amplification;
+          average value agreement is about 92%. The magnalium&ndash;platinum pair still disagrees, but the
+          book revised its predicted composition after a density check on E&ouml;tv&ouml;s's 11.92 cm &times;
+          1.01 cm cylinder (25.402 g, or 2.66 g/cm<sup>3</sup>), which lies closer to aluminium's 2.7 than to
+          magnesium's 1.74.</li>
+      </ol>
+    </div>
+
+    <p class="caveat">The analysis-flexibility caveat from <a href="#cavendish">the Cavendish section</a>
+      applies here too: the magnalium sample's composition was revised to fit, and an unexplained residual
+      scale factor remains. The scale is fitted, so only the ranking test is free of tuning &mdash; and the book
+      also argues that the effect should be about a million times larger than E&ouml;tv&ouml;s measured, which
+      is why the scale factor needs the suspension explanation.</p>
+
+    <div class="prose">
+      <p><strong>Status: a reinterpretation of published data, not a new measurement.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     NEUTRON STARS, BLACK HOLES, AND A MASS GAP
+     ============================================================ -->
+<section id="mass-gap" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">A gap that may be a units problem</p>
+      <h2>Neutron stars, black holes, and a mass gap</h2>
+    </div>
+
+    <p class="caveat">The rescaling below rests on the book's own binding-energy estimates and its claim that
+      gravitational mass differs from inertial mass for compact objects. The argument is self-consistent
+      within the framework and is not independent of it.</p>
+
+    <div class="prose">
+      <p>The idea: gravitational binding energy is negative mass-energy, so it reduces an object's
+        <em>inertial</em> mass but not its gravitational mass. For a star collapsing to a neutron star (radius
+        1.5&ndash;2 Schwarzschild radii) that comes to about 17.5 &plusmn; 2.5% of the progenitor's mass, and
+        for a black hole about 30%. Remnant masses inferred from gravity under general relativity, which
+        assumes the two masses are equal, would then be too large by a factor that depends on composition and
+        compactness. The book gives a neutron-star constant, G<sub>Nu</sub> = 8.017303 &plusmn;
+        0.24&times;10<sup>-11</sup> (about 1/0.83 times G<sub>Fe</sub>), and says G<sub>Nu</sub> and the
+        black-hole constant are the first constants higher than steel's.</p>
+
+      <p>The heaviest known neutron star, PSR J0952&minus;0607, has a general-relativity mass of 2.35 &plusmn;
+        0.17 solar masses. Recomputed with the book's masses, the observed gap between neutron stars and black
+        holes shrinks from 0.95 to about 0.34 solar masses, which the book compares with the sample gap you'd
+        expect between neighbouring black holes (average 0.325) and between neutron stars (average 0.052). It
+        adds that a spacing as large as the original 0.96 solar masses occurs once among the eight black-hole
+        spacings it lists, so the gap &ldquo;was not too unusual&rdquo; even before rescaling. The observed
+        optical gap spans 2.35&ndash;3.3 solar masses.</p>
+
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <caption>The mass gap, by general relativity's masses and the book's (solar masses)</caption>
+          <thead>
+            <tr>
+              <th scope="col">Quantity</th>
+              <th scope="col">GR-based</th>
+              <th scope="col">The book's masses</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Neutron-star binding energy</td><td class="num">&mdash;</td><td class="num">17.5 &plusmn; 2.5% of progenitor mass</td></tr>
+            <tr><td>Black-hole binding energy</td><td class="num">&mdash;</td><td class="num">&asymp;30%</td></tr>
+            <tr><td>Gap between heaviest neutron stars and lightest black holes</td><td class="num">0.95</td><td class="num">&asymp;0.34</td></tr>
+            <tr><td>Average sample gap between neighbouring black holes</td><td class="num">&mdash;</td><td class="num">0.325</td></tr>
+            <tr><td>Heaviest neutron star (PSR J0952&minus;0607)</td><td class="num">2.35 &plusmn; 0.17</td><td class="num">smaller (rescaled)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Gravitational-wave events are read the same way. For primary components, the general-relativity gap
+        runs 1.46&ndash;3.6 solar masses, 2.14 wide; for secondaries, three &ldquo;mass-gap&rdquo; candidates
+        (GW190917, GW190814 and GW200210) exist, and only GW190814 lies solidly inside the gap, with no
+        optical counterpart. GW200105 was retracted, with a detection confidence of 36% against LIGO's 50%
+        threshold, and V723 Monocerotis, long thought to be a black hole, was reassessed in 2022 (a
+        general-relativity mass of 3.04 solar masses if a black hole). On the Tolman&ndash;Oppenheimer&ndash;Volkoff
+        limit, the official general-relativity figures are 2.75 &plusmn; 0.25 and 2.55 &plusmn; 0.35 solar
+        masses, with older treatments giving 2.2&ndash;3 and observation-driven estimates from 2018 giving
+        2.01&ndash;2.17. The book says its rescaled limit agrees with the heaviest observed neutron star,
+        since its masses differ by the same factor as the G-values.</p>
+
+      <p>Finally, the book answers a November 2021 Big Think article arguing the gap is gone: objects that
+        appear <em>in</em> the gap don't remove it, since there should always be far fewer of them than
+        elsewhere. In the book's account the gap is a natural one of about 0.3 solar masses, stretched to 0.95
+        by using general-relativity masses.</p>
+
+      <p><strong>Status: a reinterpretation of published data, not a new measurement.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BINARY PULSARS
+     ============================================================ -->
+<section id="pulsars" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Where the book challenges a standard identification</p>
+      <h2>Binary pulsars: neutron stars or white dwarfs?</h2>
+    </div>
+
+    <p class="caveat">The Hulse&ndash;Taylor binary pulsar PSR B1913+16 &mdash; a double-neutron-star system &mdash;
+      is regarded as some of the strongest evidence for general relativity; its discoverers won the 1993
+      Nobel Prize in Physics. Its orbital decay matches general relativity's gravitational-wave prediction to
+      within a fraction of a percent. What follows is the book's reinterpretation of that system and two
+      similar ones; it contradicts the standard identification of these pulsars as neutron stars.</p>
+
+    <div class="prose">
+      <p>The book's starting point is that gravity here is carried by virtual gluons, not gravitons, so
+        changes in a gravitational field must be accompanied by emission of real gluons. Orbital decay should
+        then depend on inertial mass and total potential energy, and the smaller inertial masses that follow
+        from binding energy and composition shift the predicted decay rate slightly. The ratio of this
+        theory's prediction to general relativity's comes out at about 0.9992 (0.99917).</p>
+
+      <p>The book then turns to what the pulsars are. Using general-relativity masses, PSR B1913+16 has a
+        pulsar of 1.438 &plusmn; 0.001 solar masses and a companion of 1.390 &plusmn; 0.001 (Weisberg and Huang,
+        2016). Both sit below the Chandrasekhar limit &mdash; about 1.445 solar masses times (2/&mu;<sub>e</sub>)<sup>2</sup>,
+        where &mu;<sub>e</sub> is 2 for helium, carbon or oxygen and 56/26 for iron, and about 1.38&ndash;1.39
+        once general relativity is applied. So, per the book, they can't be neutron stars under its own
+        framework, whose masses come out smaller still, and are likelier a white-dwarf pulsar plus an ordinary
+        white dwarf. Rapid rotation (over 16 revolutions per second) could raise the limit, and the book notes
+        that mass shedding at formation (Boshkayev 2012) doesn't apply to spin-up by accretion after collapse.
+        It gives the reason for the literature's preference for neutron stars &mdash; they explain the magnetic
+        field and spin more easily &mdash; and notes that no spectroscopy is possible for pulsars, so their
+        chemical composition is unknown. It also concedes that white-dwarf-pulsar physics requires a lot of
+        additional research.</p>
+    </div>
+
+    <p class="caveat">This is the book reclassifying a well-studied class of objects, and it goes further than
+      the reinterpretations of data elsewhere on this page. The identification of these systems as neutron
+      stars is standard, and the book's alternative is a proposal, not an observation.</p>
+
+    <div class="prose">
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <caption>Binary pulsars the book says disagree with general relativity within error</caption>
+          <thead>
+            <tr>
+              <th scope="col">System</th>
+              <th scope="col">Observed / GR-predicted orbit decay</th>
+              <th scope="col">Source</th>
+              <th scope="col">Component masses (GR, solar masses)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>PSR B1913+16</td><td class="num">0.997 &plusmn; 0.002; 0.9983 &plusmn; 0.0016</td><td>Weisberg 2010; Weisberg &amp; Huang 2016</td><td class="num">1.438 / 1.390</td></tr>
+            <tr><td>PSR B1534+12</td><td class="num">0.91 &plusmn; 0.06</td><td>Stairs 2002</td><td class="num">1.3455 / 1.3330</td></tr>
+            <tr><td>PSR J1756&minus;2251</td><td class="num">1.08 &plusmn; 0.03</td><td>Ferdman 2014</td><td class="num">1.341 / 1.230</td></tr>
+          </tbody>
+        </table>
+        <p class="data-table-note">This theory predicts ratios slightly below 1 (about 0.9992 for B1913+16). The book's own list includes one system above 1.</p>
+      </div>
+
+      <p>Two details from the book's own numbers are worth having in view. The book cites Weisberg's own
+        reading of the second and third systems: various systematic effects, such as an incorrect distance in
+        the galactic-acceleration correction, may explain the small discrepancies, though an incompleteness of
+        general relativity or some unknown physical effect can't be excluded. And the 2016 value for
+        B1913+16, 0.9983 &plusmn; 0.0016, excludes 1 only at a single standard deviation, since its upper
+        bound reaches 0.9999.</p>
+
+      <p><strong>Status: reinterprets well-studied objects; contradicts the standard identification.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MERCURY, THE PLANETS, AND KEPLER'S THIRD LAW
+     ============================================================ -->
+<section id="planetary-orbits" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Three checks in the solar system</p>
+      <h2>Mercury, the planets, and Kepler's third law</h2>
+    </div>
+
+    <div class="prose">
+      <h3>Mercury's perihelion</h3>
+      <p>The book treats the other planets as concentric rings around the Sun, which it argues is reasonable
+        because Mercury's perihelion advances so slowly that the planets' positions average out over the
+        long time it takes to circle the Sun. It uses composition-dependent G-values and inertial masses for each planet, a series expansion in the
+        ratios of orbital radii (36 terms give the digits it displays), and a correction factor of 0.9668 to
+        convert the ring-model result to the exact elliptical Newtonian one.</p>
+
+      <p>Three contributions stay the same as in general relativity: the relativistic term (42.9799&Prime;
+        per century), Lense&ndash;Thirring (&minus;0.0020) and solar oblateness (0.0286). This theory changes
+        only the Newtonian planetary-perturbation term, 531.853&Prime; per century against the exact Newtonian
+        532.3035, a difference of about 0.45&Prime;. The totals are 574.8594 &plusmn; 0.0015 for this theory,
+        575.31 &plusmn; 0.0015 for general relativity, and a modern observed value of 574.7 &plusmn; 0.45. By the
+        book's calculation the first agrees within error and to 99.97% in value, the second to 99.89% and not
+        within error (both at strict one-sigma).</p>
+
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <caption>Mercury's perihelion precession (&Prime; per century). This theory's prediction 574.8594; general-relativity-based total 575.31, both computed by the book. Agreement within margin of error is judged at one standard deviation.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Observation</th>
+              <th scope="col">Observed</th>
+              <th scope="col">This theory: in value / within error</th>
+              <th scope="col">GR: in value / within error</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Newcomb (1895)</td><td class="num">575.1 &plusmn; 2.1</td><td class="num">99.96% / yes</td><td class="num">99.96% / yes</td></tr>
+            <tr><td>Clemence (1947)</td><td class="num">574.10 &plusmn; 0.65</td><td class="num">99.87% / no</td><td class="num">99.79% / no</td></tr>
+            <tr><td>Duncombe (1956)</td><td class="num">574.7 &plusmn; 0.45</td><td class="num">99.97% / yes</td><td class="num">99.89% / no</td></tr>
+            <tr><td>Anderson (1992)</td><td class="num">574.7 &plusmn; 0.1</td><td class="num">99.97% / no</td><td class="num">99.89% / no</td></tr>
+          </tbody>
+        </table>
+        <p class="data-table-note">Average agreement in value: this theory 99.9425%, GR 99.8825%. The book argues Anderson's &plusmn;0.1 should be about &plusmn;0.2 (a single-parameter fit across planets), which would move this theory to 3 of 4 within error.</p>
+      </div>
+
+      <p>The dependency should be stated plainly. With Newtonian semi-major axes, this theory's Mercury
+        prediction was 573.9738, and beat general relativity only against Clemence's 1947 value. The improved
+        574.86 came in 2025 from swapping in what the book calls its own semi-major axes &mdash; the ones it
+        derives from the Kepler-ratio analysis later in this section &mdash; and the book then calls the
+        improvement the strongest evidence for those axes.</p>
+    </div>
+
+    <p class="caveat">The improved Mercury figure depends on planetary distances that the book itself derives
+      in the next part of this section. Agreement can support one or the other, but not both at once. The
+      analysis-flexibility caveat from <a href="#cavendish">the Cavendish section</a> applies as well.</p>
+
+    <div class="prose">
+      <h3>The other planets</h3>
+      <p>Older data (Newcomb 1895; Duncombe 1956) give an anomalous precession of 8.4 &plusmn; 4.8&Prime; per
+        century for Venus and 5.0 &plusmn; 1.2 for Earth, against general relativity's 8.61, 3.84 and 1.35
+        for Venus, Earth and Mars. For the inner planets' total precession, the book's average agreement is
+        99.90% for this theory against 99.75% for general relativity (7 April 2025). It concedes that Earth's
+        high total rate flatters the total-precession agreement, and that on the <em>anomalous</em> part this
+        theory is most precise for Mercury and Venus, then Earth and Mars.</p>
+
+      <p>The book says modern data can't be used for the inner planets, because published ephemeris analyses
+        (it cites Anderson 1992 and Ohanian &amp; Ruffini 1994, and describes current fitting practice the same
+        way) fit a single shared parameter to all planets, so any planet-specific composition effect would be
+        absorbed. For the outer planets there is real telemetry, but ephemerides are refit against Newtonian
+        models, which propagates any anomaly to neighbouring planets. Saturn (Pitjeva's anomaly, around 2006)
+        and Jupiter (the INPOP10a discrepancy, 2011) are read as composition-dependent reductions, recalculated
+        on 29 and 31 March 2025 respectively; the book acknowledges Pitjeva's and Iorio's stringent constraints,
+        a few milliarcseconds per century.</p>
+
+      <h3>Kepler's third law and the "Kepler ratio"</h3>
+      <p>Kepler's third law, that the square of an orbital period is proportional to the cube of the
+        semi-major axis, holds only if the equivalence principle does. Under this theory each planet should
+        have a slightly different Kepler ratio, depending on composition. Modern semi-major axes for the
+        inner planets are derived from orbital periods using Kepler's law, not measured, so they look uniform
+        by construction. The cleanest uncorrupted data, the book argues, are Tycho Brahe's measurements as
+        Kepler used them (1617/1619). The predicted ordering is Mercury&ndash;Earth&ndash;Venus&ndash;Mars&ndash;Saturn&ndash;Jupiter,
+        and the observed ordering matches, with all planets but Saturn within error.</p>
+
+      <div class="data-table-wrap">
+        <table class="data-table">
+          <caption>Kepler-ratio ordering, by data set (the book's ranking p-values, by exact enumeration)</caption>
+          <thead>
+            <tr>
+              <th scope="col">Data set</th>
+              <th scope="col">p-value</th>
+              <th scope="col">Data set</th>
+              <th scope="col">p-value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Kepler (1617, Brahe data)</td><td class="num">0.05416</td><td>Cox (2000)</td><td class="num">0.16853</td></tr>
+            <tr><td>NASA (2024)</td><td class="num">0.08061</td><td>Allen (1963)</td><td class="num">0.23579</td></tr>
+            <tr><td>Allen (1973)</td><td class="num">0.15140</td><td>Standish &amp; Williams (1992)</td><td class="num">0.94767</td></tr>
+          </tbody>
+        </table>
+        <p class="data-table-note">Combined (Fisher) p = 0.0072, or about 1 in 139. No single data set reaches p &lt; 0.05; the best is 0.054. The Standish &amp; Williams set has a reversed inner-planet ordering, which the book attributes to adjustments made around Mars.</p>
+      </div>
+
+      <p>Szász, in 2015, reported a jump in Kepler ratios between the inner planets and Uranus, Neptune and
+        Pluto. The book says the real jump is between the inner and gas-giant planets, and that Szász's
+        placement between Saturn and Uranus is a calculation error.</p>
+    </div>
+
+    <p class="caveat">The analysis-flexibility caveat applies here: which data sets to include, the choice of
+      Allen or Standish for the outer planets (24 November 2024) and &ldquo;more precise orbit periods&rdquo;
+      (23 March 2025) were all decided during the analysis. The Kepler-derived axes also feed back into the
+      Mercury prediction above, so the two parts of this section are not independent.</p>
+
+    <div class="prose">
+      <p><strong>Status: a reinterpretation of published data, not a new measurement.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     EVIDENCE AT A GLANCE
+     ============================================================ -->
+<section id="evidence-ledger" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Taking stock</p>
+      <h2>Evidence at a glance</h2>
+      <p>The one place on this page that sets the strands side by side and says what each rests on, so the
+        caveats above can stay short. Every probability in the table is the book's own calculation; none has
+        been peer-reviewed, and several are Fisher-combined or sign-test odds that assume independent draws.</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <caption>Evidence strands, who ran them, and what each rests on</caption>
+        <thead>
+          <tr>
+            <th scope="col">Strand</th>
+            <th scope="col">Who ran it</th>
+            <th scope="col">What the book reports</th>
+            <th scope="col">The book's own odds</th>
+            <th scope="col">Main limitation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Cavendish big-G meta-analysis</td><td>Published data, re-analysed by the book</td><td>Ranking of 27 source/test pairs matches predicted order</td><td>1 in 2.2 million (source only: 1 in 824; test only: 1 in 43)</td><td>Exclusion rules revised through 2024; points not independent; modern G scatter unresolved</td></tr>
+          <tr><td>Heyl (1926&ndash;30) &amp; Pontikis (1971)</td><td>Others' data</td><td>Values consistent with predictions</td><td class="num">0.25% (Pontikis)</td><td>Book concedes Heyl alone is not a strong case; Pontikis's 1972 paper reports adjusted averages</td></tr>
+          <tr><td>Szász drop tower (2004)</td><td>Others</td><td>Some materials lift off the shelf, others don't</td><td class="num">&mdash;</td><td>Book: &ldquo;not very conclusive&rdquo;; air in capsule; adhesion</td></tr>
+          <tr><td>Neutron interferometry</td><td>Others' data (Abele &amp; Leeb meta-analysis)</td><td>Observed 0.8&ndash;1% below Newtonian prediction</td><td>0.098% (sign test, 10 experiments)</td><td>Authors attribute to systematics; experiments share method</td></tr>
+          <tr><td>Toro's pendulum</td><td>Outside experimenter (self-published)</td><td>Predicted ordering matched (2024: one swap)</td><td class="num">1 in 78 (combined)</td><td>Two rounds, one experimenter, unreplicated, tiny effect</td></tr>
+          <tr><td>Author's freefall trials</td><td>The author</td><td>Zinc falls faster than lead in 38 of 42 trials</td><td class="num">1 in 21.5 billion</td><td>Self-reported; not in vacuum; procedure changed; trials not independent</td></tr>
+          <tr><td>E&ouml;tv&ouml;s reanalysis</td><td>Published data, re-analysed</td><td>Perfect ranking of ten pairs</td><td class="num">1 in 3.6 million</td><td>Fitted scale factor (~100); composition revised after the fact; effect below stated precision</td></tr>
+          <tr><td>Mass gap</td><td>Published masses, rescaled</td><td>Gap 0.95 &rarr; 0.34 solar masses</td><td class="num">&mdash;</td><td>Depends on the book's binding-energy rescaling</td></tr>
+          <tr><td>Binary pulsars</td><td>Published timing, reinterpreted</td><td>Ratio 0.9992; observed 0.9983 &plusmn; 0.0016</td><td class="num">&mdash;</td><td>Contradicts neutron-star identification; one system on the wrong side of 1</td></tr>
+          <tr><td>Mercury perihelion</td><td>Published data, recomputed</td><td>574.86 vs observed 574.7 &plusmn; 0.45 (GR 575.31)</td><td class="num">&mdash;</td><td>Uses distances derived from the Kepler-ratio analysis</td></tr>
+          <tr><td>Kepler ratios</td><td>Published data</td><td>Predicted order recovered in Brahe's data</td><td class="num">1 in 139 (combined)</td><td>No single data set below p = 0.05</td></tr>
+        </tbody>
+      </table>
+      <p class="data-table-note">Odds are the book's own calculations, not independently checked. Where a row shows a dash, the book gives no probability for that strand.</p>
+    </div>
+
+    <div class="prose">
+      <p><strong>What the strands share.</strong> Every one is a ranking or an offset of roughly 0.1&ndash;1%;
+        none is a single decisive discrepancy. The book's odds treat each strand's data points as independent
+        draws, and they aren't: the points share materials, laboratories and apparatus.</p>
+
+      <p><strong>What the book itself says would settle it.</strong> Only two named tests: a Bremen drop
+        without the aluminium capsule, which the book recommends because it calls Szász's result not very
+        conclusive; and Cavendish experiments whose source masses are weighed on mechanical balances, the
+        book's own criterion, and one it says its 2020 attempt should have met. Any decisive version of
+        either would ideally be run blind, in a vacuum, with the predictions fixed beforehand.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHAT THIS DOES TO RELATIVITY
+     ============================================================ -->
+<section id="relativity-loose-ends" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Three loose ends</p>
+      <h2>What this does to relativity</h2>
+    </div>
+
+    <p class="caveat">The first two items are about how to interpret relativity's mathematics, and the third
+      about a particular energy-conservation puzzle; none is a new laboratory test.</p>
+
+    <div class="prose">
+      <h3>Chronology protection</h3>
+      <p>General relativity admits closed timelike curves, paths that loop back in time: Flamm's 1916
+        wormhole solution, G&ouml;del's rotating universe (1949), and Thorne's scheme of charging one wormhole
+        mouth, dragging it near light speed with a magnet and so creating a time difference. The standard
+        objections are that a wormhole needs exotic matter to stay open; Hawking's argument that
+        vacuum fluctuations looping through would grow and destroy it; Wheeler and Fuller's 1962 result that a
+        wormhole pinches off before light can cross; and that white holes collapse in fractions of a second.</p>
+
+      <p>The book adds a few of its own. A Kerr black hole's ring-singularity &ldquo;exit&rdquo; would give two
+        black holes from one, violating energy conservation. The mass inflation inside a black hole (Israel
+        and Poisson, 1990) reaches about 10<sup>57</sup> times the mass of the universe as seen from within, so
+        if a white-hole exit opened even briefly it would expose that to the outside, which the book says would
+        destroy the universe. In a closed universe, black-hole interiors would have to reach the far side (a
+        2003 worry, which also undercuts Lee Smolin's cosmic-evolution idea in closed universes). And Thorne's
+        own many-worlds escape from paradoxes doesn't stop the paradox arising in the original spacetime; the
+        related many-worlds &ldquo;immortality&rdquo; idea is criticised on
+        <a href="swi.html#comparing-interpretations">the Similar-Worlds Interpretation's page</a>.</p>
+
+      <p>On this framework the problem doesn't arise, because curvature is a granular density difference, not
+        a property of spacetime. Kip Thorne's 1989 membrane paradigm is the nearest mainstream cousin &mdash;
+        rulers and clocks change, with no spacetime and no curvature, and time really stops at the
+        Schwarzschild radius &mdash; though the book says Thorne treated it as merely a useful model. In
+        <a href="swi.html#giving-up-spacetime">the Similar-Worlds picture</a>, time travel would mean
+        switching between spacetimes, leaving the community of entangled observers, which the book says would
+        simply lead to nonexistence. It also charges that the mainstream takes a positivist view of general
+        relativity's inconsistencies; that is the book's view, and this page doesn't take it further.</p>
+
+      <h3>Absolute space and &ldquo;correlation-like&rdquo; phenomena</h3>
+      <p>The book argues that &ldquo;everything is relative&rdquo; is a philosophy layered on relativity's
+        equations, not something they imply. Operationally, length contraction and time dilation can equally
+        be described by a varying speed of light, which Einstein himself often did, and which doesn't require
+        a spacetime block. In the twin paradox, it is the travelling twin who slows during acceleration. The
+        two-astronauts argument works only if they have no memory or instruments; a dipole in the cosmic
+        microwave background reveals motion, though Sengal showed other radiation dipoles imply different
+        velocities and directions, so the book doubts a purely local-motion reading (see
+        <a href="eec.html#entanglement-fermi-paradox">the CMB material on the Entropic Expansion page</a>).</p>
+
+      <p>It matters because quantum mechanics needs collapse to be simultaneous across space, and the
+        Similar-Worlds picture needs <em>one</em> set of temporarily indistinguishable worlds at a time; both
+        want a preferred frame. Telepathic information is, in the book's phrase, correlation-like rather than
+        signal-like, and so, like entanglement, isn't bound by the speed limit &mdash; see
+        <a href="cst.html#superluminal-communication">the Conscious Set Theory page</a>, which carries a much
+        stronger caveat on that claim.</p>
+
+      <p>There is a tension the book doesn't fully resolve. <a href="swi.html#giving-up-spacetime">The
+        Similar-Worlds page</a> says only each observer's past light cone is real, while this section asks for
+        an absolute frame. The reconciliation the book offers, dated 24 November 2020, is that the frame in
+        which an entanglement was established fixes that entanglement's &ldquo;now-slice.&rdquo; A dated
+        reversal sits nearby: on 14 November 2020 the book proposed a speed-dependent deformation of the
+        wavefunction, and by 21 November it had dropped that, in favour of speed determining how out of phase
+        spin entanglement is.</p>
+
+      <h3>Conservation of gravitational energy</h3>
+      <p>Since the universe isn't a closed system in this framework &mdash; it has no border, the cosmic
+        microwave background's energy is continually lost to expansion, and a universe with entropic
+        expansion can't collapse (see <a href="eec.html#core-idea">the Entropic Expansion page</a>) &mdash; the
+        book says the first and second laws apply to closed systems only.</p>
+
+      <p>A correspondent of the book's author, a physicist, put a challenge: if a photon makes a
+        quark&ndash;antiquark pair (a meson) that reverts to a photon, and photons exert no gravity while
+        mesons do, then gravitational energy appears and vanishes. The book's answer is that a meson would have
+        to live long enough for its gravity to be <em>measured</em>. With a potential energy for a meson pair
+        at 0.5 fm of &minus;2.4624&times;10<sup>-49</sup> J, the measurement time is
+        <span class="inline-formula" data-katex="t = \dfrac{\hbar}{2\,\Delta E}"></span>, about 2.14&times;10<sup>14</sup>
+        seconds &mdash; millions of years. The longest-lived meson, the neutral long-lived kaon, lives
+        5.116&times;10<sup>-8</sup> seconds, so no meson lives long enough to violate conservation measurably.
+        And because the gravitational charge photons pick up from virtual pairs is passive, no real particle
+        is moved either. In this framework all mesons share the same potential energy, since only quark
+        counts enter, unlike in general relativity.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BLOCKING, CANCELLING AND ALTERING GRAVITY
+     ============================================================ -->
+<section id="altering-gravity" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Proposals, not experiments</p>
+      <h2>Blocking, cancelling and altering gravity</h2>
+    </div>
+
+    <p class="caveat">Nothing in this section has been built or tested. It's the book's reasoning about what its
+      own theory would allow, written at the level of thought experiments. In mainstream physics, gravity can't
+      be blocked or shielded; that's a consequence of gravity being universal and, in general relativity, a
+      property of spacetime.</p>
+
+    <div class="prose">
+      <h3>Why exotic matter doesn't help, and why blocking might</h3>
+      <p>In general relativity, anti-gravity needs exotic, negative-mass matter. In this framework exotic matter
+        has negative inertial mass but <em>positive</em> gravitational mass &mdash; self-repelling but still
+        attracted to ordinary matter &mdash; and all of it is locked in ordinary-matter shells inside
+        supermassive black holes (see <a href="eec.html#primordial-black-holes">the Entropic Expansion
+        page</a>), so it is inaccessible. Eric Laithwaite's 1983 &ldquo;lighter spinning wheel&rdquo; the book
+        treats as an illusion, since the spin cancels the force needed to keep the bar horizontal.</p>
+
+      <p>What might work instead is shielding. With gluons rather than gravitons mediating gravity, gravity has
+        a preferred wavelength, the diameter of a quark, and in principle a medium in which every straight path
+        hits a nucleus could block it, as in a neutron star. The book supposes a neutron star would block
+        gravity from objects behind it: virtual gluons entering are scattered back out the side they entered,
+        and those emitted inside exit on the nearest side, so the total gluon number, and with it energy
+        conservation, is unchanged. Its own estimate is that even the densest Earth solids scatter each gluon
+        many times but let every gluon through eventually, so they would only affect the <em>speed</em> of
+        gravity, not its strength; blocking is all or nothing. A test would be to remove a source quickly and
+        time how long a test mass takes to notice.</p>
+
+      <p>A proposed lattice would stack layers of a crystal, each displaced by one quark diameter so that every
+        straight line ends at a nucleus. The book's own assessment is that it is unlikely a significant number
+        of gluons could be blocked this way, and that there is no guarantee it will work, though even a slight
+        weight reduction would be remarkable. Electrogravity is easier to screen &mdash; Faraday cages and
+        Casimir plates block virtual photons readily, and its range is only about 40 m (14 August 2020) &mdash;
+        but the resulting &ldquo;gravity plates&rdquo; would be extremely weak. The book credits an
+        artificial-gravity idea based on quark&ndash;gluon plasma to a collaborator (27 July 2020).</p>
+
+      <h3>Local homogeneity: when gravity vanishes</h3>
+      <p>In general relativity, a small enough region is &ldquo;locally flat&rdquo; and tidal forces vanish. The
+        analogue here is density differences in granular space, which live in space alone, since time isn't a
+        dimension in this framework. Gravity disappears when the spacing of field lines varies by less than a
+        Planck length across an object's wavefunction. There are two routes: confine the wavefunction, so that
+        a long narrow gap flattens it, or move far enough from the source that the region of homogeneity
+        outgrows the object. Field strength and local homogeneity are independent &mdash; strength is how many
+        field lines there are, homogeneity is the spacing difference at the region's borders. The book
+        criticises Einstein's elevator on these grounds: an accelerating rocket and a gravitational field differ
+        in tidal forces (head versus feet, shoulders converging), and shrinking the elevator to hide that
+        removes gravity itself, too.</p>
+
+      <p>Three dated notes in the book qualify this. On 27 October 2020 it added that gravity doesn't fall off
+        with distance for a confined wavefunction, and does so only for objects of one particular size. On 2
+        November 2020 it noted that the argument about dropping atoms doesn't depend on its
+        &ldquo;wavefunction-mediated gravity&rdquo; hypothesis. And on 17 November 2020 it declared an earlier
+        neutron-star argument in this discussion invalid.</p>
+    </div>
+
+    <p class="caveat">The engineering below is further still from anything tested: it proposes hardware for an
+      effect that, on the book's own numbers, would be tiny.</p>
+
+    <div class="prose">
+      <h3>Changing gravity per kilogram: in-frame inertial mass</h3>
+      <p>Gravity per kilogram can be altered by adding inertial mass without adding quarks: extra electrons
+        (impractical, since they add a tiny mass and a huge charge) or the kinetic or thermal energy of
+        components <em>within</em> the frame, not the ship's motion as a whole, which cancels, on the same
+        principle as <a href="#laws">the laws section</a>. The ratio &gamma;<em>m</em><sub>X</sub> in
+        G<sub>X</sub> grows while gravitational mass doesn't. Inflating a large mass this way would need a hot
+        plasma or relativistic gas, but the reactors and accelerators involved would outweigh the plasma. The
+        book sketches concentric proton and electron storage rings and hollow-core-fibre wakefield
+        accelerators in ring shapes, and lists collisions, heating, laser attenuation and sustaining the ring
+        geometry as problems; xenon, which is bright when accelerated, is noted as practical, radon as not.
+        The realistic use the book gives is gravity <em>sensors</em>, measuring an unknown object's mass and
+        gravity to identify its material, since the effects are, in its own words, far too small for any
+        gravity-altering technology.</p>
+
+      <p><strong>Status: proposed, never built or tested.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DEVELOPMENT NOTES
+     ============================================================ -->
+<section id="development-notes" class="section-dark">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Dated, the way the book dates everything</p>
+      <h2>How this theory grew, in the book's own notes</h2>
+      <p>Every idea in the book carries the date it was first conceived &mdash; including the ideas it later
+        walked back. A sample of this one's history, from the founding link to the most recent recalculation
+        of the odds:</p>
+    </div>
+
+    <div class="timeline mini-timeline">
+      <div class="tl-item">
+        <span class="tl-year">19 May 2017</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Mass defect meets the Cavendish balance</h4>
+          <p>First link between nuclear binding energy and measured big-G.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">4 Jun 2018</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Two kinds of gravity</h4>
+          <p>First equations separating chromogravity and electrogravity; neutrinos excluded on 20 Jun.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">16 May 2020</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>A home Cavendish balance</h4>
+          <p>First successful measurement, after air leaks were traced; later judged unable to test
+            composition dependence because of an electronic scale.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">17 Nov 2020</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>An argument withdrawn</h4>
+          <p>The neutron-star reflection argument in the local-homogeneity discussion is declared invalid.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">30&ndash;31 Dec 2020</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Every law rewritten</h4>
+          <p>The precise cardinality equation, then all the laws of gravity restated in quark count.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">9 Jul 2022</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Every element above 99.91%</h4>
+          <p>First claim that predicted G matches measured G for all elements.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">13 Dec 2022</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>The mass gap shrinks</h4>
+          <p>Recomputing neutron-star and black-hole masses from quark count.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">28 Nov 2023</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>A pendulum from outside</h4>
+          <p>Giorgio Toro's vacuum-pendulum results read against the predictions.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">26 Feb 2024</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Test masses count too</h4>
+          <p>Test-mass composition added to the Cavendish analysis, dropping an earlier assumption that beams
+            dwarf them.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">23 Oct 2024</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Time dilation is composition-independent</h4>
+          <p>After a brief doubt, gravitational time dilation is tied to vacuum density, not acceleration.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">12 May 2026</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Exact odds</h4>
+          <p>Rank-correlation p-values recomputed by exact enumeration, with a collaborator's program.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">25 May 2026</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Freefall odds corrected</h4>
+          <p>The most recent revision in this chapter.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-dark">
+  <div class="wrap page-footer-nav">
+    <a class="pfn-back" href="../index.html#theories">
+      <span class="pfn-label">All theories</span>
+      &larr; Back to the six theories
+    </a>
+    <a href="../index.html#about">
+      <span class="pfn-label">After the six &middot; the author</span>
+      About Sky Darmos &rarr;
+    </a>
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer section-dark">
+  <div class="wrap">
+    <div class="footer-row">
+      <a class="wordmark" href="../index.html#top" style="color:var(--cream)">Elementary Spaces</a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="../index.html#theories">Theories</a>
+        <a href="../index.html#problems">Problems</a>
+        <a href="../index.html#timeline">Timeline</a>
+        <a href="../index.html#concepts">Concepts</a>
+        <a href="../index.html#formulae">Formulae</a>
+        <a href="../index.html#about">About</a>
+      </nav>
+    </div>
+    <p class="footer-note">An independent companion guide to <em>The Complete Guide to Quantum Gravity</em>
+      by Sky Darmos. Not peer-reviewed, not affiliated with any research institution, and not an assessment
+      of the theory's validity — a map for navigating what the book itself claims.</p>
+  </div>
+</footer>
+
+<script defer src="../js/script.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charge Mass Dualism — Elementary Spaces</title>
+<meta name="description" content="A deep dive into Sky Darmos's Charge Mass Dualism: an electron's mass derived from its own electromagnetic field, the muon and tauon predicted as merged electron elementary spaces, and why the book calls its granularity prediction real but untestable.">
+<meta name="theme-color" content="#3D5A6E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body style="--theory-accent: var(--acc-cmd);">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="nav-row">
+    <a class="wordmark" href="../index.html#top">Elementary Spaces <small>a guide to Sky Darmos's quantum gravity</small></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle menu"><span></span></button>
+    <nav class="primary-nav" id="primaryNav">
+      <a href="../index.html#theories">Theories</a>
+      <a href="../index.html#problems">Problems</a>
+      <a href="../index.html#timeline">Timeline</a>
+      <a href="../index.html#concepts">Concepts</a>
+      <a href="../index.html#formulae">Formulae</a>
+      <a href="../index.html#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================================================
+     SUBHERO
+     ============================================================ -->
+<section class="hero subhero section-dark" id="top">
+  <div class="wrap">
+    <p class="breadcrumb">
+      <a href="../index.html#top">Elementary Spaces</a><span class="sep">/</span><a href="../index.html#theories">Theories</a><span class="sep">/</span><span class="current" aria-current="page">Charge Mass Dualism</span>
+    </p>
+
+    <div class="hero-grid" style="margin-top:2rem;">
+      <div>
+        <p class="hero-eyebrow">Theory 3 of 6 &middot; begun 15 July 2017, sharpened through 18 September 2024</p>
+        <h1>Mass is a side effect of charge</h1>
+        <p class="dek">Space Particle Dualism explained gravity as a side effect of charge. This chapter asks
+          whether inertia is too. An electron's calculated self-energy matches its measured mass to seven
+          significant figures, and pushing the same idea further predicts the muon and tauon as merged electron
+          "elementary spaces," eventually clearing 99.9% agreement after a long chain of corrections. This page
+          walks through that chain, a related reinterpretation of how neutrinos shape-shift between types, and
+          a granularity prediction the book itself concedes can never be measured.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#core-idea">Read the core idea</a>
+          <a class="subhero-back" href="../index.html#theories">&larr; Back to the six theories</a>
+        </div>
+
+        <div class="framing-box compact">
+          <strong>A note on what's below.</strong> The core hypothesis — that a particle's mass is entirely its
+          own electromagnetic self-energy — is a genuine, historically mainstream idea (J. J. Thomson, 1881;
+          Hendrik Lorentz and others through 1904), not a fringe invention; it fell out of favor for reasons the
+          book disputes. But several headline numbers below, especially the muon and tauon mass predictions,
+          were reached through a long sequence of correction terms — for binding energy, emitted positrons,
+          spin, and "flavor mixing" — added one at a time, each nudging the result closer to an
+          already-known target. That's weaker evidence than a single blind prediction, even at 99.9% agreement,
+          and it's worth keeping in mind throughout. The chapter's speculative reach into deriving special
+          relativity itself is flagged separately where it comes up — it's the one place the book admits
+          outright that it hasn't shown its own argument rigorously.
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="180" fill="none" stroke="#F0EAE0" stroke-opacity="0.08"/>
+          <circle cx="200" cy="200" r="130" fill="none" stroke="#F0EAE0" stroke-opacity="0.11"/>
+          <circle cx="200" cy="200" r="118" fill="none" stroke="#3D5A6E" stroke-opacity="0.45" stroke-width="2.5"/>
+          <ellipse cx="200" cy="200" rx="150" ry="62" fill="none" stroke="#8B7D6B" stroke-opacity="0.75" stroke-width="2.5" stroke-dasharray="2 11" transform="rotate(-25 200 200)"/>
+          <circle cx="306" cy="156" r="16" fill="#5b8fa8" transform="rotate(-25 200 200)"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ON-PAGE TOC
+     ============================================================ -->
+<nav class="toc-nav" aria-label="On this page">
+  <div class="wrap toc-row">
+    <a class="toc-link" href="#core-idea">The core idea</a>
+    <a class="toc-link" href="#muon-tauon-mass">Predicting the muon &amp; tauon</a>
+    <a class="toc-link" href="#flavor-mixing">Flavor mixing, real and apparent</a>
+    <a class="toc-link" href="#spin-energy">The hidden energy of spin</a>
+    <a class="toc-link" href="#rest-surface">One rest surface, and a leap into relativity</a>
+    <a class="toc-link" href="#testing-it">Testing it: too small to measure</a>
+    <a class="toc-link" href="#development-notes">Development notes</a>
+  </div>
+</nav>
+
+<!-- ============================================================
+     CORE IDEA
+     ============================================================ -->
+<section id="core-idea" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Where the theory starts</p>
+      <h2>Mass as a leftover of a particle's own charge</h2>
+    </div>
+
+    <div class="prose">
+      <p><a href="chromo.html">Chromogravity</a>, covered in a later chapter, argues that gravity is a side effect of charge and
+        hypercharge rather than a fundamental force in its own right. This chapter asks whether the same logic
+        stretches to cover inertia. There's a rough pattern worth noticing first: mesons and baryons, tied to
+        the strong force, are heavier than electrons, tied to electromagnetism; neutrinos, tied to the weak
+        force, have almost no mass at all; and every genuinely massless particle in the Standard Model happens
+        to also be chargeless. Could a particle's mass just be a measure of how strongly it's coupled to a
+        force, rather than an independent property bolted on separately?</p>
+
+      <p>The specific mechanism the book reaches for is <strong>self-energy</strong> — the energy stored in a
+        charged particle's own field, from its interaction with the surrounding quantum vacuum. The idea is old:
+        J. J. Thomson proposed it in 1881, before the quantum vacuum was even a concept, calling the medium the
+        field interacted with the "aether."</p>
+
+      <h3>An electron's mass, entirely from its own field</h3>
+      <p>The specific calculation used here was worked out by the German physicist Klaus Lux and shared with
+        the author by personal correspondence in 2018. Lux modeled the electron as a small charged sphere with
+        a field reaching to infinity — mathematically identical to a spherical capacitor whose outer plate sits
+        infinitely far away — and derived the energy stored in that field directly. The result, once the
+        classical electron radius <span class="inline-formula" data-katex="R_e"></span> is substituted in, is
+        strikingly simple:
+        <span class="inline-formula" data-katex="m_e = \dfrac{e^2}{10^7\, R_e}"></span>
+        — where the constant <span class="inline-formula" data-katex="10^7"></span> is a fixed combination of
+        the vacuum permeability and the speed of light that happens to land close to that round number in SI
+        units. Plugging in the numbers gives 9.109382913&times;10<sup>-31</sup> kg against a measured electron
+        mass of 9.109383561&times;10<sup>-31</sup> kg — agreement to seven significant figures.</p>
+
+      <p>That result needs one honest caveat the book itself raises: the classical electron radius is itself
+        defined using the electron's mass, so this isn't a derivation of the electron's mass out of nothing. What
+        it does show is that the electron's mass and its own field self-energy can safely be treated as the same
+        quantity — which is the premise the rest of this chapter builds on.</p>
+
+      <details class="expand">
+        <summary>The 4/3 problem, and who else worked on this</summary>
+        <div class="expand-body">
+          <p>Between 1882 and 1904, several physicists pursued the same idea in more detail — most notably
+            Hendrik Lorentz — and concluded that a moving electron's electromagnetic mass should be
+            <span class="inline-formula" data-katex="\tfrac{4}{3}"></span> of its field energy divided by
+            <span class="inline-formula" data-katex="c^2"></span>. Wilhelm Wien (1900) and Max Abraham (1902)
+            then argued this meant <em>all</em> mass, everywhere, was electromagnetic in origin. The awkward
+            factor of 4/3 violates special relativity, and over the following decades Fermi, Dirac, Rohrlich,
+            and Schwinger each showed how it disappears once the calculation is done in a properly relativistic
+            way. In 2011, Valery Morozov pinned the correction down precisely: a moving charged sphere carries a
+            flux of non-electromagnetic energy whose impulse is exactly one-third of the sphere's own
+            electromagnetic impulse — which the book suggests is the same effect behind the extra factor of
+            one-half in Klaus Lux's own calculation above.</p>
+        </div>
+      </details>
+
+      <p>The book is pointed about why this line of reasoning matters: "for unclear reasons," electromagnetic
+        explanations of mass have been set aside in recent decades in favor of the Higgs mechanism — which,
+        unlike the self-energy picture above, doesn't predict any particle's specific mass on its own.</p>
+
+      <h3>How well does force strength track mass?</h3>
+      <p>If mass really is a side effect of charge, the ratio between any two particles' masses should roughly
+        match the ratio between the strengths of the forces they carry. Lined up naively, the fit is suggestive
+        but loose: the electron-neutrino is about 7.3 million times lighter than the electron, while the
+        weak-to-electromagnetic coupling ratio is only about 26,600 — off by a factor of 160. The proton fares
+        better, off by only a factor of 4.5 from the electromagnetic-to-strong ratio.</p>
+
+      <p>Chasing that gap down requires the weak coupling constant itself, calculated more precisely from the
+        ratio of two particles' decay times — the weakly-decaying <span class="inline-formula" data-katex="\Delta^+"></span>
+        boson against the strongly-decaying <span class="inline-formula" data-katex="\Sigma^+"></span> boson —
+        which yields <span class="inline-formula" data-katex="\alpha_W = (1.017 \pm 0.012)\times 10^{-7}"></span>.
+        Multiplying that by the average up- and down-quark mass predicts an electron-neutrino mass of
+        <span class="inline-formula" data-katex="(6.29 \pm 0.98)\times 10^{-37}\ \text{kg}"></span> against a
+        measured average (from 2022 beta-decay bounds) of
+        <span class="inline-formula" data-katex="(6.3 \pm 8.7)\times 10^{-37}\ \text{kg}"></span> — a 99.84%
+        agreement, and well within the (admittedly wide) margins of error either way.</p>
+
+      <h3>Why the neutron outweighs the proton</h3>
+      <p>Down-quarks carry slightly more mass than up-quarks, so the neutron — two downs and an up — ends up
+        heavier than the proton — two ups and a down. The size of that gap, only about 2.5 electron masses, is
+        the book's clue to where it comes from: a free neutron decays into a proton, an electron, and an
+        antineutrino, and those escaping particles need enough shared energy to carry matching momentum, which
+        works out to roughly that same 2.5-electron-mass surplus. Why is it the neutron that's heavier, and not
+        the proton? The book's answer is entropy: beta decay turns one particle into three, which is
+        overwhelmingly the more likely direction; running it backward requires three specific particles to
+        converge on the same point at once, which is why the reverse reaction only happens under the crushing
+        density of a neutron star or a black hole.</p>
+
+      <details class="expand">
+        <summary>An unsolved piece: the W- and Z-bosons</summary>
+        <div class="expand-body">
+          <p>The book is candid that this model, on its own, has nothing to say about why the W- and Z-bosons
+            are so heavy. It offers one tentative bridge back to <a href="spd.html#testing-it">Space Particle
+            Dualism's critical photon energy</a>: two merging critical-energy photons, divided by the strong
+            coupling at the so-called Z-pole, land within 37% of the actual W/Z average mass (54% of the
+            Higgs boson's mass); a single critical-energy photon alone does better, landing within 74% (93% of
+            the Higgs mass). Both are order-of-magnitude matches at best, and the book treats the gap as
+            possibly explainable by the running of coupling rather than as a settled result — this is the one
+            calculation in the chapter that leans on SPD rather than standing on self-energy alone. By the same
+            logic in reverse, gluons — the strong force's own carrier particle — would be predicted to have an
+            almost immeasurably small mass, around 5&times;10<sup>-42</sup> kg, too small to slow them down at all.</p>
+        </div>
+      </details>
+
+      <p class="caveat">The comparison below leans on the Higgs mechanism as a foil, so it's worth being precise
+        about what's actually well-tested and what isn't. The Higgs <em>boson</em> and its basic role in
+        electroweak symmetry breaking are firmly established — its 2012 discovery at the LHC matched
+        predictions closely. What the book disputes is narrower: whether the Higgs mechanism is the right
+        explanation for <em>ordinary fermion</em> masses, given that it supplies no predictions for what those
+        masses should actually be. That's a genuine, open gap in the Standard Model, not a rejection of a
+        well-confirmed result.</p>
+
+      <div class="interp-list">
+        <div class="interp-row">
+          <span>
+            <span class="interp-name">Electromagnetic mass theory</span>
+            <span class="interp-meta">Thomson, Lorentz, Wien, Abraham &middot; 1881&ndash;1904</span>
+          </span>
+          <p class="interp-status">The historical predecessor this chapter revives: mass as field self-energy.
+            Predicted no specific particle masses beyond the electron, and was set aside once the flawed 4/3
+            factor (later resolved) made it look inconsistent with relativity.</p>
+        </div>
+        <div class="interp-row">
+          <span>
+            <span class="interp-name">Higgs mechanism</span>
+            <span class="interp-meta">Standard Model &middot; 1964 onward</span>
+          </span>
+          <p class="interp-status">Well-confirmed as an account of electroweak symmetry breaking, but — as the
+            book notes and as is widely acknowledged — it supplies no first-principles prediction for any
+            individual fermion's mass; those are put in by hand as free parameters.</p>
+        </div>
+        <div class="interp-row">
+          <span>
+            <span class="interp-name">Koide's formula</span>
+            <span class="interp-meta">Yoshio Koide &middot; 1981</span>
+          </span>
+          <p class="interp-status">An empirical relationship between the electron, muon, and tauon masses with
+            no accepted derivation in the Standard Model — the puzzle this chapter's next section tries to
+            actually explain rather than just note.</p>
+        </div>
+        <div class="interp-row is-current">
+          <span>
+            <span class="interp-name">Charge Mass Dualism</span>
+            <span class="interp-meta">Sky Darmos (2017&ndash;2024) &middot; this page</span>
+          </span>
+          <p class="interp-status">The book's own proposal: fermion mass is field self-energy throughout, with
+            the muon and tauon arising from merged electron elementary spaces — extending, rather than
+            replacing, the 19th-century electromagnetic mass idea above.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PREDICTING THE MUON AND TAUON
+     ============================================================ -->
+<section id="muon-tauon-mass" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">From speculation to a number</p>
+      <h2>Predicting the muon and the tauon</h2>
+    </div>
+
+    <div class="prose">
+      <p><a href="spd.html#mass-out-of-light">Space Particle Dualism's own account of rest mass</a> speculated
+        that the muon and tauon are two or three electron elementary spaces merged into one, with the surplus
+        charge escaping as one or two positrons. This chapter tries to turn that qualitative story into an
+        actual predicted number — and the target it's measured against is the <strong>Koide formula</strong>, a
+        relationship the Japanese physicist Yoshio Koide noticed in 1981 between the three charged leptons'
+        masses, with no accepted explanation inside the Standard Model:
+        <span class="inline-formula" data-katex="\dfrac{m_e + m_\mu + m_\tau}{\left(\sqrt{m_e} + \sqrt{m_\mu} + \sqrt{m_\tau}\right)^2} = \dfrac{2}{3}"></span>.</p>
+
+      <p>Treating the muon and tauon as literally 2 and 3 merged electron charges, and plugging their masses
+        straight into the electromagnetic mass formula above, gives only a 58% match to that ratio. The book
+        then works through several physical refinements in sequence, each correcting the last:</p>
+
+      <details class="expand">
+        <summary>The chain of corrections, step by step</summary>
+        <div class="expand-body">
+          <p><strong>Accounting for the polarized-vacuum cloud.</strong> A stronger charge polarizes a larger
+            cloud of virtual positrons around it, and that cloud's own volume — not just the source charge —
+            contributes mass. Scaling mass by the cube of the charge count instead of the square brings the
+            Koide match to 92%.</p>
+          <p><strong>Accounting for confinement.</strong> Two electrons can share the same space if their spins
+            are opposite, but a third electron crowds the other two, shrinking the effective confinement radius.
+            Correcting for this pushes the Koide match to 98%, and the raw predicted masses to about
+            201 <span class="inline-formula" data-katex="m_e"></span> for the muon (97% of the true 207
+            <span class="inline-formula" data-katex="m_e"></span>) and 3,435 <span class="inline-formula" data-katex="m_e"></span>
+            for the tauon (99% of the true 3,477 <span class="inline-formula" data-katex="m_e"></span>) — after
+            multiplying both by <span class="inline-formula" data-katex="\pi"></span>, a factor the book notices
+            fits almost too well and flags for that reason.</p>
+          <p><strong>Running of coupling.</strong> Using the electromagnetic coupling constant evaluated at the
+            classical electron radius, rather than its low-energy value, sharpens the muon to 205.44
+            <span class="inline-formula" data-katex="m_e"></span> (99.36%) and the tauon to 3,510.13
+            <span class="inline-formula" data-katex="m_e"></span> (99.06%).</p>
+          <p><strong>Binding energy.</strong> Merging charges releases negative potential energy, which
+            <em>reduces</em> the resting mass slightly — but that same energy has to be supplied again as input
+            energy when a muon or tauon is actually created in a collision, and it's the input energy that
+            particle-physics experiments typically measure. Accounting for both versions moves the numbers
+            around (down to 98.15%/99.30% for the true rest mass, back up to 99.43%/98.82% for the
+            "apparent," input-energy version) without changing the overall picture much.</p>
+          <p><strong>Emitted positrons.</strong> Charge conservation requires one or two positrons to escape
+            during the merger, carrying away some of that input energy. Subtracting their mass brings the final
+            figures to 206.95 <span class="inline-formula" data-katex="m_e"></span> for the muon (99.91%) and
+            3,515.59 <span class="inline-formula" data-katex="m_e"></span> for the tauon (98.91%) — a combined
+            Koide-ratio agreement of 99.85%.</p>
+        </div>
+      </details>
+
+      <p class="caveat">Each step above is physically motivated on its own terms, but the sequence as a whole is
+        also a story of successive free parameters being added one at a time, each chosen partly because it
+        moved the result closer to the electron/muon/tauon masses already known from measurement. The book's
+        own calculation of the odds of reaching this precision by chance — 0.000038% — is a statement about how
+        unlikely the <em>final digits</em> are to line up this well if the model were arbitrary, not an
+        independent, blind test of the model itself. Treat the closeness of fit with that in mind.</p>
+
+      <p>The book also notes a possible independent hint: the CERN and Brookhaven <em>muon g&minus;2</em>
+        experiments (1959&ndash;2006), later confirmed by Fermilab in 2021, measured the muon's magnetic moment
+        slightly off from the Standard Model's predicted value — a discrepancy whose ultimate size, and even
+        whether it constitutes new physics at all, is itself still debated in the literature on how to calculate
+        the Standard Model prediction. The book speculates that some of that gap could be explained by the same
+        potential energy this chapter uses to build the muon in the first place, though it stops short of
+        working the connection through in detail.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FLAVOR MIXING
+     ============================================================ -->
+<section id="flavor-mixing" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Back to the Similar-Worlds Interpretation</p>
+      <h2>Flavor mixing, real and apparent</h2>
+    </div>
+
+    <div class="prose">
+      <p>An electron can be in superposition of spinning up and spinning down, or of going left and going
+        right — but it can never be in superposition of <em>being an electron</em> and being a positron. Some
+        neutral particles break that rule, though: neutrinos are permanently in superposition of being electron-,
+        muon-, and tau-flavored, and some neutral mesons (the K-mesons, or kaons) exist only as a superposition
+        of two different quark compositions. Standard quantum mechanics doesn't explain why some particle
+        properties can mix like this and others can't.</p>
+
+      <p><a href="swi.html#core-idea">The Similar-Worlds Interpretation</a> offers a candidate answer: we
+        co-exist in every world that's currently indistinguishable from every other, and that can include worlds
+        where a particle's very <em>identity</em> differs, as long as nothing yet reveals which identity is
+        "real." How long such an identity-superposition can last is set by the energy-time uncertainty relation,
+        <span class="inline-formula" data-katex="\Delta t = \dfrac{\hbar}{2\,\Delta E}"></span>, where
+        <span class="inline-formula" data-katex="\Delta E"></span> is the energy difference the environment
+        would need to detect. For a hypothetical proton-neutron superposition, that works out to about
+        2.2&times;10<sup>-24</sup> seconds — far too brief for the proton's easily-detectable electric charge to
+        stay hidden, which is exactly why charge conservation holds so reliably in practice. Neutrinos have no
+        electric charge to give them away, and interact so weakly that a lead block a light-year thick would
+        stop only half of them; a neutrino's flavor-identity can stay superposed for roughly
+        10<sup>15</sup> seconds or more, which is what makes real flavor oscillation — a neutrino "shape-shifting"
+        between types as it travels — possible at all.</p>
+
+      <h3>Mass without oscillation</h3>
+      <p>Even when a particle's identity-superposition is too short-lived to ever fully oscillate — an electron
+        genuinely can't become a muon — the book argues a sliver of that other identity still leaks into the
+        particle's effective mass, in proportion to how much of a full identity-cycle elapses during that brief
+        window. That splits every mass into an "unmixed" (bare, never directly observed) value and a "mixed"
+        (measured) value, connected by clean conversion factors:
+        <span class="inline-formula" data-katex="C_e = 1 + \dfrac{1}{2\pi} \approx 1.159"></span>,
+        <span class="inline-formula" data-katex="C_\mu = 1"></span> exactly — the muon, sitting between the
+        other two, turns out to be immune to the effect — and
+        <span class="inline-formula" data-katex="C_\tau = 1 - \dfrac{1}{2\pi} \approx 0.841"></span>.</p>
+
+      <p>Applying these factors to the previous section's tauon calculation initially makes things
+        <em>worse</em> (down to 98.53% agreement), until one further correction is layered in: extrapolating the
+        muon's own small remaining error, scaled by the tauon-to-muon mass ratio, up to the tauon. That step is
+        explicitly a plausibility check rather than a derivation in its own right, but doing it lands the tauon
+        mass at 3,476.83 <span class="inline-formula" data-katex="m_e"></span> — a 99.99% agreement with the
+        CODATA-recommended tauon mass, and a match to four of the five individual published tau-mass
+        measurements (1992&ndash;2020) within their own margins of error. Only the CODATA average itself misses,
+        which the book attributes to that average's stated uncertainty being a purely statistical figure across
+        five very different experiments, understating the real systematic spread.</p>
+
+      <p>As a loose, independent-looking hint rather than a proof, the book points out that the same
+        <span class="inline-formula" data-katex="1 + \tfrac{1}{2\pi}"></span> factor from the electron's own
+        mixing shows up again in the ratio between the observed and predicted values in the muon g&minus;2
+        experiments discussed above (1.153 observed against 1.159 predicted) — suggestive, but a single numerical
+        coincidence, not a second derivation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SPIN ENERGY
+     ============================================================ -->
+<section id="spin-energy" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">A real effect, applied to a hypothetical particle</p>
+      <h2>The hidden energy of spin</h2>
+    </div>
+
+    <div class="prose">
+      <p>Two chapters back, the leftover gap in the muon and tauon mass predictions was attributed, tentatively,
+        to "probably spin." This section tries to actually calculate that contribution rather than just gesture
+        at it. The underlying physics is the <strong>Zeeman effect</strong> — the genuinely well-established
+        splitting in energy between aligned and anti-aligned spin states, familiar from atomic spectroscopy —
+        applied here to the merging electron charges that are supposed to form a muon or tauon.</p>
+
+      <p>Working out the electric field each merging charge is subjected to, and the speed each charge must be
+        moving at (drawn from the binding energy calculated earlier, split evenly between the merging charges),
+        gives a magnetic field, and from there a spin-alignment energy via
+        <span class="inline-formula" data-katex="U = g_e\,\mu_S\,B"></span>, where <span class="inline-formula" data-katex="g_e"></span>
+        is the electron's own magnetic moment. For the muon, this closes a 97.19% match against the residual gap
+        the earlier chapter had left unexplained. For the tauon — after folding in the extra scaling factors for
+        the larger polarized-vacuum cloud, the tauon's own confinement correction, and the flavor-mixing factor
+        from the previous section — the match is 89.77%.</p>
+
+      <p>Net effect on the overall picture: folding spin energy into the muon and tauon masses raises the
+        average accuracy of both predictions from 99.41% (using only the corrections from the two previous
+        sections) to 99.914% — 206.7734 <span class="inline-formula" data-katex="m_e"></span> for the muon
+        against a measured 206.7683 <span class="inline-formula" data-katex="m_e"></span> (99.998%), and
+        3,483.04 <span class="inline-formula" data-katex="m_e"></span> for the tauon against a measured
+        3,477.22 &plusmn; 0.23 <span class="inline-formula" data-katex="m_e"></span> (99.83%).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     REST SURFACE / RELATIVITY
+     ============================================================ -->
+<section id="rest-surface" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Walking back an assumption, then reaching further</p>
+      <h2>One rest surface, and a speculative leap into relativity</h2>
+    </div>
+
+    <div class="prose">
+      <p>Earlier chapters had scaled each particle type's elementary-space size by a different constant, tied to
+        the strength of whichever force that particle carries. This chapter reverses that choice: if the three
+        fundamental forces really do converge in strength at high energy, as grand unification proposes, then
+        every particle's underlying, "naked" surface ought to be exactly the same size — and the different
+        masses we actually observe come entirely from how strongly each type of charge polarizes the vacuum
+        around it, which is just the ordinary running of coupling, not from differently-sized fundamental
+        surfaces. That gives a single "rest surface" formula for fermions,
+        <span class="inline-formula" data-katex="A_E = \dfrac{16\pi G_E^{\,2}\, m_e}{c^4}"></span>, and a
+        matching circumference formula for a massless boson like the photon — bosons, having only one complex
+        dimension to their elementary space rather than the two a fermion has, don't get a full real surface at
+        all.</p>
+
+      <h3>A more speculative reach: deriving relativity itself</h3>
+      <p>The book then tries something considerably more ambitious. A moving charge's magnetic field is,
+        classically, just its electric field as seen through Lorentz contraction — the textbook explanation for
+        how relativity itself makes magnets work. If mass really is electromagnetic self-energy, the book
+        argues, then the ordinary relativistic increase in a particle's mass at high speed literally
+        <em>is</em> that same magnetic-energy increase. Since an elementary space's size tracks its particle's
+        energy, a fast-moving particle's elementary space should grow too — uniformly, in every direction — which
+        raises an immediate puzzle: ordinary length contraction only happens along the direction of motion, not
+        in every direction. The book's proposed resolution is that the growth is only apparent from <em>outside</em>
+        the moving frame; from inside, nothing looks different, because every relevant constant would have grown
+        together in a way that cancels out internally — and reinterpreting that outside view as an
+        effective slowing of light's speed inside the moving frame is what the book suggests could generate
+        length contraction and time dilation together, as a package.</p>
+
+      <p>This is the most speculative material on the page, and the book is unusually candid about that itself:
+        it explicitly says this chain of reasoning "would have to be shown in a more rigorous way" before it
+        could count as an actual derivation of special relativity, and at one point flags its own argument as
+        possibly circular — "this may sound like a tautology, and it might be one." It's included here as a
+        research direction the book is actively gesturing toward, not as a completed result.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTING IT
+     ============================================================ -->
+<section id="testing-it" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">From formula to (an admittedly tiny) experiment</p>
+      <h2>Testing it: a prediction too small to measure</h2>
+    </div>
+
+    <div class="prose">
+      <p>Granular space should make any particle's path slightly longer than a perfectly straight line, through
+        a kind of microscopic zig-zagging as it threads between overlapping elementary spaces:
+        <span class="inline-formula" data-katex="\Delta x_{\text{del}}(x) = x\,\dfrac{G}{G_E}"></span>. For a
+        one-meter path, that extra length comes out to roughly 8&times;10<sup>-37</sup> m — a particle would need
+        to travel about 1.24&times;10<sup>36</sup> meters before that zig-zagging added up to a single extra
+        meter. Applying the formula to light crossing the entire visible universe, using the book's own
+        roughly-42-trillion-year age estimate, gives a total extra path length on the order of
+        10<sup>-15</sup> m.</p>
+
+      <p><strong>Status: real prediction, not a measurable one.</strong> Unlike the experiments proposed
+        elsewhere on this site — unbuilt, but buildable in principle — the book's own conclusion here is blunter:
+        "its incredible smallness makes it untestable." If the effect were larger, it might show up as an
+        anomalous redshift for the most distant observed objects, but at this scale there's no proposed
+        instrument, current or future, that could ever isolate it from ordinary noise.</p>
+
+      <h3>A consistency check on the hierarchy problem</h3>
+      <p>The chapter closes by revisiting <a href="spd.html#density-of-space">Space Particle Dualism's own
+        hierarchy-problem estimate</a> with a far more careful count. Rather than treating every virtual particle
+        in the vacuum as an identical photon, this version weights each particle type by its own elementary-space
+        size, then sums across a full census of the Standard Model's 17 fundamental particle types and their
+        exotic-matter counterparts — and, more carefully still, by how many individual quarks sit inside each of
+        hundreds of known mesons and baryons. The refined estimate lands at somewhere between
+        1.4&times;10<sup>69</sup> and 3.4&times;10<sup>69</sup> connections per elementary space, depending on
+        exactly how compound particles are counted — close to, but still safely under, the roughly
+        10<sup>70</sup> ceiling the theory requires for space to feel convincingly three-dimensional. The book is
+        explicit about why that matters: "it is good that our result here did not exceed this value. If it did,
+        the theory would be in serious trouble." The same calculation also shows that massive fermions dominate
+        this connectivity almost entirely — massless photons alone contribute a comparatively negligible
+        3.4&times;10<sup>60</sup>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DEVELOPMENT NOTES
+     ============================================================ -->
+<section id="development-notes" class="section-dark">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Dated, the way the book dates everything</p>
+      <h2>How this theory grew, in the book's own notes</h2>
+      <p>Every idea in the book carries the date it was first conceived — including the ideas it later walked
+        back. A sample of this one's history, from an abandoned first attempt on the muon to the most recent
+        correction:</p>
+    </div>
+
+    <div class="timeline mini-timeline">
+      <div class="tl-item">
+        <span class="tl-year">16 Jul 2014</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>A wrong turn: degeneracy pressure</h4>
+          <p>The earliest attempt to explain the muon's extra mass, later abandoned once the merged-charges
+            picture below replaced it.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">15 Jul 2017</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>A first neutrino mass estimate</h4>
+          <p>The opening attempt to extend electromagnetic mass theory to the weak force, later replaced by a
+            more precise weak-coupling derivation.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">23&ndash;24 Jun 2018</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Klaus Lux's electron mass calculation</h4>
+          <p>The self-energy derivation this chapter is built around, adopted by personal correspondence and
+            matching the electron's measured mass to seven significant figures.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2&ndash;9 Feb 2023</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>The Koide ratio climbs past 90%</h4>
+          <p>Accounting for the polarized-vacuum cloud and electron confinement pushes the muon/tauon prediction
+            from a 58% to a 98% match.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">25 Feb &ndash; 7 Mar 2023</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Non-oscillating flavor mixing</h4>
+          <p>Introducing unmixed-versus-mixed masses eventually resolves the tauon prediction to 99.99% against
+            the CODATA value.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">22 Mar &ndash; 13 May 2023</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Spin energy, calculated directly</h4>
+          <p>Replacing the earlier "probably spin" guess with an actual Zeeman-effect-style calculation, raising
+            the combined muon/tauon accuracy to 99.914%.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">29 Mar &ndash; 2 Apr 2018</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Unitary rest surface, and a reach into relativity</h4>
+          <p>Walking back the idea that different forces need differently-scaled elementary spaces, then
+            speculating that special relativity itself might follow from the same picture.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">26 Apr 2019</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>The granularity delay, recalculated</h4>
+          <p>Reworking the photon path-length prediction using the book's own (much older) age of the universe
+            — and concluding the effect is real but permanently unmeasurable.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">18 Sep 2024</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>A corrected neutrino mass</h4>
+          <p>Fixing a mistake in the original 2017 calculation, reaching 99.84% agreement with the measured
+            electron-neutrino mass — the most recent revision in this chapter.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-dark">
+  <div class="wrap page-footer-nav">
+    <a class="pfn-back" href="../index.html#theories">
+      <span class="pfn-label">All theories</span>
+      &larr; Back to the six theories
+    </a>
+    <a href="eec.html">
+      <span class="pfn-label">Next theory &middot; 2013</span>
+      Entropic Expansion Cosmology &rarr;
+    </a>
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer section-dark">
+  <div class="wrap">
+    <div class="footer-row">
+      <a class="wordmark" href="../index.html#top" style="color:var(--cream)">Elementary Spaces</a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="../index.html#theories">Theories</a>
+        <a href="../index.html#problems">Problems</a>
+        <a href="../index.html#timeline">Timeline</a>
+        <a href="../index.html#concepts">Concepts</a>
+        <a href="../index.html#formulae">Formulae</a>
+        <a href="../index.html#about">About</a>
+      </nav>
+    </div>
+    <p class="footer-note">An independent companion guide to <em>The Complete Guide to Quantum Gravity</em>
+      by Sky Darmos. Not peer-reviewed, not affiliated with any research institution, and not an assessment
+      of the theory's validity — a map for navigating what the book itself claims.</p>
+  </div>
+</footer>
+
+<script defer src="../js/script.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+
+</body>
+</html>

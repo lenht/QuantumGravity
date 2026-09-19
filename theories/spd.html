@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Space Particle Dualism — Elementary Spaces</title>
+<meta name="description" content="A deep dive into Sky Darmos's Space Particle Dualism: particles as complex-valued spherical surfaces, why the Standard Model's three forces need no symmetry breaking, the hierarchy problem, and the slit experiment proposed to test it.">
+<meta name="theme-color" content="#3D5A6E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body style="--theory-accent: var(--acc-spd);">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="nav-row">
+    <a class="wordmark" href="../index.html#top">Elementary Spaces <small>a guide to Sky Darmos's quantum gravity</small></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle menu"><span></span></button>
+    <nav class="primary-nav" id="primaryNav">
+      <a href="../index.html#theories">Theories</a>
+      <a href="../index.html#problems">Problems</a>
+      <a href="../index.html#timeline">Timeline</a>
+      <a href="../index.html#concepts">Concepts</a>
+      <a href="../index.html#formulae">Formulae</a>
+      <a href="../index.html#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================================================
+     SUBHERO
+     ============================================================ -->
+<section class="hero subhero section-dark" id="top">
+  <div class="wrap">
+    <p class="breadcrumb">
+      <a href="../index.html#top">Elementary Spaces</a><span class="sep">/</span><a href="../index.html#theories">Theories</a><span class="sep">/</span><span class="current" aria-current="page">Space Particle Dualism</span>
+    </p>
+
+    <div class="hero-grid" style="margin-top:2rem;">
+      <div>
+        <p class="hero-eyebrow">Theory 2 of 6 &middot; conceived 2005, on a car ride near Skala, Greece</p>
+        <h1>Space is made of overlapping spheres</h1>
+        <p class="dek">The book's second founding idea gives every particle its own small, complex-valued
+          spherical surface instead of treating it as a point. Overlap enough of these "elementary spaces"
+          and you get the three-dimensional space we live in — and, the book argues, the Standard Model's
+          three forces fall out of the same structure without ever needing a Higgs field, an electroweak
+          unification, or a grand-unified symmetry break. This page covers how that picture is built, what it
+          predicts about the size of a particle, and the experiment proposed to actually measure one.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#core-idea">Read the core idea</a>
+          <a class="subhero-back" href="../index.html#theories">&larr; Back to the six theories</a>
+        </div>
+
+        <div class="framing-box compact">
+          <strong>A note on what's below.</strong> Most of this page reinterprets open or genuinely
+          unresolved questions — what gives particles mass, why gravity is so weak, how large the vacuum's
+          energy really is. A few sections go further and reject parts of particle physics that are very
+          well tested experimentally, including the electroweak theory and the Higgs mechanism. Those are a
+          sharper break from consensus physics than most of this site's other claims, and they're flagged
+          again where they come up.
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="180" fill="none" stroke="#F0EAE0" stroke-opacity="0.08"/>
+          <circle cx="200" cy="200" r="130" fill="none" stroke="#F0EAE0" stroke-opacity="0.11"/>
+          <circle cx="148" cy="200" r="112" fill="#5b8fa8" fill-opacity="0.4" stroke="#F0EAE0" stroke-opacity="0.4"/>
+          <circle cx="252" cy="200" r="112" fill="#D9C9A8" fill-opacity="0.55" stroke="#F0EAE0" stroke-opacity="0.4"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ON-PAGE TOC
+     ============================================================ -->
+<nav class="toc-nav" aria-label="On this page">
+  <div class="wrap toc-row">
+    <a class="toc-link" href="#core-idea">The core idea</a>
+    <a class="toc-link" href="#three-forces">Three forces, one geometry</a>
+    <a class="toc-link" href="#not-a-riemann-sphere">A necessary caution</a>
+    <a class="toc-link" href="#density-of-space">The density of space</a>
+    <a class="toc-link" href="#testing-it">Testing it: probing a particle</a>
+    <a class="toc-link" href="#mass-out-of-light">Mass out of light</a>
+    <a class="toc-link" href="#development-notes">Development notes</a>
+  </div>
+</nav>
+
+<!-- ============================================================
+     CORE IDEA
+     ============================================================ -->
+<section id="core-idea" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Where the theory starts</p>
+      <h2>A particle is a surface, not a point</h2>
+    </div>
+
+    <div class="prose">
+      <p>General relativity is built on point particles sitting inside a smooth, continuous spacetime.
+        Space Particle Dualism starts from the opposite assumption: every particle carries its own
+        "elementary space" — a small, two-dimensional spherical surface, sized directly by the particle's
+        own mass-energy —
+        <span class="inline-formula" data-katex="R_E = \dfrac{2\,G_E\,E}{c^{4}}"></span> —
+        where <span class="inline-formula" data-katex="G_E"></span> is a new constant, scaled to the
+        strength of electromagnetism rather than gravity. Billions of these surfaces, mostly belonging to
+        the virtual particles constantly flickering in and out of the vacuum, overlap into the smooth
+        three-dimensional space we move through. On this picture, space and matter were never two different
+        things to begin with.</p>
+
+      <h3>Complex mass, and four kinds of matter</h3>
+      <p>The book treats a particle's mass-energy as a complex number, <span class="inline-formula"
+        data-katex="E_{\mathbb{C}} = a + bi"></span>, oscillating continuously between its real part
+        <em>a</em> and its imaginary part <em>b</em>. A "measurement" just catches that oscillation at one
+        instant. Sorting particles by the sign of each part gives four categories, not two: ordinary matter
+        (both parts positive), antimatter (real positive, imaginary negative — matching John Wheeler's own
+        observation that positrons behave like electrons running backward in time), and two categories with
+        no Standard Model counterpart at all: exotic matter (both parts negative) and exotic antimatter.
+        The book takes this literally — exotic matter isn't a metaphor for dark matter, it's a distinct
+        particle type this framework predicts should exist.</p>
+
+      <details class="expand">
+        <summary>An early wrong turn: radius versus surface area</summary>
+        <div class="expand-body">
+          <p>The first version of this idea plugged the complex energy straight into the radius formula and
+            squared it to get a surface area. Because squaring a complex number scrambles its signs — <span
+            class="inline-formula" data-katex="(a+bi)^2 = a^2 + 2abi - b^2"></span> — this produced
+            elementary spaces whose sign didn't match their own source particle's sign, which the book flags
+            as an unacceptable extra degree of freedom with no physical meaning: a particle and its own
+            surface are supposed to be the same fact, not two independently-signed ones.</p>
+          <p>The fix was to recognize that a complex sphere's radius has to be a real, absolute-value
+            quantity, not a complex one — so the real and imaginary parts of the energy each get their own
+            real radius, and those two radii add together to make the particle's full elementary space. Once
+            that correction is made, the four sign-combinations above fall out cleanly, with no leftover
+            ambiguity.</p>
+        </div>
+      </details>
+
+      <h3>The surface <em>is</em> the particle</h3>
+      <p>An earlier draft of the theory kept the particle and its elementary space as two separate things —
+        a point riding on, or orbiting inside, its own surface. The book now treats that distinction as a
+        confusion: there's no particle apart from the surface. What's usually called "rest mass" is just the
+        rest-surface; what's usually called relativistic mass or energy is the same surface grown larger.
+        The continuous appearing and disappearing of that surface — oscillating through every complex value
+        that shares the same absolute size — is what generates the particle's wavefunction in the first
+        place, not a hidden classical object bouncing around underneath it.</p>
+
+      <details class="expand">
+        <summary>Where exotic matter is supposed to be</summary>
+        <div class="expand-body">
+          <p>Exotic matter has negative inertial mass, which means — unlike ordinary matter — it repels its
+            own kind. The book's proposal is that this repulsion locks exotic matter into a rigid lattice, a
+            "Wigner crystal," spanning the entire universe: the very first structure to exist, on this
+            account. Ordinary matter is then drawn toward the lattice points, flipping their net mass
+            positive and triggering the collapse of the crystal into what becomes a sea of primordial black
+            holes. This is a much more specific and unusual cosmological claim than most of what's on this
+            page — mainstream cosmology has no comparable "exotic matter crystal" concept — and it's included
+            here as the book's own account of where its own predicted particle type would actually be.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     THREE FORCES, ONE GEOMETRY
+     ============================================================ -->
+<section id="three-forces" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Where the Standard Model's structure comes from</p>
+      <h2>Three forces, one nested geometry</h2>
+      <p>The Standard Model's symmetry group, <span class="inline-formula"
+        data-katex="SU(3)\times SU(2)\times U(1)"></span>, is usually explained as the leftover shape of a
+        larger, unbroken symmetry that existed at very high energy and then broke as the universe cooled.
+        The book argues that no such breaking is needed — that the structure is already implied by which
+        number systems each elementary space is built from.</p>
+    </div>
+
+    <div class="prose">
+      <p>Complex numbers have the symmetry group <span class="inline-formula" data-katex="U(1)"></span>.
+        Quaternions — a four-part extension of complex numbers, where multiplication order starts to
+        matter — have the symmetry group <span class="inline-formula" data-katex="SU(2)"></span>, and
+        contain the complex numbers inside them. Octonions — an eight-part extension where even grouping
+        order stops mattering — have the symmetry group <span class="inline-formula" data-katex="G_2"></span>,
+        which contains <span class="inline-formula" data-katex="SU(3)"></span>. The book's proposal is that
+        photons and electrons are built from complex-valued elementary spaces, W- and Z-bosons and neutrinos
+        from quaternionic ones, and quarks and gluons from octonionic ones — and because each number system
+        already contains the simpler one, the nesting comes for free: quarks feel all three forces, W- and
+        Z-bosons feel two, and electrons and photons feel only one, exactly matching what's observed, with no
+        undiscovered particle zoo required to make it work.</p>
+
+      <details class="expand">
+        <summary>The original, cruder version of this idea</summary>
+        <div class="expand-body">
+          <p>The first attempt (2005–2006) simply assigned one-dimensional elementary spaces to <span
+            class="inline-formula" data-katex="U(1)"></span>, two-dimensional ones to <span
+            class="inline-formula" data-katex="SU(2)"></span>, and the emergent overlap-space itself to <span
+            class="inline-formula" data-katex="SU(3)"></span>. The book now lists its own flaws with that
+            version: an elementary space doesn't gain new degrees of freedom just from which way it happens
+            to point in 3D space, since physics is the same in every direction; and the emergent overlap-space
+            isn't compactified the way true elementary spaces are, so its symmetry group should really have
+            been the larger <span class="inline-formula" data-katex="SL(3,\mathbb{C})"></span>, not <span
+            class="inline-formula" data-katex="SU(3)"></span>. Moving to quaternions and octonions for the
+            weak and strong force was the fix.</p>
+        </div>
+      </details>
+
+      <p class="caveat">This section's two specific rejections — of electroweak unification and of grand
+        unification — deserve a stronger caveat than most of this site's claims. Grand unification (GUT) is
+        genuinely speculative and untested; no experiment has ever probed its proposed energy scale. But the
+        electroweak theory itself, which the book also calls "false," is one of the most thoroughly tested
+        parts of the Standard Model — the W and Z bosons' masses, and the 2012 discovery of the Higgs boson,
+        match its predictions precisely. The book's specific objection is that nobody has observed the
+        symmetry being <em>fully restored</em> at high energy, which is a narrower and more exotic claim
+        about the theory's deep ultraviolet behavior than most physicists would use the word "false" for.</p>
+
+      <p>Specifically: the book notes that electroweak theory predicts the W- and Z-bosons should become
+        massless once collisions reach the symmetry-restoration energy of 246 GeV — but particle accelerators
+        already reach 6,500 GeV, more than 25 times that, without anyone observing it. Likewise for grand
+        unification: popular diagrams showing the three forces' coupling constants converging at high energy
+        are, per the book, an oversimplification — the lines come close but don't actually meet, any more
+        than two non-parallel lines crossing implies they were ever the same line.</p>
+    </div>
+
+    <div class="section-head" style="margin-top:2.5rem;">
+      <p class="eyebrow">How the book positions its own idea</p>
+      <h2>Explaining mass and unification, by the book's own reckoning</h2>
+    </div>
+
+    <div class="interp-list">
+
+      <div class="interp-row">
+        <span>
+          <span class="interp-name">Standard Model + Higgs mechanism</span>
+          <span class="interp-meta">Widely accepted &middot; 1964 onward</span>
+        </span>
+        <p class="interp-status">The mainstream account: particles gain mass by interacting with the Higgs
+          field. Accepted, but the book notes it predicts no particle masses on its own, and the symmetry
+          group has to be separately replicated for each of the three generations of matter.</p>
+      </div>
+
+      <div class="interp-row">
+        <span>
+          <span class="interp-name">Electroweak unification</span>
+          <span class="interp-meta">Glashow, Salam, Weinberg &middot; 1960s&ndash;70s</span>
+        </span>
+        <p class="interp-status">Rejected, in the narrow sense above: no observed symmetry restoration at
+          246 GeV, even at collision energies 25&times; higher. The underlying electroweak theory itself
+          remains extremely well-tested; see the caveat above this table.</p>
+      </div>
+
+      <div class="interp-row">
+        <span>
+          <span class="interp-name">Grand Unified Theories (SU(5), SO(10)...)</span>
+          <span class="interp-meta">Georgi &amp; Glashow &middot; 1974 onward</span>
+        </span>
+        <p class="interp-status">Rejected: the three coupling constants approach each other at high energy
+          but, per the book's reading, don't actually converge — closer to non-parallel lines crossing than
+          forces merging. Never tested directly either way.</p>
+      </div>
+
+      <div class="interp-row">
+        <span>
+          <span class="interp-name">String theory</span>
+          <span class="interp-meta">Compactified extra dimensions</span>
+        </span>
+        <p class="interp-status">Rejected as an unnecessary complication: needs 26 compactified dimensions
+          once supersymmetry — which would have simplified that number — turned out not to match any observed
+          particle. The book argues spheres resolve point-particle infinities as well as strings do, without
+          the extra machinery.</p>
+      </div>
+
+      <div class="interp-row">
+        <span>
+          <span class="interp-name">Twistor theory</span>
+          <span class="interp-meta">Roger Penrose</span>
+        </span>
+        <p class="interp-status">A direct inspiration for elementary spaces, but the book abandoned literally
+          identifying its own surfaces with Penrose's twistors or Riemann spheres — see the next section for
+          why.</p>
+      </div>
+
+      <div class="interp-row">
+        <span>
+          <span class="interp-name">Octonionic Standard Model</span>
+          <span class="interp-meta">Cohl Furey &middot; 2014 onward</span>
+        </span>
+        <p class="interp-status">Genuinely similar tools — complex numbers, quaternions, octonions — but a
+          more ambitious aim: one 64-dimensional tensor product meant to unify gravity, quantum mechanics and
+          the Standard Model at once, rather than SPD's separate, independent use of each number system.</p>
+      </div>
+
+      <div class="interp-row is-current">
+        <span>
+          <span class="interp-name">Space Particle Dualism</span>
+          <span class="interp-meta">Sky Darmos (2005) &middot; this page</span>
+        </span>
+        <p class="interp-status">The book's own proposal: the Standard Model's nested symmetry falls
+          directly out of complex, quaternionic and octonionic elementary spaces, with no symmetry breaking
+          and no predicted-but-unseen particles required.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     A NECESSARY CAUTION
+     ============================================================ -->
+<section id="not-a-riemann-sphere" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">A short but important correction</p>
+      <h2>A necessary caution: math tools aren't physical objects</h2>
+    </div>
+
+    <div class="prose">
+      <p>A complex number can always be pictured sitting on a Riemann sphere, and it's tempting to picture
+        an elementary space the same way — as a literal sphere with a point orbiting on its surface,
+        representing the particle. The book tried exactly that in its earliest form, deliberately building
+        on Penrose's twistor theory. It doesn't work: if the orbiting point is the particle, then its orbit
+        speed has to increase as the elementary space grows, and once the elementary space's radius exceeds
+        the particle's own wavelength, that orbit speed would have to exceed the speed of light.</p>
+
+      <p>The fix is to stop treating the Riemann sphere as a physical object at all. At any given instant, an
+        elementary space's entire surface has exactly one complex value for its area — not four differently
+        signed quadrants with something physically sweeping between them. The Riemann sphere is only a way of
+        <em>representing</em> that single number geometrically, the same way a spacetime diagram represents
+        an impulse without the diagram itself being a real four-dimensional object anyone lives inside. The
+        book is explicit that both general relativity and twistor theory can fall into this same trap: it's
+        easy to mistake a useful mathematical picture for the physical thing it was drawn to describe.</p>
+
+      <p>The same reasoning rules out a separate suggestion the book records receiving — that vibrating
+        strings could be layered onto elementary spaces, the way string theory vibrates strings in
+        compactified dimensions. Since a particle's whole energy comes from its surface continuously
+        appearing and disappearing, not from any internal vibration, adding a string to that surface
+        wouldn't change anything about what's actually being measured.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     THE DENSITY OF SPACE
+     ============================================================ -->
+<section id="density-of-space" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">From geometry to the hierarchy problem</p>
+      <h2>The density of space, and why gravity is so weak</h2>
+    </div>
+
+    <div class="prose">
+      <p>Most approaches to quantum gravity work with entities at the Planck scale, which makes them nearly
+        impossible to test. Before 2016, elementary spaces in this framework were thought to be smaller than
+        the Planck length too — which turns out to be self-defeating, because vacuum fluctuations shouldn't
+        appear closer together than one Planck length apart, so anything smaller than that can't overlap
+        with its neighbors densely enough to build a gapless patchwork of space.</p>
+
+      <h3>How big is an elementary space, really?</h3>
+      <p>The fix was to stop using the ordinary gravitational constant <span class="inline-formula"
+        data-katex="G"></span> to size elementary spaces, and use a new constant instead — scaled up to the
+        strength of electromagnetism rather than gravity:
+        <span class="inline-formula" data-katex="G_E = \dfrac{k_e\,e^{2}}{m_p^{2}} \approx 8.25\times 10^{25}\ \text{m}^3\text{s}^{-2}\text{kg}^{-1}"></span>.
+        Equivalently, <span class="inline-formula" data-katex="G_E = G \times \dfrac{\alpha}{\alpha_G}"></span>
+        — the ratio between electromagnetism's coupling constant and gravity's, which comes out to about
+        1.24&times;10<sup>36</sup>. Swapping <span class="inline-formula" data-katex="G"></span> for
+        <span class="inline-formula" data-katex="G_E"></span> grows an electron's elementary space from an
+        absurdly small 1.35&times;10<sup>-57</sup> m — using ordinary gravity — up to about 10<sup>-21</sup> m,
+        just three orders of magnitude below the smallest distances particle physics has ever directly
+        probed.</p>
+
+      <h3>Vacuum energy, without renormalization</h3>
+      <p>Vacuum fluctuations can, in principle, have any energy at all, and the more energetic they are, the
+        more briefly they exist. Standard quantum field theory only gets a finite value for the vacuum's
+        energy density by applying renormalization — without it, the sum diverges to infinity. The book takes
+        a different route: it quantizes those fluctuations directly, first approximately, by allowed
+        lifetimes, then more precisely, by allowed wavelengths in multiples of the Planck length, and sums
+        the (deliberately truncated) series using the Euler&ndash;Mascheroni constant as a correction term.
+        Counting only virtual photons, that lands on roughly 6.1&times;10<sup>116</sup> J/m<sup>3</sup> — and
+        higher still once the other sixteen Standard Model particle types, and an assumed share for dark
+        matter, are added in.</p>
+
+      <h3>Granular dimensionality, and the hierarchy problem</h3>
+      <p>How three-dimensional a patch of space feels depends on how many other elementary spaces each one
+        overlaps with — call that number <em>n</em>:
+        <span class="inline-formula" data-katex="D = 2 + \left(1 - \dfrac{1}{\sqrt{n}}\right)"></span>.
+        Plugging the vacuum energy figures above into <em>n</em> gives a value in the range of
+        10<sup>66</sup>&ndash;10<sup>68</sup> connections per elementary space, which pushes <em>D</em> to
+        within roughly 10<sup>-34</sup> of exactly 3. That's the entire explanation for why gravity is so
+        weak on this account: gravity isn't a separately weak force being diluted by something else, it
+        <em>is</em> that residual gap between <em>D</em> and a perfectly smooth 3. The book's own numbers land
+        gravity at around 10<sup>35</sup> times weaker than electromagnetism — close to, but not quite, the
+        10<sup>36</sup> ratio the theory's other constants would predict, a discrepancy the book flags rather
+        than rounds away.</p>
+
+      <p>One consequence the book draws from treating gravity this way: because only <em>differences</em> in
+        density cause gravitational pull, a substance spread perfectly evenly through space — like the vacuum
+        energy itself — can't have any gravitational effect at all, no matter how large that energy is. That
+        sidesteps the vacuum catastrophe that a genuinely global, force-carrying "graviton" would otherwise
+        run into.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTING IT
+     ============================================================ -->
+<section id="testing-it" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">From formula to experiment</p>
+      <h2>Testing it: probing a particle's own size</h2>
+    </div>
+
+    <div class="prose">
+      <p>An elementary space's diameter grows with its particle's energy. Set that diameter equal to the
+        particle's own wavelength, and you get a specific, calculable "critical frequency" — the point where
+        a particle's own extended size should start to matter for how it behaves, rather than being
+        negligible. For photons, that works out to:
+        <span class="inline-formula" data-katex="E_{\text{crit},\gamma} = \sqrt{\dfrac{h\,c^{5}}{4\,G_E}} \approx 2.2\times10^{-9}\ \text{J}"></span>,
+        a frequency of about 3.3&times;10<sup>24</sup> Hz and a wavelength of about 9.0&times;10<sup>-17</sup> m
+        — for comparison, visible light sits around 10<sup>14</sup>&ndash;10<sup>15</sup> Hz, and typical
+        gamma rays around 10<sup>19</sup> Hz.</p>
+
+      <p>Repeating the calculation for an electron's de Broglie wavelength gives a critical wavelength of
+        9.0065857&times;10<sup>-17</sup> m — agreeing with the photon's own critical wavelength to six digits,
+        a strikingly tight match given that the two calculations don't even share all the same constants. The
+        book proves this isn't a coincidence that a heavier particle could beat: solving the general case
+        shows the two critical wavelengths only converge exactly in the limit where a particle's mass goes to
+        zero and its speed goes to <span class="inline-formula" data-katex="c"></span> — meaning no particle
+        with any rest mass can ever out-resolve a photon at this game, however close it gets.</p>
+
+      <details class="expand">
+        <summary>Why a heavier particle doesn't automatically win</summary>
+        <div class="expand-body">
+          <p>Counter-intuitively, the Higgs boson — far heavier than an electron — has a <em>longer</em>
+            critical wavelength (about 8.18&times;10<sup>-16</sup> m) than the electron does. That's because a
+            heavier particle reaches its own critical point at a much lower speed; it doesn't need to approach
+            light speed the way a light particle does. Resolving power tracks how close a particle gets to
+            <span class="inline-formula" data-katex="c"></span>, not how heavy it is — which is exactly why
+            only a massless particle, or the lightest possible mass approaching light speed, can ever reach
+            the photon's own limit.</p>
+        </div>
+      </details>
+
+      <p>Direct single-particle measurement tops out around 9&times;10<sup>-17</sup> m — LIGO's laser
+        interferometers already measure distance differences an order of magnitude smaller than that, around
+        10<sup>-18</sup> m, but by comparing waves against each other rather than firing a single particle
+        through a gap.</p>
+
+      <h3>The proposed slit experiment</h3>
+      <p>The most direct test would fire photons above the critical frequency through a gap the size of the
+        critical wavelength itself, and see whether they get stuck — something ordinary quantum mechanics
+        says shouldn't happen for any gap wider than about 10<sup>-22</sup> m. That precise a gap is far
+        beyond current fabrication, but a monoatomic lattice of solid hydrogen — kept below its 14.01 K
+        melting point, which is easy to achieve — offers a naturally occurring, atom-spaced gap of
+        2.2858&times;10<sup>-10</sup> m. Solving
+        <span class="inline-formula" data-katex="f = \dfrac{d_{\text{gap}}\,c^{4}}{4\,G_E\,h}"></span>
+        for that gap width gives a required photon frequency of about 8.45&times;10<sup>30</sup> Hz.</p>
+
+      <p>The proposed setup: a spectrometer, a solid-hydrogen plate, and a photon detector, flown in outer
+        space (Earth-based gamma-ray detectors only infer wavelength indirectly, from the atmospheric
+        Cherenkov radiation a gamma ray produces, which isn't precise enough here). If high-frequency photons
+        that ordinary quantum mechanics predicts should pass straight through instead get stuck at this
+        lattice spacing, that would be direct evidence for the elementary space radius this theory predicts.</p>
+
+      <p><strong>Status: proposed, not yet run.</strong> The highest-frequency gamma rays ever detected sit
+        around 10<sup>30</sup> Hz, by the book's own account — roughly an order of magnitude below what this
+        experiment needs, and the book itself notes that its limited recognition so far makes it unlikely any
+        space agency will attempt it soon.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MASS OUT OF LIGHT
+     ============================================================ -->
+<section id="mass-out-of-light" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Where rest mass — and the three generations — come from</p>
+      <h2>Mass out of light</h2>
+    </div>
+
+    <div class="prose">
+      <p>If elementary spaces explain particles, where does ordinary rest mass — the electron's, say — come
+        from in the first place? The book has revised its answer to this twice.</p>
+
+      <h3>Two abandoned versions</h3>
+      <p>The original 2005 idea borrowed the black-hole analogy directly: bundles of massless photons could
+        get trapped the way light gets trapped in an event horizon, forming a rest-mass particle out of pure
+        light. The book now rejects this on its own terms — in this framework photons carry no quarks and so
+        exert no gravity, meaning they can't even form the "quasi-black holes" this theory otherwise allows
+        for, let alone a genuine event horizon.</p>
+      <p>A 2015 revision modeled the massless/massive difference as one of dimensionality — one-dimensional
+        elementary spaces for massless particles, two-dimensional ones for massive particles — inferred from
+        the extra spin states a massive particle carries. That was dropped once the nested-symmetry picture
+        above required <em>both</em> the complex (U(1)) and quaternionic (SU(2)) types of elementary space to
+        produce massless <em>and</em> massive particles each.</p>
+
+      <h3>The current version: merging</h3>
+      <p>The book's present answer is that a massive particle forms when two massless elementary spaces
+        merge — which both halts them, the way an event horizon would, and adds a dimension, giving the
+        result its extra spin degrees of freedom, all without invoking a Higgs field. Because it's the
+        specific structure of an elementary space, not the presence of mass itself, that generates charge,
+        the resulting particle picks up charge in the process too — unlike a hypothetical light-only black
+        hole, which never could.</p>
+
+      <h3>Why three generations?</h3>
+      <p>Muons and tauons are identical to electrons in every way except mass, appear only briefly in
+        high-energy collisions, and decay almost immediately — a puzzle particle physics has carried since
+        their discovery. The book's proposal: they aren't separately fundamental at all. A muon is modeled as
+        two electron-elementary-spaces merged together, with one positron emitted to keep the net charge at
+        exactly &minus;1; a tauon is three merged electrons, with two positrons emitted. Because electrons are
+        fermions and resist sitting close together, forcing several of them into contact takes a large amount
+        of energy — which the book offers as the qualitative reason a muon ends up 207 times heavier than a
+        single electron, despite being "made of" the same stuff.</p>
+
+      <p>The book takes this a good deal further in its next chapter, Charge Mass Dualism, turning this
+        qualitative merging story into a quantitative prediction of the muon and tauon masses — the
+        <a href="../index.html#cmd">homepage's own summary</a> of that chapter reports a match to better than
+        99.9% against the measured values, including the puzzle already flagged on the homepage's Problems
+        section, <a href="../index.html#problems">the Koide formula</a>. If the three generations depended
+        instead on some arbitrarily-shaped compactified dimension, as string theory would have it, the book
+        argues there'd be no reason to expect any such pattern in their masses at all.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DEVELOPMENT NOTES
+     ============================================================ -->
+<section id="development-notes" class="section-dark">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Dated, the way the book dates everything</p>
+      <h2>How this theory grew, in the book's own notes</h2>
+      <p>Every idea in the book carries the date it was first conceived — including the ideas it later
+        walked back. A sample of this one's history, from the founding insight to the most recent revision:</p>
+    </div>
+
+    <div class="timeline mini-timeline">
+      <div class="tl-item">
+        <span class="tl-year">22 Aug 2005</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Complex mass and energy</h4>
+          <p>Treating a particle's mass-energy as a complex number — the idea that eventually yields matter,
+            antimatter, and exotic matter from a single sign scheme.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">30 Aug 2005</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Mistaking the surface for a Riemann sphere</h4>
+          <p>An early attempt to build directly on twistor theory — soon abandoned once it implied
+            faster-than-light orbit speeds.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">22 Sep 2005</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Fractional dimensionality proposed</h4>
+          <p>The first version of the formula for how three-dimensional a patch of overlapping space
+            actually feels.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">20 Nov 2005</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Mass from trapped photons (v1)</h4>
+          <p>The original, later-abandoned idea that rest mass forms from bundles of photons trapped in
+            tiny event horizons.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">22 Dec 2005</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>U(1) and SU(2) from complex spheres</h4>
+          <p>The first pass at mapping number systems onto the electromagnetic and weak forces.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">14 Aug 2016</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>A solution for the hierarchy problem</h4>
+          <p>Rescaling elementary spaces to the elementary space constant <span class="inline-formula"
+            data-katex="G_E"></span> — explaining, for the first time, why gravity is so much weaker than the
+            other forces.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">3 Sep 2016</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>The critical photon frequency</h4>
+          <p>The specific, calculable number that the slit experiment above is built around.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">19 Aug 2019</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Mass from merged surfaces (v2)</h4>
+          <p>The current account of rest mass — two massless elementary spaces merging — replacing the
+            abandoned event-horizon and dimensionality-based versions.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">9 Dec 2019</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Surface and source unified</h4>
+          <p>Dropping the last remaining distinction between a particle and its own elementary space — the
+            two were never separate things.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-dark">
+  <div class="wrap page-footer-nav">
+    <a class="pfn-back" href="../index.html#theories">
+      <span class="pfn-label">All theories</span>
+      &larr; Back to the six theories
+    </a>
+    <a href="cmd.html">
+      <span class="pfn-label">Next theory &middot; 2023</span>
+      Charge Mass Dualism &rarr;
+    </a>
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer section-dark">
+  <div class="wrap">
+    <div class="footer-row">
+      <a class="wordmark" href="../index.html#top" style="color:var(--cream)">Elementary Spaces</a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="../index.html#theories">Theories</a>
+        <a href="../index.html#problems">Problems</a>
+        <a href="../index.html#timeline">Timeline</a>
+        <a href="../index.html#concepts">Concepts</a>
+        <a href="../index.html#formulae">Formulae</a>
+        <a href="../index.html#about">About</a>
+      </nav>
+    </div>
+    <p class="footer-note">An independent companion guide to <em>The Complete Guide to Quantum Gravity</em>
+      by Sky Darmos. Not peer-reviewed, not affiliated with any research institution, and not an assessment
+      of the theory's validity — a map for navigating what the book itself claims.</p>
+  </div>
+</footer>
+
+<script defer src="../js/script.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+
+</body>
+</html>

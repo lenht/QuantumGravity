@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Similar-Worlds Interpretation — Elementary Spaces</title>
+<meta name="description" content="A deep dive into Sky Darmos's Similar-Worlds Interpretation: consciousness as a cloud in phase space, the case against many-worlds and decoherence, and the quantum-eraser experiment proposed to test it.">
+<meta name="theme-color" content="#3D5A6E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body style="--theory-accent: var(--acc-swi);">
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="nav-row">
+    <a class="wordmark" href="../index.html#top">Elementary Spaces <small>a guide to Sky Darmos's quantum gravity</small></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle menu"><span></span></button>
+    <nav class="primary-nav" id="primaryNav">
+      <a href="../index.html#theories">Theories</a>
+      <a href="../index.html#problems">Problems</a>
+      <a href="../index.html#timeline">Timeline</a>
+      <a href="../index.html#concepts">Concepts</a>
+      <a href="../index.html#formulae">Formulae</a>
+      <a href="../index.html#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================================================
+     SUBHERO
+     ============================================================ -->
+<section class="hero subhero section-dark" id="top">
+  <div class="wrap">
+    <p class="breadcrumb">
+      <a href="../index.html#top">Elementary Spaces</a><span class="sep">/</span><a href="../index.html#theories">Theories</a><span class="sep">/</span><span class="current" aria-current="page">Similar-Worlds Interpretation</span>
+    </p>
+
+    <div class="hero-grid" style="margin-top:2rem;">
+      <div>
+        <p class="hero-eyebrow">Theory 1 of 6 &middot; conceived 29 October 2003, Pforzheim, Germany</p>
+        <h1>We exist in every world we can't tell apart</h1>
+        <p class="dek">The book's founding idea reframes superposition: not one particle in many places, but one
+          consciousness sitting inside every version of the universe that currently looks the same. This page
+          walks through how that idea is argued for, how it stacks up against the other interpretations of
+          quantum mechanics, and the experiment the book proposes to actually test it.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#core-idea">Read the core idea</a>
+          <a class="subhero-back" href="../index.html#theories">&larr; Back to the six theories</a>
+        </div>
+
+        <div class="framing-box compact">
+          <strong>A note on what's below.</strong> The first half of this page covers a reinterpretation of
+          standard quantum mechanics — unconventional, but argued in the same terms mainstream physics uses.
+          The second half moves into the book's proposed tests of that idea, and from there into psychokinesis
+          and telepathy experiments the book treats as supporting evidence. Those results, mostly from
+          parapsychologist Dean Radin, are not accepted by mainstream physics, and their interpretation is
+          disputed even within parapsychology itself, as the book's own account of that debate makes clear
+          further down this page.
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="180" fill="none" stroke="#F0EAE0" stroke-opacity="0.08"/>
+          <circle cx="200" cy="200" r="130" fill="none" stroke="#F0EAE0" stroke-opacity="0.11"/>
+          <circle cx="150" cy="185" r="78" fill="#5b8fa8" fill-opacity="0.4" stroke="#F0EAE0" stroke-opacity="0.4"/>
+          <circle cx="222" cy="215" r="78" fill="#A8CFC0" fill-opacity="0.4" stroke="#F0EAE0" stroke-opacity="0.4"/>
+          <circle cx="178" cy="255" r="78" fill="#D9C9A8" fill-opacity="0.5" stroke="#F0EAE0" stroke-opacity="0.4"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ON-PAGE TOC
+     ============================================================ -->
+<nav class="toc-nav" aria-label="On this page">
+  <div class="wrap toc-row">
+    <a class="toc-link" href="#core-idea">The core idea</a>
+    <a class="toc-link" href="#giving-up-spacetime">Giving up spacetime</a>
+    <a class="toc-link" href="#why-consciousness">Why consciousness</a>
+    <a class="toc-link" href="#comparing-interpretations">Comparing interpretations</a>
+    <a class="toc-link" href="#testing-eraser">Testing it: quantum erasers</a>
+    <a class="toc-link" href="#nonlocal-pk">Nonlocal perturbation</a>
+    <a class="toc-link" href="#rate-of-collapse">Rate of collapse</a>
+    <a class="toc-link" href="#development-notes">Development notes</a>
+  </div>
+</nav>
+
+<!-- ============================================================
+     CORE IDEA
+     ============================================================ -->
+<section id="core-idea" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Where the theory starts</p>
+      <h2>A cloud of consciousness in phase space</h2>
+    </div>
+
+    <div class="prose">
+      <p>Quantum mechanics has a well-known limit on precision: a particle's position and its momentum can
+        never both be pinned down exactly. Squeeze one down and the other spreads out. That's Heisenberg's
+        uncertainty principle —
+        <span class="inline-formula" data-katex="\Delta x \, \Delta p \geq \dfrac{\hbar}{2}"></span> —
+        and the strange part isn't that we can't <em>measure</em> both at once. It's that the particle
+        doesn't seem to <em>have</em> both properties at once, independent of anyone measuring them.</p>
+
+      <p>The same strangeness shows up in the double-slit experiment: a single particle sent toward two open
+        slits builds up an interference pattern, as if it travelled through both slits and interfered with
+        itself. It doesn't settle into one path until the moment something registers which path it took.
+        Before that, most physicists agree it's meaningless to ask which slit it "really" went through.</p>
+
+      <p>Standard quantum theory calls this a <strong>superposition</strong> — a particle in many states at
+        once, until a "measurement" resolves it into one. But what actually counts as a measurement was
+        never settled. A single particle hitting another particle doesn't know anything. A measuring device
+        is macroscopic, but it doesn't know what it's measuring either, until a person reads the result and
+        understands what it means. That thread — that only <em>knowing</em> something, which requires a
+        conscious mind, can end a superposition — is what historically tied quantum mechanics to
+        consciousness at all, in the interpretation Niels Bohr and Werner Heisenberg first proposed and John
+        von Neumann and Eugene Wigner later made explicit.</p>
+
+      <h3>Everett's answer, and a different one</h3>
+      <p>In 1957 Hugh Everett proposed a way to avoid giving consciousness any special role: the many-worlds
+        interpretation. On his view, superposition never stops — it's just that once it reaches human scale,
+        the different outcomes split into separate, non-interfering worlds, and each copy of the observer
+        only ever sees their own branch. It's popular because it keeps quantum mechanics purely mechanical.
+        But the book raises a specific objection: if consciousness is doing nothing in this picture — if
+        nothing is really being chosen — then why does it feel like something is happening? Why does each
+        branch-copy feel a flow of time at all, rather than simply existing, inertly, the way a point on a
+        block-universe diagram does?</p>
+
+      <p>The Similar-Worlds Interpretation takes the opposite route. Picture every possible state of the
+        <em>entire universe</em> as a single point in an enormous space of possibilities — physicists call
+        this a phase space. Nearby points are near-identical universes. In an ordinary classical picture, the
+        passage of time is just a point drifting through that space. The book's proposal is to replace that
+        single point with a small <strong>cloud</strong>: our consciousness sits inside every point in the
+        cloud — every version of the universe that's currently indistinguishable from every other — all at
+        once. Superposition is what that cloud looks like from the inside. A measurement doesn't choose a
+        hidden value out of nowhere; it just shrinks the cloud down to the states still consistent with what
+        was observed.</p>
+
+      <h3>What that buys back: entanglement without spooky action</h3>
+      <p>This picture has an immediate payoff for one of quantum mechanics' oldest puzzles, the
+        Einstein–Podolsky–Rosen paradox. Two entangled particles seem to coordinate their properties —
+        say, opposite spins — no matter how far apart they are, instantaneously, which looks like it should
+        violate relativity's speed limit. In the similar-worlds picture there's no coordination to explain:
+        because every point in the cloud is a state of the <em>whole universe</em>, the two particles simply
+        already have opposite spins in every one of the shared worlds. Nothing has to travel between them for
+        that agreement to hold, any more than two socks from the same pair "communicate" to be a matching set.
+        The book calls this the <strong>fuzzy observer principle</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     GIVING UP SPACETIME
+     ============================================================ -->
+<section id="giving-up-spacetime" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">A relativistic complication</p>
+      <h2>Why the theory gives up on "spacetime" as one thing</h2>
+    </div>
+
+    <div class="prose">
+      <p>Relativity complicates the phase-space picture, because relativity denies that there's one
+        universal "now" — simultaneity depends on how fast you're moving. So which slice of the universe is
+        the cloud of consciousness supposed to be a cloud <em>of</em>?</p>
+
+      <p>The book's answer is to stop treating spacetime as a single real object and instead assign reality
+        only to each conscious observer's <strong>past light cone</strong> — everything whose light has had
+        time to reach them. A remote alien on our "now-slice" could, in principle, drift into a reference
+        frame where our future already lies on their now-slice — but that doesn't make our future real,
+        because that alien still can't <em>see</em> it; they can only ever see their own past light cone.
+        Nothing our future can influence has happened yet, so nothing has forced it into a definite state.
+        It's genuinely still open, the way quantum mechanics says it has to be.</p>
+
+      <p>That raises an obvious worry, which the book calls <strong>Wigner's conflict</strong>: if only what's
+        been measured is real, are other people around you unreal until you look at them? The proposed way
+        out is entanglement — it links different observers' wavefunctions together so they change in a
+        synchronized way, without needing a single shared spacetime to do it. Wigner himself ran into this
+        exact puzzle in his own version of a consciousness-based interpretation and, notably, never resolved
+        it to his satisfaction.</p>
+
+      <p>The upshot, on the book's account, is that "spacetime" was never one thing to begin with — space and
+        time can influence each other without being fused into a single entity, and the past isn't a place
+        that still physically exists somewhere. This move matters beyond this chapter: it's also what
+        the book uses later to argue that wormhole-style time travel can't be built, and it sets up
+        <a href="../index.html#spd">Space Particle Dualism's</a> account of what's actually doing the bending
+        that general relativity attributes to curved spacetime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY CONSCIOUSNESS
+     ============================================================ -->
+<section id="why-consciousness" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The argument for a non-mechanical mind</p>
+      <h2>Why consciousness, and not just computation</h2>
+    </div>
+
+    <div class="prose">
+      <p>If something has to end a superposition, and it isn't just "size" or "scale" doing it, why does it
+        have to be consciousness specifically, rather than any sufficiently complex physical process? The
+        book's argument runs through Kurt Gödel's incompleteness theorem: any formal system powerful enough
+        to do arithmetic contains true statements it cannot prove from within itself. One consequence, on the
+        book's reading, is that logical reasoning can't be fully automated — a "robot mathematician" that
+        substitutes for a human is impossible in principle, because genuine reasoning needs access to meaning
+        and truth, not just rule-following. That gives a working definition: consciousness is an
+        <strong>incomputable but deterministic</strong> process. Deterministic, because the same reasoning
+        given the same input always reaches the same conclusion; incomputable, because no algorithm can
+        simulate it.</p>
+
+      <p>That reframes what "quantum randomness" is. Instead of true dice-rolling, the book proposes that
+        outcomes are settled by <strong>non-computable determinism</strong> — meaningful, free choices made
+        by conscious (and subconscious) minds, which look random from the outside only because we can't
+        predict them the way we predict an algorithm's output.</p>
+
+      <h3>Two speeds of mind</h3>
+      <p>The book leans on neuroscience — particularly Benjamin Libet's timing experiments — to split this
+        into two levels. A signal takes roughly half a second to become <em>consciously</em> available after
+        it reaches the senses. But the brain also continuously re-samples its environment at about 40 times a
+        second (its "gamma" rhythm), and only about half of that reaches full conscious awareness — which is
+        why the book puts the conscious frame rate at roughly 20 pictures per second against a subconscious
+        rate of 40. One consequence: an ordinary macroscopic object around you is being re-measured so often
+        that it can only stay in superposition for about a fortieth of a second at a time, even though the
+        individual photons and nerve signals reporting on it remain in superposition for the fuller half
+        second before any of that reaches consciousness.</p>
+
+      <details class="expand">
+        <summary>Why psychokinesis, if real, would be so weak</summary>
+        <div class="expand-body">
+          <p>The book connects this timing directly to an old parapsychology puzzle: if minds can influence
+            quantum outcomes, why do lab results (random-number-generator studies averaged across thousands of
+            participants) show only a razor-thin edge over chance — around 51%, not 100%? Its proposed answer
+            isn't "the effect is weak," but that the <em>window</em> to act in is razor-thin: a mind would
+            have to exert a meaningful nudge inside roughly a fortieth of a second, tied to the same gamma
+            rhythm that resets superpositions that quickly. Shifting a large object (macro-PK) is separately
+            hard because it requires coordinating enormous numbers of particles — a large, unlikely drop in
+            entropy — while shifting a single binary outcome (micro-PK) doesn't need to fight entropy at all,
+            just needs to land in that narrow timing window.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     COMPARING INTERPRETATIONS
+     ============================================================ -->
+<section id="comparing-interpretations" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How the book positions its own idea</p>
+      <h2>Eight interpretations of quantum mechanics, by the book's own reckoning</h2>
+      <p>The book sorts interpretations along three axes: does the wavefunction ever really change (a
+        "choice" theory) or never (a "no-choice" theory)? Is the cutoff tied to physical scale or to
+        consciousness? And if consciousness is involved, does it just witness the outcome (passive) or
+        actually influence it (active)? The verdicts below are the book's own — not an independent physics
+        assessment.</p>
+    </div>
+
+    <div class="interp-list">
+
+      <div class="interp-row">
+        <span>
+          <span class="interp-name">Copenhagen interpretation</span>
+          <span class="interp-meta">Consciousness scale-choice &middot; Bohr, Heisenberg (1927/1957)</span>
+        </span>
+        <p class="interp-status">Fine as far as it goes — treats the wavefunction as the observer's
+          accessible knowledge — but only because it never asks what happens once the observer's own brain
+          is included in the system. Extending it to cover the observer is what produces the next
+          interpretation.</p>
+      </div>
+
+      <div class="interp-row">
+        <span>
+          <span class="interp-name">Von Neumann–Wigner (orthodox) interpretation</span>
+          <span class="interp-meta">Passive consciousness choice &middot; von Neumann, Wigner, Wheeler</span>
+        </span>
+        <p class="interp-status">"Correct but incomplete," in the book's words: it's the Copenhagen view
+          applied to the whole universe including the observer, and the book treats the quantum-eraser
+          result as direct evidence for it over any scale-dependent alternative. It just doesn't yet say
+          whether consciousness only witnesses the collapse or actually steers it.</p>
+      </div>
+
+      <div class="interp-row">
+        <span>
+          <span class="interp-name">Interactionalism</span>
+          <span class="interp-meta">Active consciousness choice &middot; Eccles, Radin, Stapp</span>
+        </span>
+        <p class="interp-status">The book's preferred predecessor — the version of Von Neumann–Wigner where
+          consciousness doesn't just watch the collapse but has some influence on its outcome. Called "the
+          most correct pre-existing view," mainly lacking a relativistic treatment and a neuroscience-grounded
+          account of timing.</p>
+      </div>
+
+      <div class="interp-row">
+        <span>
+          <span class="interp-name">Decoherence / many-minds</span>
+          <span class="interp-meta">Passive, no-choice &middot; H. Dieter Zeh (1970)</span>
+        </span>
+        <p class="interp-status">Rejected. On the book's argument it treats measurement as a loss rather
+          than a gain of information, has no principled account of the flow of time, and depends on an
+          undefined "wavefunction of the universe" that dissolves once any of its supposedly fixed
+          parameters turn out to vary.</p>
+      </div>
+
+      <div class="interp-row">
+        <span>
+          <span class="interp-name">Many-worlds interpretation</span>
+          <span class="interp-meta">Relativistic scale, no-choice &middot; Hugh Everett (1957)</span>
+        </span>
+        <p class="interp-status">Credited with inspiring parts of the book's own approach, but judged to
+          only relocate the measurement problem rather than solve it — it still needs an arbitrary scale at
+          which worlds "split," and the book holds that quantum-eraser results and superconductivity rule
+          out any scale-dependent cutoff.</p>
+      </div>
+
+      <div class="interp-row">
+        <span>
+          <span class="interp-name">Many-worlds immortality theory</span>
+          <span class="interp-meta">Active, no-choice &middot; Moravec, Marchal, Tegmark</span>
+        </span>
+        <p class="interp-status">The idea that consciousness always finds a branch where it survives. The
+          book calls this self-contradictory — it would grant every observer effectively unlimited
+          psychokinetic power over their own fate — and, like standard many-worlds, considers it ruled out
+          by the quantum-eraser result.</p>
+      </div>
+
+      <div class="interp-row is-current">
+        <span>
+          <span class="interp-name">Similar-Worlds Interpretation</span>
+          <span class="interp-meta">Relativistic consciousness choice &middot; Sky Darmos (2003) — this page</span>
+        </span>
+        <p class="interp-status">The book's own proposal: a relativistic extension of Von Neumann–Wigner
+          built on the phase-space "cloud" picture above, later joined to Space Particle Dualism to explain
+          why probabilities come out wave-shaped in the first place.</p>
+      </div>
+
+      <div class="interp-row">
+        <span>
+          <span class="interp-name">Objective Reduction (Orch-OR)</span>
+          <span class="interp-meta">Active scale-choice &middot; Roger Penrose (1989), Stuart Hameroff</span>
+        </span>
+        <p class="interp-status">Treated with real respect but ultimately turned down: collapse is
+          triggered by a gravitational threshold rather than by consciousness, which the book argues
+          explains away consciousness rather than accounting for it, and requires an unrealistic degree of
+          quantum isolation inside brain microtubules.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTING IT: QUANTUM ERASERS
+     ============================================================ -->
+<section id="testing-eraser" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">From interpretation to experiment</p>
+      <h2>Testing it: the quantum-eraser proposal</h2>
+    </div>
+
+    <div class="prose">
+      <p>Most interpretations of quantum mechanics are usually treated as philosophical add-ons that don't
+        change any prediction. The book disagrees, and points to the quantum eraser as the reason why.</p>
+
+      <p>The idea builds on John Archibald Wheeler's delayed-choice experiments from the 1970s–80s, which
+        showed that whether a photon "behaves" as a wave or a particle isn't decided until the measurement
+        choice is made — even if that choice comes after the photon was emitted. Wheeler put it bluntly:</p>
+
+      <blockquote class="epigraph">
+        <p>"To be is to be perceived."</p>
+        <cite>John Archibald Wheeler, paraphrasing Bishop Berkeley</cite>
+      </blockquote>
+
+      <p>The quantum eraser pushes this further. Two entangled photons are created together. One is sent
+        toward a double slit with polarizers marking which slit it passed through — which destroys the
+        interference pattern, as marking always does. Its entangled partner is sent to a separate detector.
+        If that partner photon is then passed through a third polarizer that <em>undoes</em> the marking,
+        the interference pattern reappears — and this erasure can happen after the first photon has already
+        hit the screen. That means the screen, despite being macroscopic, was still in superposition. It
+        hadn't "measured" anything yet, in the sense that matters.</p>
+
+      <p>So somewhere between the screen and the observer's consciousness, the superposition does eventually
+        collapse. The book's proposal is to find exactly where, by delaying the erasing decision longer and
+        longer — using the entangled partner's travel time as a clock — while human observers, animals, or
+        even robots sit at varying distances from the experiment. If erasing stops working once a signal
+        would have reached a given observer's brain, that observer's consciousness is implicated in the
+        collapse. Push the delay past where a robot's sensors register the result, and if erasing still
+        works, the robot isn't conscious in the sense this experiment tests for.</p>
+
+      <details class="expand">
+        <summary>How you'd actually delay a photon by half a second</summary>
+        <div class="expand-body">
+          <p>Photons are fast: in half a second, light in a vacuum covers about 150,000 km, and even slowed
+            inside optical fiber it's still around 105,000 km — far too long a path for a tabletop setup. The
+            book walks through three ways to buy that delay without ever "measuring" the photon in transit:</p>
+          <p><strong>Fiber-optic loop.</strong> Route the entangled partner into a glass-fiber loop it can
+            circulate inside indefinitely, with an entry point that can later be switched into an exit
+            pointing at the third polarizer. Glass fiber's shallow reflection angles avoid the photon-loss
+            problem that ordinary or even high-end "supermirror" cavities run into.</p>
+          <p><strong>Slowing light with a Bose–Einstein condensate.</strong> Using electromagnetically
+            induced transparency, physicist Lene Hau's group slowed light by a factor of about 30 million
+            inside an ultra-cold sodium condensate — enough, the book calculates, that a half-second delay
+            would need a chamber only around 5 meters across.</p>
+          <p><strong>Storing light in a crystal.</strong> A 2013 German team used the same technique to
+            absorb light into a crystal and hold it there — with a control beam preventing re-emission — for
+            delays of up to a full minute, far more than the experiment needs.</p>
+          <p>The whole setup, the book notes, would double as the first real version of Schrödinger's cat: an
+            animal (or a robot rigged to self-destruct on "seeing" an interference pattern) sealed inside a
+            Faraday cage, with the eraser deciding — after the cage is opened — whether it had been in
+            superposition the whole time.</p>
+        </div>
+      </details>
+
+      <p><strong>Status: proposed, not yet run.</strong> As of the book's most recent update, this experiment
+        hasn't been performed. The book notes that Dean Radin expressed interest in attempting a version of it
+        in his own lab, but no results exist to report.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     NONLOCAL PERTURBATION
+     ============================================================ -->
+<section id="nonlocal-pk" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Where the evidence gets contested</p>
+      <h2>Nonlocal perturbation and psychokinesis</h2>
+    </div>
+
+    <p class="caveat">Everything in this section rests on experimental claims from parapsychology — chiefly
+      Dean Radin's — that mainstream physics does not treat as established, and whose correct interpretation
+      is disputed even between the parapsychologists involved, as described below. It's included because the
+      book leans on it heavily, not as independent confirmation of anything.</p>
+
+    <div class="prose">
+      <p>In 2016, Radin presented a double-slit experiment he titled "Experimental test of the
+        Von Neumann–Wigner interpretation." Participants didn't literally look at the slits — if they had,
+        the photons would have ended up in their eyes rather than at the detector. Instead they focused on
+        the slits mentally, in what Radin describes as a remote-viewing, or "inner eye," mode. The claimed
+        result: the interferometric visibility of the pattern shifted measurably, at a reported five-sigma
+        significance.</p>
+
+      <p>Here the book and Radin part ways on interpretation, and the book is candid about the disagreement.
+        Radin frames it as the observers <em>remote-viewing</em> the photons' paths — a form of perception.
+        The book argues that doesn't quite make sense, because a photon mid-flight through a double slit
+        doesn't yet have a definite position to "view" — there's no existing information there to perceive.
+        Its preferred reading is that participants performed ordinary micro-psychokinesis, nudging an
+        already-superposed outcome rather than perceiving a hidden one.</p>
+
+      <p>The same fork shows up in a separate line of experiments: random-number-generator recordings that
+        sit unopened and un-observed for hours, days, or (in one case) half a year, where participants can
+        apparently still influence the outcome after the fact. Radin and fellow researcher Stephan Schwartz
+        read this as evidence of retrocausality — influence running backward in time from the later
+        observation to the earlier recording. The book instead argues the record was simply still in
+        superposition the entire time it went unobserved, so there's no need to invoke backward causation at
+        all — ordinary psychokinesis, just exercised on a delay.</p>
+
+      <p>The book is explicit about what this evidence can and can't settle. It can't determine <em>when or
+        where</em> a wavefunction collapses — that's what the quantum-eraser experiment above is for. All it
+        argues for is that <em>some</em> observer influence on quantum outcomes exists at all, which is a
+        much narrower claim, and even that claim depends entirely on accepting Radin's experimental results
+        as this section describes them.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     RATE OF COLLAPSE
+     ============================================================ -->
+<section id="rate-of-collapse" class="deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">A different account of the brain's clock</p>
+      <h2>The rate of wavefunction collapse</h2>
+    </div>
+
+    <div class="prose">
+      <p>Penrose and Hameroff's Orchestrated Objective Reduction model makes a specific, checkable claim: the
+        brain's gamma waves, oscillating at 40 Hz, correspond to a gravity-triggered collapse rate. The book
+        proposes a plainer alternative — that 40 Hz is just the ordinary firing rate of the neurons doing the
+        measuring, with no gravity required.</p>
+
+      <p>It offers a small, testable-feeling piece of supporting arithmetic. If the subconscious samples the
+        world 40 times a second, a person walking at an ordinary pace five meters away moves about 35mm
+        between samples. At arm's length — roughly 0.7 meters, the book's assumed "engaging distance" — that
+        corresponds to an angular size of about 0.05mm, strikingly close to the 0.058–0.072mm diameter of the
+        smallest objects visible to the naked eye. The suggested reading: our sampling rate is tuned to just
+        barely resolve the smallest details we can see moving at everyday walking speed, which is a much
+        simpler story than deriving the same number from graviton emission thresholds.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DEVELOPMENT NOTES
+     ============================================================ -->
+<section id="development-notes" class="section-dark">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Dated, the way the book dates everything</p>
+      <h2>How this theory grew, in the book's own notes</h2>
+      <p>Every idea in the book carries the date it was first conceived. A sample of this one's history,
+        from the founding insight to the most recent update to the eraser proposal:</p>
+    </div>
+
+    <div class="timeline mini-timeline">
+      <div class="tl-item">
+        <span class="tl-year">29 Oct 2003</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>The cloud in phase space</h4>
+          <p>The founding image: consciousness as a moving cloud of indistinguishable worlds, not a single
+            point.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">22 Jul 2004</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>The EPR paradox falls out</h4>
+          <p>Entangled spins are already opposite in every shared world — the fuzzy observer principle.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">11 Nov 2005</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Cross-wiring in the brain</h4>
+          <p>Longer neural pathways only enlarge a superposition if they pass through more synapses, not
+            just more distance.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">8 May 2012</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Planes of simultaneity</h4>
+          <p>Reworking the phase-space picture around relativity's planes of simultaneity rather than a
+            single universal "now."</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">1 Oct 2015</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>The animal-consciousness test proposed</h4>
+          <p>First sketch of using a quantum eraser to test whether a non-human measurement can be undone.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">13 Apr 2016</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Timing revised</h4>
+          <p>Correcting an earlier estimate: macroscopic objects stay in superposition for about 1/40th of
+            a second, not half a second.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">29 Jun 2017</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Testing robot consciousness</h4>
+          <p>Extending the eraser proposal to a self-destructing robot as a literal, testable Schrödinger's
+            cat.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">4 Oct 2020</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>The smallest meaningful frame</h4>
+          <p>The angular-resolution argument connecting the 40Hz gamma rhythm to naked-eye visual acuity.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">19 Mar 2025</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Storing light in a crystal</h4>
+          <p>The most recent addition to the eraser toolkit — up to a full minute of delay, using
+            electromagnetically induced transparency.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-dark">
+  <div class="wrap page-footer-nav">
+    <a class="pfn-back" href="../index.html#theories">
+      <span class="pfn-label">All theories</span>
+      &larr; Back to the six theories
+    </a>
+    <a href="../index.html#spd">
+      <span class="pfn-label">Next theory &middot; 2005</span>
+      Space Particle Dualism &rarr;
+    </a>
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer section-dark">
+  <div class="wrap">
+    <div class="footer-row">
+      <a class="wordmark" href="../index.html#top" style="color:var(--cream)">Elementary Spaces</a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="../index.html#theories">Theories</a>
+        <a href="../index.html#problems">Problems</a>
+        <a href="../index.html#timeline">Timeline</a>
+        <a href="../index.html#concepts">Concepts</a>
+        <a href="../index.html#formulae">Formulae</a>
+        <a href="../index.html#about">About</a>
+      </nav>
+    </div>
+    <p class="footer-note">An independent companion guide to <em>The Complete Guide to Quantum Gravity</em>
+      by Sky Darmos. Not peer-reviewed, not affiliated with any research institution, and not an assessment
+      of the theory's validity — a map for navigating what the book itself claims.</p>
+  </div>
+</footer>
+
+<script defer src="../js/script.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+
+</body>
+</html>

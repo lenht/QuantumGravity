@@ -13,6 +13,21 @@
   --ink-deep:#28404f;      /* ink, darkened slightly for the darkest panels */
   --cream-dim:#e7e0d3;     /* cream, dimmed for hairlines on light bg */
 
+  /* Per-theory signature accents for the deep-dive subpages. All six are
+     derived from the tokens above — no new hex values — reserving ink/cream
+     for structure and drawing on each theory's own homepage-icon colors:
+     pure where an icon leans on one accent, color-mix() where it leans on
+     two. Each theories/*.html page sets --theory-accent to the matching
+     value via an inline style on <body>. See homepage-notes.md for the
+     full mapping and rationale. */
+  --acc-swi: var(--steel);
+  --acc-spd: var(--sand);
+  --acc-cmd: var(--taupe);
+  --acc-eec: var(--sage);
+  --acc-cst: color-mix(in srgb, var(--sage) 55%, var(--sand) 45%);
+  --acc-chromo: color-mix(in srgb, var(--steel) 55%, var(--taupe) 45%);
+  --theory-accent: var(--acc-swi); /* fallback; overridden per subpage */
+
   --serif:"STIX Two Text", "Iowan Old Style", Georgia, serif;
   --sans:"IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --mono:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -272,7 +287,7 @@ details.expand .expand-body p{margin-bottom:0.7em;}
 .tl-dot{position:relative;}
 .tl-dot::before{
   content:""; position:absolute; left:50%; top:0.3rem; width:12px; height:12px; border-radius:50%;
-  background:var(--steel); transform:translateX(-50%); border:2px solid var(--ink);
+  background:var(--theory-accent); transform:translateX(-50%); border:2px solid var(--ink);
 }
 @media (max-width:600px){
   .tl-dot{grid-row:1 / span 2;}
@@ -363,6 +378,109 @@ footer.site-footer{padding:3.5rem 0 2.5rem;}
 .footer-nav a{font-size:0.9375rem; text-decoration:none;}
 .footer-note{font-size:0.8438rem; color:#a9b6bd; max-width:34em; margin-top:2.5rem;}
 .footer-note a{color:#a9b6bd;}
+
+/* ============================================================
+   SUBPAGES — theory deep-dives (theories/*.html)
+   ============================================================ */
+.breadcrumb{
+  font-family:var(--mono); font-size:0.9375rem; padding:0 0 0.9rem; margin-bottom:1.75rem;
+  display:flex; align-items:center; flex-wrap:wrap; border-bottom:1px solid rgba(240,234,224,0.15);
+}
+.breadcrumb a{color:var(--taupe); text-decoration-color:var(--sand);}
+.breadcrumb .sep{color:var(--sand); margin:0 0.4em;}
+.breadcrumb .current{color:var(--ink);}
+.breadcrumb .current::before{
+  content:""; display:inline-block; width:6px; height:6px; border-radius:50%;
+  background:var(--theory-accent); margin-right:0.5em; vertical-align:middle;
+}
+.section-dark .breadcrumb{border-bottom-color:rgba(240,234,224,0.15);}
+.section-dark .breadcrumb a{color:#cdd8de; text-decoration-color:var(--sage);}
+.section-dark .breadcrumb .sep{color:var(--taupe);}
+.section-dark .breadcrumb .current{color:var(--cream);}
+
+.subhero{padding:2.5rem 0 3.5rem;}
+.subhero .hero-eyebrow{margin-bottom:0.9rem;}
+.subhero h1{font-size:clamp(2rem,4.4vw,3.15rem); max-width:20ch;}
+.subhero .dek{max-width:40em;}
+.subhero .hero-art{max-width:300px;}
+@media (max-width:900px){.subhero .hero-art{max-width:240px;}}
+
+.framing-box.compact{margin-top:1.75rem; padding:1rem 1.25rem; font-size:0.875rem; max-width:600px;}
+
+.subhero-back{
+  align-self:center; font-size:0.9375rem; font-weight:500; color:#cdd8de;
+  text-decoration-color:var(--theory-accent);
+}
+
+.toc-nav{background:var(--cream); border-bottom:1px solid var(--cream-dim); position:sticky; top:60px; z-index:90;}
+.toc-row{display:flex; gap:0.55rem; flex-wrap:wrap; padding:0.85rem 0; overflow-x:auto;}
+.toc-link{
+  font-family:var(--mono); font-size:0.75rem; padding:0.4rem 0.8rem; border-radius:999px;
+  border:1px solid var(--cream-dim); background:transparent; color:var(--ink);
+  text-decoration:none; white-space:nowrap; flex:none;
+}
+.toc-link:hover{background:var(--sand); border-color:var(--sand);}
+.toc-link.is-active{
+  background:color-mix(in srgb, var(--theory-accent) 22%, var(--cream) 78%);
+  border-color:var(--theory-accent); color:var(--ink); font-weight:500;
+}
+
+.deep-section .section-head{margin-bottom:2rem;}
+.deep-section p + h3, .deep-section p + h4{margin-top:1.75rem;}
+.deep-section h3{font-size:1.375rem; margin-top:2.25rem;}
+.prose{max-width:42em;}
+.prose p{font-size:1.0313rem;}
+.prose p, .deep-section .prose{color:#4d5f6a;}
+.section-dark .prose, .section-dark .prose p{color:#cdd8de;}
+
+.inline-formula{font-size:1.05em;}
+
+.dated{font-family:var(--mono); font-size:0.75rem; color:var(--taupe); white-space:nowrap;}
+.section-dark .dated{color:var(--sage);}
+
+/* Interpretation ledger (reuses the problem-list rhythm) */
+.interp-list{border-top:1px solid var(--cream-dim); margin-top:1rem;}
+.interp-row{
+  display:grid; grid-template-columns:13rem 1fr; gap:1.25rem;
+  padding:1.15rem 0; border-bottom:1px solid var(--cream-dim);
+}
+@media (max-width:700px){.interp-row{grid-template-columns:1fr; gap:0.4rem;}}
+.interp-row.is-current{background:color-mix(in srgb, var(--theory-accent) 24%, var(--cream) 76%); margin:0 -1.25rem; padding:1.15rem 1.25rem; border-radius:6px; border-bottom-color:transparent;}
+.interp-name{font-weight:600; font-size:1rem; display:block;}
+.interp-meta{font-family:var(--mono); font-size:0.75rem; color:var(--taupe); display:block; margin-top:0.3rem;}
+.interp-status{font-size:0.9375rem; color:#4d5f6a;}
+.interp-row.is-current .interp-status{color:var(--ink);}
+
+.mini-timeline{margin-top:0.5rem;}
+
+/* Data table — for pages with genuinely tabular content (records, surveys, catalogues).
+   Reuses --theory-accent and the .caveat dashed-border language for visual family. */
+.data-table-wrap{
+  overflow-x:auto; margin:1.75rem 0; border:1px dashed var(--taupe); border-radius:var(--radius);
+  background:#fbf8f3;
+}
+.data-table{width:100%; border-collapse:collapse; font-size:0.875rem; min-width:560px;}
+.data-table caption{
+  font-family:var(--mono); font-size:0.75rem; color:var(--taupe); text-align:left;
+  caption-side:top; padding:0.85rem 1.1rem 0.4rem;
+}
+.data-table th, .data-table td{padding:0.6rem 1.1rem; text-align:left; border-bottom:1px solid var(--cream-dim);}
+.data-table thead th{
+  font-family:var(--mono); font-size:0.7188rem; font-weight:600; color:var(--ink);
+  background:color-mix(in srgb, var(--theory-accent) 20%, var(--cream) 80%); white-space:nowrap;
+}
+.data-table tbody tr:last-child td{border-bottom:none;}
+.data-table tbody tr:hover{background:rgba(0,0,0,0.025);}
+.data-table td.num{font-family:var(--mono); font-size:0.8281rem; white-space:nowrap;}
+.data-table-note{font-size:0.8125rem; color:var(--taupe); padding:0 1.1rem 0.9rem; margin:0;}
+
+.page-footer-nav{
+  display:flex; justify-content:space-between; align-items:center; gap:1.5rem;
+  padding:2.75rem 0; border-top:1px solid rgba(240,234,224,0.15); flex-wrap:wrap;
+}
+.page-footer-nav a{font-weight:600; text-decoration:none;}
+.page-footer-nav .pfn-label{display:block; font-family:var(--mono); font-size:0.75rem; color:var(--theory-accent); font-weight:400; margin-bottom:0.25rem;}
+.page-footer-nav .pfn-back{margin-right:auto;}
 
 /* misc */
 .visually-hidden{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);}
