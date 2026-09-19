@@ -43,6 +43,12 @@ html{scroll-behavior:smooth;}
   *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
 }
 
+/* Accent for use on the dark (ink) background. The raw SWI, CMD and Chromogravity
+   accents are only ~2:1 against ink; folding in 40% cream lifts all six to >=3:1,
+   enough for dots and underlines. Declared on body so it resolves against each
+   page's own inline --theory-accent. */
+body{--theory-accent-on-dark:color-mix(in srgb, var(--theory-accent) 60%, var(--cream) 40%);}
+
 body{
   margin:0;
   font-family:var(--sans);
@@ -287,7 +293,7 @@ details.expand .expand-body p{margin-bottom:0.7em;}
 .tl-dot{position:relative;}
 .tl-dot::before{
   content:""; position:absolute; left:50%; top:0.3rem; width:12px; height:12px; border-radius:50%;
-  background:var(--theory-accent); transform:translateX(-50%); border:2px solid var(--ink);
+  background:var(--theory-accent-on-dark); transform:translateX(-50%); border:2px solid var(--ink);
 }
 @media (max-width:600px){
   .tl-dot{grid-row:1 / span 2;}
@@ -394,6 +400,7 @@ footer.site-footer{padding:3.5rem 0 2.5rem;}
   background:var(--theory-accent); margin-right:0.5em; vertical-align:middle;
 }
 .section-dark .breadcrumb{border-bottom-color:rgba(240,234,224,0.15);}
+.section-dark .breadcrumb .current::before{background:var(--theory-accent-on-dark);}
 .section-dark .breadcrumb a{color:#cdd8de; text-decoration-color:var(--sage);}
 .section-dark .breadcrumb .sep{color:var(--taupe);}
 .section-dark .breadcrumb .current{color:var(--cream);}
@@ -409,8 +416,11 @@ footer.site-footer{padding:3.5rem 0 2.5rem;}
 
 .subhero-back{
   align-self:center; font-size:0.9375rem; font-weight:500; color:#cdd8de;
-  text-decoration-color:var(--theory-accent);
+  text-decoration-color:var(--theory-accent-on-dark);
 }
+/* `.section-dark a` (above) sets a sage underline and outranks the rule above, which
+   left the accent underline dead; restated here so it takes effect. */
+.section-dark .subhero-back{text-decoration-color:var(--theory-accent-on-dark);}
 
 .toc-nav{background:var(--cream); border-bottom:1px solid var(--cream-dim); position:sticky; top:60px; z-index:90;}
 .toc-row{display:flex; gap:0.55rem; flex-wrap:wrap; padding:0.85rem 0; overflow-x:auto;}
@@ -479,7 +489,11 @@ footer.site-footer{padding:3.5rem 0 2.5rem;}
   padding:2.75rem 0; border-top:1px solid rgba(240,234,224,0.15); flex-wrap:wrap;
 }
 .page-footer-nav a{font-weight:600; text-decoration:none;}
-.page-footer-nav .pfn-label{display:block; font-family:var(--mono); font-size:0.75rem; color:var(--theory-accent); font-weight:400; margin-bottom:0.25rem;}
+.page-footer-nav .pfn-label{display:block; font-family:var(--mono); font-size:0.75rem; color:color-mix(in srgb, var(--cream) 85%, var(--ink) 15%); font-weight:400; margin-bottom:0.25rem;}
+.page-footer-nav .pfn-label::before{
+  content:""; display:inline-block; width:6px; height:6px; border-radius:50%;
+  background:var(--theory-accent-on-dark); margin-right:0.5em; vertical-align:middle;
+}
 .page-footer-nav .pfn-back{margin-right:auto;}
 
 /* misc */
