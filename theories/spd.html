@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Space Particle Dualism — Elementary Spaces</title>
-<meta name="description" content="A deep dive into Sky Darmos's Space Particle Dualism: particles as complex-valued spherical surfaces, why the Standard Model's three forces need no symmetry breaking, the hierarchy problem, and the slit experiment proposed to test it.">
+<meta name="description" content="A deep dive into Sky Darmos's Space Particle Dualism: particles as complex-valued spherical surfaces, why the Standard Model's three forces need no symmetry breaking, the hierarchy problem, the slit experiment proposed to test it, and a 2026 revision of the Born rule with its own wave-imprint prediction.">
 <meta name="theme-color" content="#3D5A6E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +45,7 @@
 
     <div class="hero-grid" style="margin-top:2rem;">
       <div>
-        <p class="hero-eyebrow">Theory 2 of 6 &middot; conceived 2005, on a car ride near Skala, Greece</p>
+        <p class="hero-eyebrow">Theory 2 of 6 &middot; conceived 2005, on a car ride near Skala, Greece &mdash; extended through 10 March 2026</p>
         <h1>Space is made of overlapping spheres</h1>
         <p class="dek">The book's second founding idea gives every particle its own small, complex-valued
           spherical surface instead of treating it as a point. Overlap enough of these "elementary spaces"
@@ -91,6 +91,7 @@
     <a class="toc-link" href="#density-of-space">The density of space</a>
     <a class="toc-link" href="#testing-it">Testing it: probing a particle</a>
     <a class="toc-link" href="#mass-out-of-light">Mass out of light</a>
+    <a class="toc-link" href="#revised-born-rule">Revised Born rule</a>
     <a class="toc-link" href="#development-notes">Development notes</a>
   </div>
 </nav>
@@ -545,6 +546,128 @@
 </section>
 
 <!-- ============================================================
+     REVISED BORN RULE
+     ============================================================ -->
+<section id="revised-born-rule" class="section-tint deep-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">A late, and separately dated, revision</p>
+      <h2>A revised Born rule: probability as a rectified half-wave</h2>
+    </div>
+
+    <p class="caveat">This material sits in the book's introductory chapter rather than its Space Particle
+      Dualism chapter proper — but it's built entirely out of the oscillating complex-valued elementary
+      spaces this page already covers, which is why it's placed here rather than left with nowhere to live.
+      Its own dates, 2025&ndash;2026, are also the most recent on this page by several years.</p>
+
+    <div class="prose">
+      <p>Ordinary quantum mechanics gets a detection probability from a wavefunction's complex amplitude
+        with the Born rule, <span class="inline-formula" data-katex="P=|z|^2"></span>.
+        <a href="#core-idea">Earlier on this page</a>, a particle's complex mass-energy
+        <span class="inline-formula" data-katex="z"></span> was already described oscillating continuously
+        through every value sharing the same absolute size, cycling through positive and negative real and
+        imaginary parts in turn, with an ordinary measurement just catching that oscillation at one instant.
+        The book's proposal here narrows what counts as a measurement further: a particle is only actually
+        present, in the sense that matters for detection, while the real part of that oscillation,
+        <span class="inline-formula" data-katex="\Re(z)"></span>, is positive. Interference itself is
+        untouched — every calculation that isn't a detection still uses the full complex
+        <span class="inline-formula" data-katex="z"></span> — but detection probability changes.</p>
+
+      <p>Squaring only the real part first gives
+        <span class="inline-formula" data-katex="P = 2\left|\Re(z)\right|^{2}"></span>, the factor of 2
+        restoring normalization after the imaginary part is dropped. The book then argues that formula is
+        still sign-blind in a way the underlying ontology doesn't allow, so it clips the real part,
+        <span class="inline-formula" data-katex="\Re(z)^{+} = \max\left(\Re(z),\ 0\right)"></span>, which
+        throws away half of what was left and doubles the normalizing factor again:
+        <span class="inline-formula" data-katex="P = 4\left(\Re(z)^{+}\right)^{2}"></span> — a squared
+        half-wave rectification, in the book's own phrase, restated in bra-ket form as
+        <span class="inline-formula" data-katex="P = 4\left(\Re(\langle\phi|\psi\rangle)^{+}\right)^{2}"></span>.
+        The book checks the arithmetic explicitly: summed over every outcome,
+        <span class="inline-formula" data-katex="\sum_i \left(\Re(z_i)^{+}\right)^{2} = 0.25"></span>, not 1
+        the way ordinary probabilities sum, which is exactly why the factor of 4 is needed to restore
+        <span class="inline-formula" data-katex="\sum_i 4\left(\Re(z_i)^{+}\right)^{2} = 1"></span>.</p>
+
+      <p>This isn't offered as a fix for some known gap in the ordinary Born rule's own justification — the
+        book doesn't engage with Gleason's theorem, the Deutsch&ndash;Wallace decision-theoretic derivation,
+        or envariance, and doesn't try to argue past any of them. It's presented purely as a consequence of
+        the picture already built up on this page: if a particle really is only detectable while its own
+        elementary space sits in the positive-real phase of its oscillation, restricting the probability
+        rule to that phase isn't a free choice bolted onto quantum mechanics from outside — it's what
+        "detection" has to mean under this framework.</p>
+
+      <h3>A distinct prediction: wave imprints without interference</h3>
+      <p>The clipped rule makes one prediction ordinary quantum mechanics doesn't: a single coherent
+        emission point should print a pattern of concentric rings on a screen even with no diffraction or
+        interference at all, rather than the smooth, featureless falloff ordinary QM predicts for that case.
+        Working from a 650 nm laser 0.8 m from a screen, the book solves
+        <span class="inline-formula" data-katex="\theta = \arccos\left(\dfrac{d}{d+\lambda}\right)"></span>
+        for the angular ring spacing and gets 0.00127 rad, about 0.073&deg;, giving a first-ring spacing of
+        <span class="inline-formula" data-katex="\Delta x = d\,\theta \approx 1.02\ \text{mm}"></span> —
+        which the book calls well above the smallest distance the naked eye can discern. The first ten ring
+        spacings it lists run 1.02, 1.44, 1.77, 2.04, 2.28, 2.50, 2.70, 2.88, 3.06 and 3.22 mm.</p>
+
+      <p>A real emitter isn't a single point, and the book says the clean rings degrade into a generic
+        granular pattern once that's accounted for — which it says is something it has already observed: a
+        photograph of laser light reflected off a wall from 0.8 m shows a grain the book calls clearly
+        visible even with no interference present. Its proposed further test is to slide the laser back by
+        exactly half a wavelength and watch the bright and dark grains swap.</p>
+    </div>
+
+    <p class="caveat">This guide's own addition, not the book's: ordinary laser speckle — the granular
+      pattern coherent light produces reflecting off any rough surface, from purely classical interference
+      at the surface's own microscopic irregularities — is the standard, well-established explanation for
+      exactly this kind of grain. The book doesn't use the word "speckle" anywhere in this material and
+      doesn't address that explanation or rule it out; it presents the granularity as support for its own
+      rule without engaging the mainstream alternative. That omission matters more here than a typical
+      uncited claim, since it's the one piece of this section framed as an observation already made rather
+      than a proposal still to be run.</p>
+
+    <div class="prose">
+      <h3>A reinterpreted uncertainty principle, and two purely qualitative extensions</h3>
+      <p>Clipping to a quarter of the original states, the book argues, shrinks position uncertainty by the
+        same factor of 4 while leaving momentum uncertainty fixed, giving
+        <span class="inline-formula" data-katex="\Delta x\,\Delta p = \dfrac{\hbar}{8}"></span> in place of
+        the ordinary <span class="inline-formula" data-katex="\Delta x \, \Delta p \geq \dfrac{\hbar}{2}"></span>
+        already used <a href="swi.html#core-idea">on the Similar-Worlds Interpretation's page</a>. That's a
+        genuinely different number, but the book treats it as a bookkeeping correction to an already-known
+        physical scenario rather than a proposal to actually go measure
+        <span class="inline-formula" data-katex="\Delta x"></span> directly and catch the factor of 4.</p>
+
+      <p>Two further extensions carry no attached numbers to test at all: restricting each orbital to its
+        <span class="inline-formula" data-katex="2l+1"></span> real-amplitude sectors, instead of ordinary
+        quantum mechanics' <span class="inline-formula" data-katex="2l"></span>, is offered as a qualitative
+        account of why molecular bonds are as rigid as they are, and the same restriction is extended, just
+        as qualitatively, to how biological molecules might act as cellular automata.</p>
+
+      <details class="expand">
+        <summary>What the book compares this to — and what it doesn't</summary>
+        <div class="expand-body">
+          <p>The one comparison the book draws to another physicist's work is Celso Villas-Boas's 2025
+            "dark photon states," where a photon is entangled with a photon-number state that hasn't been
+            emitted yet. The book calls the resemblance a coincidence of terminology rather than a shared
+            mechanism — Boas's states are about photon-number superposition, not about
+            <span class="inline-formula" data-katex="\Re(z)"></span> crossing zero — and argues, in its own
+            words, that experiments where a single measured photon still shows wave behavior count against
+            Boas's model specifically, not against its own.</p>
+          <p>Beyond that, the book cites Roger Nelson's Global Consciousness Project and Simon Shnoll's work
+            on non-Gaussian statistical distributions as circumstantial support for phase-coherence effects
+            being real — not as rival derivations of a probability rule, but the same kind of pattern
+            <a href="swi.html#nonlocal-pk">this site's existing parapsychology caveat</a> already applies to
+            elsewhere.</p>
+        </div>
+      </details>
+
+      <p><strong>Status: an interpretation with one partly-observed, testable consequence.</strong> The
+        clipped normalization and the rewritten uncertainty relation are internal reinterpretations of an
+        already-known scenario; the wave-imprint pattern is a genuinely distinct prediction, but the book
+        treats its own laser photograph as confirming evidence rather than running the clean version of the
+        experiment — a single, isolated emission point — that would actually distinguish it from ordinary
+        speckle.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
      DEVELOPMENT NOTES
      ============================================================ -->
 <section id="development-notes" class="section-dark">
@@ -635,6 +758,51 @@
           <h4>Surface and source unified</h4>
           <p>Dropping the last remaining distinction between a particle and its own elementary space — the
             two were never separate things.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">2 Jul 2025</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>Squaring the real component</h4>
+          <p>The first step toward a revised Born rule: probability from the real part of a particle's
+            oscillating complex energy, not its full complex value.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">6 Jul 2025</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>The clipped rule, and its factor of 2</h4>
+          <p>Restricting detection to the positive-real phase of the oscillation — the step that would later
+            become the factor-of-4 rule below.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">18 Jul 2025</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>The wave-imprint pattern</h4>
+          <p>The concentric-ring prediction worked out and matched against an existing laser photograph.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">25 Sep &ndash; 1 Oct 2025</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>The uncertainty principle rewritten</h4>
+          <p>Position uncertainty shrinks by the same factor of 4 the clipped rule removes, giving &#295;/8
+            in place of &#295;/2; corrected on 1 October.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-year">10 Mar 2026</span>
+        <span class="tl-dot"></span>
+        <div class="tl-content">
+          <h4>The corrected factor of 4</h4>
+          <p>The final version of the rule, extended the same week to molecular bonds and cellular
+            automata — the book's own changelog lists these three entries slightly out of order (10, then 9,
+            then 10 March), kept here in true date order.</p>
         </div>
       </div>
     </div>
