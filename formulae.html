@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulae &amp; Constants — Elementary Spaces</title>
+<meta name="description" content="Every formula and constant from the book's own Formulae and Constants reference chapter — Space Particle Dualism, Entropic Expansion, and Chromogravity & Electrogravity — with exact values and cross-links to where each is used.">
+<meta name="theme-color" content="#3D5A6E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="nav-row">
+    <a class="wordmark" href="index.html#top">Elementary Spaces <small>a guide to Sky Darmos's quantum gravity</small></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle menu"><span></span></button>
+    <nav class="primary-nav" id="primaryNav">
+      <a href="index.html#theories">Theories</a>
+      <a href="index.html#problems">Problems</a>
+      <a href="index.html#timeline">Timeline</a>
+      <a href="index.html#concepts">Concepts</a>
+      <a href="index.html#formulae">Formulae</a>
+      <a href="index.html#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============================================================
+     SUBHERO
+     ============================================================ -->
+<section class="hero subhero section-dark" id="top">
+  <div class="wrap">
+    <p class="breadcrumb">
+      <a href="index.html#top">Elementary Spaces</a><span class="sep">/</span><a href="index.html#formulae">Formulae</a><span class="sep">/</span><span class="current" aria-current="page">Full reference</span>
+    </p>
+
+    <div class="hero-grid" style="margin-top:2rem;">
+      <div>
+        <p class="hero-eyebrow">Reference &middot; 26 entries, three theories, one chapter</p>
+        <h1>Every formula and constant, exactly as the book states it</h1>
+        <p class="dek">The homepage's own formula cards are a sample of six. This page is the rest: every
+          entry from the book's dedicated "Formulae and Constants" reference chapter, transcribed exactly —
+          name, description, formula, and the precise value the book prints — rather than the rounded
+          figures used in prose elsewhere on this site.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#spd-formulae">Browse the tables</a>
+          <a class="subhero-back" href="index.html#formulae">&larr; Back to the homepage's own sample</a>
+        </div>
+
+        <div class="framing-box compact">
+          <strong>A note on what's below, and what isn't.</strong> The book's own reference chapter
+          collects formulae for only three of its six theories: Space Particle Dualism, Entropic Expansion
+          Cosmology, and Chromogravity &amp; Electrogravity. Charge Mass Dualism, the Similar-Worlds
+          Interpretation, and Conscious Set Theory have no equivalent table in that chapter — their numbers
+          live in the prose of their own chapters instead, which is where this site's deep-dive pages for
+          them already draw from. This page doesn't fill that gap; it transcribes what the reference chapter
+          itself contains, and no more.
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="180" fill="none" stroke="#F0EAE0" stroke-opacity="0.08"/>
+          <circle cx="200" cy="200" r="130" fill="none" stroke="#F0EAE0" stroke-opacity="0.11"/>
+          <rect x="90" y="90" width="90" height="90" rx="4" fill="none" stroke="#5b8fa8" stroke-opacity="0.55" stroke-width="1.5"/>
+          <rect x="150" y="150" width="90" height="90" rx="4" fill="none" stroke="#D9C9A8" stroke-opacity="0.7" stroke-width="1.5"/>
+          <rect x="210" y="210" width="90" height="90" rx="4" fill="none" stroke="#8B7D6B" stroke-opacity="0.6" stroke-width="1.5"/>
+          <line x1="90" y1="115" x2="300" y2="115" stroke="#F0EAE0" stroke-opacity="0.15"/>
+          <line x1="90" y1="145" x2="300" y2="145" stroke="#F0EAE0" stroke-opacity="0.1"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ON-PAGE TOC
+     ============================================================ -->
+<nav class="toc-nav" aria-label="On this page">
+  <div class="wrap toc-row">
+    <a class="toc-link" href="#spd-formulae" style="--theory-accent: var(--acc-spd);">Space Particle Dualism</a>
+    <a class="toc-link" href="#eec-formulae" style="--theory-accent: var(--acc-eec);">Entropic Expansion</a>
+    <a class="toc-link" href="#chromo-formulae" style="--theory-accent: var(--acc-chromo);">Chromogravity &amp; Electrogravity</a>
+  </div>
+</nav>
+
+<!-- ============================================================
+     READING THE TABLE
+     ============================================================ -->
+<section class="deep-section">
+  <div class="wrap">
+    <p class="caveat">
+      <strong>How to read these tables.</strong> The "Value" column is the book's own — usually more decimal
+      places than the rounded figures used in the six theory pages' own prose, since this is a reference
+      chapter rather than a narrative one. Where a value reads "Any," the book means the formula is a general
+      law rather than one with a single fixed output (Newton's law of gravity is "any" in the same sense). The
+      year in each entry's name is the book's own dating convention, carried over from every theory page's
+      "Development notes" section; a second year (e.g. "2018 &amp; 2020") means the formula was revised. Where
+      a formula in this chapter differs from a figure already stated elsewhere on this site, that's noted
+      under the relevant table rather than silently resolved one way or the other.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     SPACE PARTICLE DUALISM
+     ============================================================ -->
+<section id="spd-formulae" class="deep-section" style="--theory-accent: var(--acc-spd);">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><a href="theories/spd.html">Theory 2 of 6</a> &middot; the chapter this table's own constant, G<sub>E</sub>, makes possible</p>
+      <h2>Space Particle Dualism</h2>
+      <p>Thirteen entries, from the elementary-space radius formula through the lifetime of the shortest-lived
+        virtual particle it allows. Most of the critical-frequency chain underlies
+        <a href="theories/spd.html#testing-it">the slit experiment SPD proposes</a>; the granular-dimensionality
+        row is the exact figure <a href="theories/spd.html#density-of-space">SPD's own hierarchy-problem
+        section</a> and <a href="theories/cmd.html#testing-it">Charge Mass Dualism's recount</a> both already
+        point to.</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <caption>Space Particle Dualism — every formula in the book's reference chapter for this theory</caption>
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Formula</th>
+            <th scope="col">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Elementary space radius (2005)</td>
+            <td>Depends on the energy of the particle.</td>
+            <td><span class="inline-formula" data-katex="R_E = \dfrac{2\,G_E\,E}{c^{4}}"></span></td>
+            <td class="num">Any.</td>
+          </tr>
+          <tr>
+            <td>Elementary space constant (2016 &amp; 2018)</td>
+            <td>Constant that determines the size of elementary spaces.</td>
+            <td><span class="inline-formula" data-katex="G_E = \dfrac{k_e\,e^{2}}{m_p^{2}}"></span></td>
+            <td class="num">8.246441821&times;10<sup>25</sup> m<sup>3</sup>&nbsp;s<sup>-2</sup>&nbsp;kg<sup>-1</sup></td>
+          </tr>
+          <tr>
+            <td>Granular dimensionality (2005 &amp; 2015)</td>
+            <td>Depends on the energy density of the vacuum and determines the strength of gravity.</td>
+            <td>
+              <span class="inline-formula" data-katex="D = 2 + \left(1 - \dfrac{1}{\sqrt{n}}\right)"></span><br>
+              <span class="inline-formula" data-katex="D = d + \left(1 - \dfrac{1}{\sqrt[d]{n}}\right)"></span>
+            </td>
+            <td class="num">3 &minus; 10<sup>-35</sup></td>
+          </tr>
+          <tr>
+            <td>Critical photon energy (2016)</td>
+            <td>Energy at which the elementary space of a photon grows over its wavelength.</td>
+            <td><span class="inline-formula" data-katex="E_{\text{crit}} = \sqrt{\dfrac{h\,c^{5}}{4\,G_E}}"></span></td>
+            <td class="num">2.205547715&times;10<sup>-9</sup> J</td>
+          </tr>
+          <tr>
+            <td>Critical photon frequency (2016)</td>
+            <td>Frequency at which the elementary space of a photon grows over its wavelength.</td>
+            <td><span class="inline-formula" data-katex="f_{\text{crit}} = \dfrac{E_{\text{crit}}}{h}"></span></td>
+            <td class="num">3.328591242&times;10<sup>24</sup> Hz</td>
+          </tr>
+          <tr>
+            <td>Critical photon wavelength (2016)</td>
+            <td>Photon wavelength at which it equals the diameter of the associated elementary space.</td>
+            <td><span class="inline-formula" data-katex="\lambda_{\text{crit}} = \dfrac{c}{f_{\text{crit}}}"></span></td>
+            <td class="num">9.006586757&times;10<sup>-17</sup> m</td>
+          </tr>
+          <tr>
+            <td>Critical electron speed (2016)</td>
+            <td>Speed at which the elementary space of an electron grows over its wavelength.</td>
+            <td><span class="inline-formula" data-katex="v_{\text{crit}} = \left(-\dfrac{4\,G_E\,m_e^{2}}{h} + \sqrt{\dfrac{16\,G_E^{2}\,m_e^{4}}{h^{2}} + 4c^{2}}\right)\times\dfrac{1}{2}"></span></td>
+            <td class="num">299,792,457.793 m/s</td>
+          </tr>
+          <tr>
+            <td>Critical electron impulse and energy (2016)</td>
+            <td>Energy and impulse at which the elementary space of an electron grows over its wavelength.</td>
+            <td>
+              <span class="inline-formula" data-katex="p_{\text{crit}} = \dfrac{m_e\,v_{\text{crit}}}{\sqrt{1-\left(v_{\text{crit}}/c\right)^{2}}}"></span><br>
+              <span class="inline-formula" data-katex="E_{\text{crit}} = \sqrt{p^{2}c^{2}+m_e^{2}c^{4}}"></span>
+            </td>
+            <td class="num">p<sub>crit</sub> = 7.47707569&times;10<sup>-18</sup> kg&nbsp;m/s<br>E<sub>crit</sub> = 2.24157&times;10<sup>-9</sup> J</td>
+          </tr>
+          <tr>
+            <td>Critical electron de Broglie wavelength (2016)</td>
+            <td>Wavelength at which the elementary space of an electron grows over its wavelength.</td>
+            <td><span class="inline-formula" data-katex="\lambda_{\text{crit}} = \dfrac{h}{p_{\text{crit}}}"></span></td>
+            <td class="num">9.0065857&times;10<sup>-17</sup> m</td>
+          </tr>
+          <tr>
+            <td>Length dependent quantization of energy (2015)</td>
+            <td>The wavelength of particles is quantized using the Planck length.</td>
+            <td>
+              <span class="inline-formula" data-katex="E = \dfrac{h c}{\lambda}"></span>,
+              <span class="inline-formula" data-katex="\lambda = n\times\sqrt{\dfrac{\hbar G}{c^{3}}}"></span>
+            </td>
+            <td class="num">Discrete values.</td>
+          </tr>
+          <tr>
+            <td>Time dependent quantization of energy (2015)</td>
+            <td>The energy of particles is quantized using the time-energy relation.</td>
+            <td>
+              <span class="inline-formula" data-katex="E = \dfrac{\hbar}{2n\times t_P}"></span>,
+              <span class="inline-formula" data-katex="t_P = \sqrt{\dfrac{\hbar G}{c^{5}}}"></span>
+            </td>
+            <td class="num">Discrete values.</td>
+          </tr>
+          <tr>
+            <td>Energy minimum for virtual particles (2016)</td>
+            <td>Energy minimum for elementary spaces contributing to granular dimensionality.</td>
+            <td><span class="inline-formula" data-katex="E_{\min} = \dfrac{c^{4}\sqrt{G\hbar/c^{3}}}{4\,G_E}"></span></td>
+            <td class="num">3.95785&times;10<sup>-28</sup> J</td>
+          </tr>
+          <tr>
+            <td>Maximal lifetime (2016)</td>
+            <td>Lifetime of a minimal energy virtual particle.</td>
+            <td><span class="inline-formula" data-katex="\Delta t = \dfrac{\hbar}{2\,E_{\min}}"></span></td>
+            <td class="num">1.332253621&times;10<sup>-7</sup> sec</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="data-table-note">The critical-photon and critical-electron rows are the exact source of the
+        figures already rounded in prose on <a href="theories/spd.html#testing-it">SPD's own testing-it
+        section</a> (2.2&times;10<sup>-9</sup> J, 3.3&times;10<sup>24</sup> Hz, 9.0&times;10<sup>-17</sup> m,
+        and the electron's matching 9.0065857&times;10<sup>-17</sup> m). The granular-dimensionality row's
+        "3 &minus; 10<sup>-35</sup>" is the refined figure <a href="theories/cmd.html#testing-it">CMD's own
+        recount</a> arrives at, distinct from the earlier "10<sup>-34</sup>" estimate SPD's own page still
+        states — this table doesn't resolve which one the book treats as current, only that both appear on
+        the site.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ENTROPIC EXPANSION
+     ============================================================ -->
+<section id="eec-formulae" class="section-tint deep-section" style="--theory-accent: var(--acc-eec);">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><a href="theories/eec.html">Theory 4 of 6</a> &middot; the chain behind the 42-trillion-year figure</p>
+      <h2>Entropic Expansion</h2>
+      <p>Six entries. The middle three are the exact machinery behind
+        <a href="theories/eec.html#post-decoupling-age">EEC's own post-decoupling age derivation</a> — the
+        time-redshift constant here (39,625,004,647 lyr) is the same one the homepage's own formula card and
+        <a href="theories/cmd.html#core-idea">Charge Mass Dualism's "16-trillion-year dark epoch" aside</a>
+        both already assume.</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <caption>Entropic Expansion — every formula in the book's reference chapter for this theory</caption>
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Formula</th>
+            <th scope="col">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Initial mass of primordial exotic holes (2017 &amp; 2018)</td>
+            <td>Relevant for the precise version of the time-redshift equation.</td>
+            <td><span class="inline-formula" data-katex="M_{\text{SBH}_i} = \dfrac{G_E\,m_e}{G}"></span></td>
+            <td class="num">1,125,587.541 kg</td>
+          </tr>
+          <tr>
+            <td>Impulse of exotic matter particles dependent on host black hole (2018)</td>
+            <td>Only of theoretical value.</td>
+            <td><span class="inline-formula" data-katex="\Delta p = \dfrac{\hbar c^{2}}{8\,G\,M_{EH}}"></span></td>
+            <td class="num">Always practically zero.</td>
+          </tr>
+          <tr>
+            <td>Hubble parameter at different times (2019)</td>
+            <td>According to SPD, the expansion of the universe is independent of gravity.</td>
+            <td><span class="inline-formula" data-katex="H = \dfrac{H_0-H_i}{t_0^{2}}\times t^{2} + H_i"></span></td>
+            <td class="num">Any.</td>
+          </tr>
+          <tr>
+            <td>Time-redshift equation (2019; 2021)</td>
+            <td>Allows the light-travel distance to any object to be calculated.</td>
+            <td><span class="inline-formula" data-katex="t_0 = \dfrac{\dfrac{6c\,z_{t_0}}{H_0-H_i}-3}{2+\dfrac{6H_i}{H_0-H_i}}"></span></td>
+            <td class="num">&cong; z &times; 39,625,004,647 yr</td>
+          </tr>
+          <tr>
+            <td>Initial Hubble parameter (2019)</td>
+            <td>Impacts only the seventh digit in the age of the universe.</td>
+            <td><span class="inline-formula" data-katex="H_i = \dfrac{M_{\text{SBH}_i}^{2}\,H_0}{M_{\text{SBH}_\mu}^{2}}"></span></td>
+            <td class="num">2.750307987&times;10<sup>-17</sup> m/s per light-second</td>
+          </tr>
+          <tr>
+            <td>Initial temperature of the universe (2015)</td>
+            <td>The initial temperature depends on the average entropy density.</td>
+            <td><span class="inline-formula" data-katex="T_i = \sqrt[3]{\dfrac{\rho_S\,c^{3}\,h^{3}}{16\,\pi\,k^{3}\,\zeta(3)\,T^{3}}}"></span></td>
+            <td class="num">5,963.0497688 K</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="data-table-note">Two things worth flagging rather than smoothing over. First, "initial mass of
+        primordial exotic holes" (1,125,587.541 kg) is a different quantity from the minimum mass for a
+        primordial black hole to close a horizon that <a href="theories/eec.html#primordial-black-holes">EEC's
+        own primordial-black-holes section</a> derives (about 9.80&times;10<sup>30</sup> kg, roughly 4.9 solar
+        masses) — the similar name is easy to conflate with a very different number. Second, this table's
+        "initial temperature" formula is dated 2015, predates the supermassive-black-hole survey
+        <a href="theories/eec.html#full-age-of-the-universe">EEC's own full-age section</a> is built on, and
+        its result (5,963 K) matches none of that section's own figures (the 3,418&ndash;11,712 K survey range,
+        or the 4,021 K BAO-tuned pick) — this reference-chapter formula looks superseded by the later method,
+        the same way EEC's page already flags an earlier, "now-superseded" age estimate elsewhere. The formula
+        also prints <em>T</em> on both sides (T<sub>i</sub> on the left, a plain <em>T</em> inside the cube
+        root on the right); that's transcribed exactly as the book's own table shows it, not a typo introduced
+        here. The initial-Hubble-parameter row's own M<sub>SBH<sub>&mu;</sub></sub> is likewise printed exactly
+        as given — the book's reference chapter doesn't define it within this table, and this guide couldn't
+        trace where it's defined elsewhere.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SPD-CHROMOGRAVITY AND ELECTROGRAVITY
+     ============================================================ -->
+<section id="chromo-formulae" class="deep-section" style="--theory-accent: var(--acc-chromo);">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow"><a href="theories/chromo.html">Theory 6 of 6</a> &middot; the book's own chapter groups this table under SPD, not on its own</p>
+      <h2>SPD-Chromogravity and Electrogravity</h2>
+      <p>Seven entries, building directly on Space Particle Dualism's own constants rather than starting
+        fresh — the book's own table name, "SPD-chromogravity," makes that dependency explicit in a way
+        <a href="theories/chromo.html#two-gravities">the theory page's own prose</a> only implies. The last
+        row, the general formula for any element's own gravitational constant, is the one
+        <a href="theories/chromo.html#cavendish">Chromogravity's Cavendish meta-analysis</a> applies across the
+        whole periodic table.</p>
+    </div>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <caption>SPD-Chromogravity and Electrogravity — every formula in the book's reference chapter for this theory</caption>
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Formula</th>
+            <th scope="col">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mass-gravity constant of the proton (2018; 2020)</td>
+            <td>The basis of the chromogravity constant.</td>
+            <td><span class="inline-formula" data-katex="G_p = G_{\text{Fe}}\times\dfrac{m_{\text{Fe}}}{n_{p\text{Fe}}\,m_p+n_{n\text{Fe}}\,m_n}\times\dfrac{m_H}{m_p}"></span></td>
+            <td class="num">G<sub>p</sub> = 6.617310&times;10<sup>-11</sup> m<sup>3</sup>&nbsp;kg<sup>-1</sup>&nbsp;s<sup>-2</sup></td>
+          </tr>
+          <tr>
+            <td>Chromogravity constant (2018)</td>
+            <td>Not used in combination with a mass, but with quark count.</td>
+            <td><span class="inline-formula" data-katex="G_{|\mathbb{Y}|} = G_{\text{Fe}}\times\dfrac{m_{\text{Fe}}}{n_{p\text{Fe}}\,m_p+n_{n\text{Fe}}\,m_n}\times\dfrac{m_H}{m_p}\times\dfrac{m_p^{2}}{9}"></span></td>
+            <td class="num">2.05700&times;10<sup>-65</sup> m<sup>3</sup>&nbsp;kg&nbsp;s<sup>-2</sup></td>
+          </tr>
+          <tr>
+            <td>Electrogravity constant (2018)</td>
+            <td>Analogous to the above.</td>
+            <td><span class="inline-formula" data-katex="G_{|\mathbb{Q}|} = \dfrac{G_p\,e^{2}}{4\pi\varepsilon_0\,\hbar\,c}"></span></td>
+            <td class="num">1.35096&times;10<sup>-66</sup> m<sup>3</sup>&nbsp;kg&nbsp;s<sup>-2</sup></td>
+          </tr>
+          <tr>
+            <td>Law of chromogravity (2018)</td>
+            <td>Replaces Newton's law of gravity.</td>
+            <td><span class="inline-formula" data-katex="F_{G_{|\mathbb{Y}|}} = G_{|\mathbb{Y}|}\times\dfrac{|\mathbb{Y}|_1\,|\mathbb{Y}|_2}{r^{2}}"></span></td>
+            <td class="num">Any.</td>
+          </tr>
+          <tr>
+            <td>Law of electrogravity (2018)</td>
+            <td>Analogous to the above.</td>
+            <td><span class="inline-formula" data-katex="F_{G_{|\mathbb{Q}|}} = G_{|\mathbb{Q}|}\times\dfrac{|\mathbb{Q}|_1\,|\mathbb{Q}|_2}{r^{2}}"></span></td>
+            <td class="num">Any.</td>
+          </tr>
+          <tr>
+            <td>Mass-gravity constant of hydrogen (2018; 2020)</td>
+            <td>The basis of all mass-gravity constants.</td>
+            <td><span class="inline-formula" data-katex="G_H = G_{\text{Fe}}\times\dfrac{m_{\text{Fe}}}{n_{p\text{Fe}}\,m_p+n_{n\text{Fe}}\,m_n}"></span></td>
+            <td class="num">G<sub>H</sub> = 6.613431&times;10<sup>-11</sup> m<sup>3</sup>&nbsp;kg<sup>-1</sup>&nbsp;s<sup>-2</sup></td>
+          </tr>
+          <tr>
+            <td>Mass-gravity constant of any element (2018; 2020)</td>
+            <td>The gravity per kilogram depends on the chemical composition.</td>
+            <td><span class="inline-formula" data-katex="G_X = G_H\times\dfrac{n_{pX}\,m_p+n_{nX}\,m_n}{m_X}"></span></td>
+            <td class="num">Any.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="data-table-note">Worth flagging: this table's G<sub>H</sub> (6.613431) and G<sub>p</sub>
+        (6.617310) are close to, but not identical with, the "refined" values Chromogravity's own page states
+        in prose — G<sub>H</sub> = 6.613511 and G<sub>p</sub> = 6.617210. That's the same "two bases" split
+        <a href="theories/chromo.html#cavendish">the Cavendish section's own predicted-G table note</a> already
+        catches: a per-material table reproduces cleanly from the steel-anchored G<sub>H</sub> = 6.613430
+        (which this reference table's 6.613431 matches, to rounding), not from the refined 6.613511 quoted
+        elsewhere in the same chapter. The chromogravity and electrogravity constants (2.05700&times;10<sup>-65</sup>
+        and 1.35096&times;10<sup>-66</sup>) do match Chromogravity's own prose values exactly.</p>
+    </div>
+  </div>
+</section>
+
+<div class="section-dark">
+  <div class="wrap page-footer-nav">
+    <a class="pfn-back" href="index.html#formulae">
+      <span class="pfn-label">Homepage</span>
+      &larr; Back to the formula samples
+    </a>
+    <a href="problems.html">
+      <span class="pfn-label">Another full index</span>
+      Every problem, and where it's argued &rarr;
+    </a>
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer section-dark">
+  <div class="wrap">
+    <div class="footer-row">
+      <a class="wordmark" href="index.html#top" style="color:var(--cream)">Elementary Spaces</a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html#theories">Theories</a>
+        <a href="index.html#problems">Problems</a>
+        <a href="index.html#timeline">Timeline</a>
+        <a href="index.html#concepts">Concepts</a>
+        <a href="index.html#formulae">Formulae</a>
+        <a href="index.html#about">About</a>
+      </nav>
+    </div>
+    <p class="footer-note">An independent companion guide to <em>The Complete Guide to Quantum Gravity</em>
+      by Sky Darmos. Not peer-reviewed, not affiliated with any research institution, and not an assessment
+      of the theory's validity — a map for navigating what the book itself claims. The <a href="problems.html">full
+      problems index</a> and the <a href="timeline.html">full chronology</a> are this page's siblings.</p>
+  </div>
+</footer>
+
+<script defer src="js/script.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+
+</body>
+</html>
