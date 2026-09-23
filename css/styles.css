@@ -231,6 +231,13 @@ nav.primary-nav a:hover{background:none; border-bottom-color:var(--steel);}
 .tag-gravity{background:#cfe0e8; color:var(--ink);}
 .tag-particle{background:#e6ddc9; color:var(--ink);}
 .tag-consciousness{background:#e0d6e0; color:var(--ink);}
+.tag-swi{background:color-mix(in srgb, var(--acc-swi) 40%, var(--cream) 60%); color:var(--ink);}
+.tag-spd{background:color-mix(in srgb, var(--acc-spd) 55%, var(--cream) 45%); color:var(--ink);}
+.tag-cmd{background:color-mix(in srgb, var(--acc-cmd) 40%, var(--cream) 60%); color:var(--ink);}
+.tag-eec{background:color-mix(in srgb, var(--acc-eec) 45%, var(--cream) 55%); color:var(--ink);}
+.tag-cst{background:color-mix(in srgb, var(--acc-cst) 45%, var(--cream) 55%); color:var(--ink);}
+.tag-chromo{background:color-mix(in srgb, var(--acc-chromo) 40%, var(--cream) 60%); color:var(--ink);}
+a.tag{text-decoration:none;}
 .problem-name{font-weight:600; font-size:1rem;}
 .problem-solution{color:var(--taupe); font-size:0.95rem;}
 .problem-solution a{font-size:inherit;}
@@ -293,7 +300,7 @@ details.expand .expand-body p{margin-bottom:0.7em;}
 .tl-dot{position:relative;}
 .tl-dot::before{
   content:""; position:absolute; left:50%; top:0.3rem; width:12px; height:12px; border-radius:50%;
-  background:var(--theory-accent-on-dark); transform:translateX(-50%); border:2px solid var(--ink);
+  background:var(--tl-dot-color, var(--theory-accent-on-dark)); transform:translateX(-50%); border:2px solid var(--ink);
 }
 @media (max-width:600px){
   .tl-dot{grid-row:1 / span 2;}
@@ -462,6 +469,14 @@ footer.site-footer{padding:3.5rem 0 2.5rem;}
 .interp-row.is-current .interp-status{color:var(--ink);}
 
 .mini-timeline{margin-top:0.5rem;}
+
+/* Full chronology page — the .timeline component is otherwise only ever used on a
+   .section-dark background (homepage, per-theory dev-notes); this page puts it on a
+   light section instead, so its dark-tuned text colors need a scoped flip. */
+#chronology .tl-year{color:var(--taupe);}
+#chronology .tl-content h4{color:var(--ink);}
+#chronology .tl-content p{color:#4d5f6a;}
+#chronology .tl-phase{margin-bottom:0.5rem;}
 
 /* Data table — for pages with genuinely tabular content (records, surveys, catalogues).
    Reuses --theory-accent and the .caveat dashed-border language for visual family. */

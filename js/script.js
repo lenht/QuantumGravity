@@ -16,7 +16,7 @@
 
   // Problem filter tabs
   var filterBtns = document.querySelectorAll('.filter-btn');
-  var rows = document.querySelectorAll('.problem-row');
+  var rows = document.querySelectorAll('.problem-row, .tl-item[data-cat]');
   filterBtns.forEach(function(btn){
     btn.addEventListener('click', function(){
       filterBtns.forEach(function(b){ b.setAttribute('aria-pressed','false'); });
