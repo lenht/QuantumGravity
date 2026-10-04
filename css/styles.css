@@ -14,18 +14,31 @@
   --cream-dim:#e7e0d3;     /* cream, dimmed for hairlines on light bg */
 
   /* Per-theory signature accents for the deep-dive subpages. All six are
-     derived from the tokens above — no new hex values — reserving ink/cream
-     for structure and drawing on each theory's own homepage-icon colors:
-     pure where an icon leans on one accent, color-mix() where it leans on
-     two. Each theories/*.html page sets --theory-accent to the matching
-     value via an inline style on <body>. See homepage-notes.md for the
-     full mapping and rationale. */
+     derived from the tokens above — no new hex values. Four are pure tokens
+     matching each theory's dominant homepage-icon color (SWI/steel, SPD/sand,
+     CMD/taupe, EEC/sage). CST and Chromogravity were originally color-mix()es
+     of two *already-claimed* accent tokens (sage+sand for CST, steel+taupe
+     for Chromogravity), which put each one literally on the line between two
+     existing accents rather than in its own region — CST sat closer to EEC
+     than EEC sat to anything else (CIEDE2000 ≈8), and Chromogravity sat
+     nearly as close to SWI (≈8.4). Revised Sep 2026: CST now mixes in
+     cream (a token otherwise reserved for backgrounds) to pull it into a
+     paler, cooler blue clear of the sage-to-sand line; Chromogravity mixes
+     sage into taupe instead of steel, landing on a distinct olive rather
+     than a steel-leaning blue-grey. Worst-case separation across all six
+     improves from ΔE≈8 to ΔE≈13.5 at full strength (≈8.1 vs ≈5.7 for the
+     --theory-accent-on-dark variant used on dark sections), with no change
+     to the ≥3:1 on-dark contrast floor against --ink, which was already set
+     by CMD/taupe rather than by either revised value. Each theories/*.html
+     page sets --theory-accent to the matching value via an inline style on
+     <body>. See homepage-notes.md for the full mapping, the before/after
+     CIEDE2000 tables, and the search method used to pick these. */
   --acc-swi: var(--steel);
   --acc-spd: var(--sand);
   --acc-cmd: var(--taupe);
   --acc-eec: var(--sage);
-  --acc-cst: color-mix(in srgb, var(--sage) 55%, var(--sand) 45%);
-  --acc-chromo: color-mix(in srgb, var(--steel) 55%, var(--taupe) 45%);
+  --acc-cst: color-mix(in srgb, var(--cream) 40%, var(--steel) 60%);
+  --acc-chromo: color-mix(in srgb, var(--sage) 45%, var(--taupe) 55%);
   --theory-accent: var(--acc-swi); /* fallback; overridden per subpage */
 
   --serif:"STIX Two Text", "Iowan Old Style", Georgia, serif;
@@ -514,3 +527,85 @@ footer.site-footer{padding:3.5rem 0 2.5rem;}
 /* misc */
 .visually-hidden{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);}
 hr.rule{border:none; border-top:1px solid var(--cream-dim); margin:0;}
+
+/* ============================================================
+   FIGURES — inline SVG diagrams inside .prose  (added Oct 2026)
+   Markup:  <figure class="fig"><div class="fig-scroll" tabindex="0"><svg>…</svg></div>
+            <figcaption><strong>Lead.</strong> Explanation…</figcaption></figure>
+   - Figures number themselves with a CSS counter, so inserting or
+     reordering a figure never needs a manual renumber.
+   - Colors come only from the six tokens (plus color-mix() of them).
+     Small text is always --ink; --taupe / --steel are used for strokes
+     and fills only, since both are under 4.5:1 on cream.
+   - The SVG keeps a 560px minimum width; below that the .fig-scroll
+     wrapper scrolls sideways instead of shrinking the labels to nothing.
+   ============================================================ */
+body{counter-reset:fig;}
+
+figure.fig{
+  counter-increment:fig;
+  margin:2.25rem 0; padding:1.15rem 1.25rem 1.05rem;
+  background:color-mix(in srgb, var(--cream) 55%, white);
+  border:1px solid color-mix(in srgb, var(--taupe) 30%, var(--cream));
+  border-radius:8px;
+}
+@media (max-width:640px){figure.fig{margin-left:-0.35rem; margin-right:-0.35rem; padding:0.9rem 0.85rem;}}
+
+.fig-scroll{overflow-x:auto; -webkit-overflow-scrolling:touch;}
+.fig-scroll svg{width:100%; min-width:560px; height:auto;}
+/* compact figures sit in narrow cards (homepage concept cards): smaller minimum before scrolling */
+figure.fig.fig-compact .fig-scroll svg{min-width:340px;}
+.concept-card{min-width:0;}  /* lets a card shrink to the column so its figure scrolls instead of widening the page */
+
+figure.fig figcaption{
+  margin-top:0.9rem; padding-top:0.75rem;
+  border-top:1px solid var(--cream-dim);
+  font-size:0.875rem; line-height:1.55;
+}
+figure.fig figcaption::before{
+  content:"Figure " counter(fig);
+  display:block; margin-bottom:0.3rem;
+  font-family:var(--mono); font-size:0.75rem; letter-spacing:0.02em;
+  color:color-mix(in srgb, var(--ink) 72%, var(--cream));
+}
+figure.fig figcaption strong{color:var(--ink);}
+details.expand figure.fig{margin:1.25rem 0 1rem;}
+
+/* ---- SVG vocabulary ---- */
+.fig text{font-family:var(--sans); font-size:12.5px; fill:var(--ink);}
+.fig .t-b{font-weight:600;}
+.fig .t-lg{font-size:14px;}
+.fig .t-sm{font-size:11.5px;}
+.fig .t-mono{font-family:var(--mono); font-size:11.5px;}
+.fig .t-it{font-style:italic;}
+.fig .t-mut{fill:color-mix(in srgb, var(--ink) 78%, var(--cream));}
+.fig .t-mid{text-anchor:middle;}
+.fig .t-end{text-anchor:end;}
+.fig .t-cream{fill:var(--cream);}
+
+.fig .f-none{fill:none;}
+.fig .f-ink{fill:var(--ink);}
+.fig .f-steel{fill:var(--steel);}
+.fig .f-sage{fill:var(--sage);}
+.fig .f-sand{fill:var(--sand);}
+.fig .f-taupe{fill:var(--taupe);}
+.fig .f-cream{fill:var(--cream);}
+.fig .f-panel{fill:color-mix(in srgb, var(--cream) 55%, white);}
+
+.fig .k-ink{stroke:var(--ink);}
+.fig .k-steel{stroke:var(--steel);}
+.fig .k-sage{stroke:var(--sage);}
+.fig .k-sand{stroke:var(--sand);}
+.fig .k-taupe{stroke:var(--taupe);}
+.fig .k-hair{stroke:color-mix(in srgb, var(--taupe) 45%, var(--cream));}
+.fig .k-none{stroke:none;}
+
+.fig .w1{stroke-width:1;}
+.fig .w15{stroke-width:1.5;}
+.fig .w2{stroke-width:2;}
+.fig .w3{stroke-width:3;}
+.fig .w5{stroke-width:5;}
+.fig .dash{stroke-dasharray:6 4;}
+.fig .dash-s{stroke-dasharray:3 3;}
+.fig .dots{stroke-dasharray:0.1 5; stroke-linecap:round;}
+.fig .round{stroke-linecap:round; stroke-linejoin:round;}
