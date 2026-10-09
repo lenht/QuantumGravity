@@ -215,6 +215,44 @@ nav.primary-nav a:hover{background:none; border-bottom-color:var(--steel);}
 }
 .framing-box strong{color:var(--cream);}
 
+/* ---- Per-page hero colour (revised Oct 2026) --------------------------------
+   The homepage hero keeps the original flat --ink. Every other page takes one
+   colour from the owner's extended hero palette below (hex values supplied by
+   the owner; used by the heroes only).
+   Each hero is a single solid colour (no gradient, as in the original).
+   Light/mid palette colours are darkened by mixing with black, which keeps
+   their hue; the percentage is the smallest that keeps every hero text colour
+   at >=4.5:1 (sage eyebrow, #cdd8de links, #d7dde1 dek, and the dek inside
+   the framing box).
+   Theory pages are matched by the accent token in their inline <body style>;
+   root pages by a section id that exists only on that page. */
+:root{
+  --hp-lilac:#B19AB6;
+  --hp-navy:#2F4B63;
+  --hp-charcoal:#3C3F44;
+  --hp-brown:#4B362D;
+  --hp-terracotta:#C47F6B;
+  --hp-taupe:#A0907E;
+  --hp-rose:#C4A69B;
+  --hp-olive:#6B7A4E;
+  --hp-teal:#84B0AE;
+}
+/* homepage: original flat ink */
+body:not([style]):has(#theories){--page-hero:var(--ink);}
+/* root pages */
+body:not([style]):has(#index){--page-hero:color-mix(in srgb, var(--hp-terracotta) 56%, #000);}
+body:not([style]):has(#chronology){--page-hero:var(--hp-brown);}
+body:not([style]):has(#spd-formulae){--page-hero:var(--hp-charcoal);}
+/* theory pages */
+body[style*="--acc-swi"]{--page-hero:color-mix(in srgb, var(--hp-lilac) 50%, #000);}
+body[style*="--acc-spd"]{--page-hero:color-mix(in srgb, var(--hp-rose) 47%, #000);}
+body[style*="--acc-cmd"]{--page-hero:color-mix(in srgb, var(--hp-taupe) 55%, #000);}
+body[style*="--acc-eec"]{--page-hero:color-mix(in srgb, var(--hp-olive) 70%, #000);}
+body[style*="--acc-cst"]{--page-hero:var(--hp-navy);}
+body[style*="--acc-chromo"]{--page-hero:color-mix(in srgb, var(--hp-teal) 48%, #000);}
+
+.hero.section-dark{background:var(--page-hero, var(--ink));}
+
 /* ============================================================
    PROBLEMS
    ============================================================ */
