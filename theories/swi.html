@@ -21,13 +21,24 @@
   <div class="nav-row">
     <a class="wordmark" href="../index.html#top">Elementary Spaces <small>a guide to Sky Darmos's quantum gravity</small></a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle menu"><span></span></button>
-    <nav class="primary-nav" id="primaryNav">
-      <a href="../index.html#theories">Theories</a>
-      <a href="../index.html#problems">Problems</a>
-      <a href="../index.html#timeline">Timeline</a>
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+      <div class="has-dropdown">
+        <button type="button" class="dropdown-toggle is-current" id="theoriesToggle" aria-expanded="false" aria-haspopup="true" aria-controls="theoriesMenu">Theories</button>
+        <ul class="dropdown" id="theoriesMenu" aria-labelledby="theoriesToggle">
+          <li><a href="swi.html" aria-current="page">Similar-Worlds Interpretation</a></li>
+          <li><a href="spd.html">Space Particle Dualism</a></li>
+          <li><a href="cmd.html">Charge Mass Dualism</a></li>
+          <li><a href="eec.html">Entropic Expansion Cosmology</a></li>
+          <li><a href="cst.html">Conscious Set Theory</a></li>
+          <li><a href="chromo.html">Chromogravity &amp; Electrogravity</a></li>
+          <li class="dropdown-all"><a href="../index.html#theories">All theories overview</a></li>
+        </ul>
+      </div>
+      <a href="../problems.html">Problems</a>
+      <a href="../timeline.html">Timeline</a>
       <a href="../index.html#concepts">Concepts</a>
-      <a href="../index.html#formulae">Formulae</a>
-      <a href="../index.html#about">About</a>
+      <a href="../formulae.html">Formulae</a>
+      <a href="../about.html">About</a>
     </nav>
   </div>
 </header>
@@ -51,10 +62,6 @@
         <div class="cta-row">
           <a class="btn btn-primary" href="#core-idea">Read the core idea</a>
           <a class="subhero-back" href="../index.html#theories">&larr; Back to the six theories</a>
-        </div>
-
-        <div class="framing-box compact">
-          <strong>A note on what's below.</strong> The first half of this page follows a reinterpretation of standard quantum mechanics, argued in mainstream terms. The second half turns to the experiments Darmos proposes and to the psychokinesis and telepathy research he draws on. That research, mostly Dean Radin's, is still contested in mainstream physics, and even parapsychologists read it differently &mdash; Darmos's account of that disagreement appears further down. Those sections are labeled where they come up, so you can weigh the evidence yourself.
         </div>
       </div>
 
@@ -525,11 +532,11 @@
       <a class="wordmark" href="../index.html#top" style="color:var(--cream)">Elementary Spaces</a>
       <nav class="footer-nav" aria-label="Footer">
         <a href="../index.html#theories">Theories</a>
-        <a href="../index.html#problems">Problems</a>
-        <a href="../index.html#timeline">Timeline</a>
+        <a href="../problems.html">Problems</a>
+        <a href="../timeline.html">Timeline</a>
         <a href="../index.html#concepts">Concepts</a>
-        <a href="../index.html#formulae">Formulae</a>
-        <a href="../index.html#about">About</a>
+        <a href="../formulae.html">Formulae</a>
+        <a href="../about.html">About</a>
       </nav>
     </div>
     <p class="footer-note">An independent companion guide to Sky Darmos's <em>The Complete Guide to Quantum Gravity</em>. Written to walk through the framework on its own terms, with honest notes where it departs from mainstream physics &mdash; not a peer review, and not affiliated with any research institution.</p>

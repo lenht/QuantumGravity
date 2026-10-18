@@ -2,17 +2,41 @@
   // Mobile nav toggle
   var toggle = document.getElementById('navToggle');
   var nav = document.getElementById('primaryNav');
-  toggle.addEventListener('click', function(){
+  if (toggle && nav) toggle.addEventListener('click', function(){
     var open = toggle.getAttribute('aria-expanded') === 'true';
     toggle.setAttribute('aria-expanded', String(!open));
     nav.classList.toggle('open', !open);
   });
-  nav.querySelectorAll('a').forEach(function(a){
+  if (nav) nav.querySelectorAll('a').forEach(function(a){
     a.addEventListener('click', function(){
-      toggle.setAttribute('aria-expanded', 'false');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
       nav.classList.remove('open');
     });
   });
+
+  // Theories dropdown
+  var dd = document.querySelector('.has-dropdown');
+  var ddBtn = dd && dd.querySelector('.dropdown-toggle');
+  function setDropdown(open){
+    if (!dd) return;
+    dd.classList.toggle('open', open);
+    ddBtn.setAttribute('aria-expanded', String(open));
+  }
+  if (dd && ddBtn){
+    ddBtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      setDropdown(ddBtn.getAttribute('aria-expanded') !== 'true');
+    });
+    document.addEventListener('click', function(e){
+      if (!dd.contains(e.target)) setDropdown(false);
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && ddBtn.getAttribute('aria-expanded') === 'true'){
+        setDropdown(false); ddBtn.focus();
+      }
+    });
+    if (toggle) toggle.addEventListener('click', function(){ setDropdown(false); });
+  }
 
   // Problem filter tabs
   var filterBtns = document.querySelectorAll('.filter-btn');
@@ -61,4 +85,92 @@
     });
   }
   renderMath();
+})();
+
+/* ---- Figure animations (pairs with the FIGURE ANIMATIONS block in styles.css) ----
+   Append after the closing })(); of js/script.js. Does three things:
+   1. adds .is-inview to an animated figure while it is on screen (and removes it
+      when it leaves), so loops only run when someone can see them;
+   2. injects the few moving shapes the static SVGs do not contain (photon dots,
+      playhead and trace dots), skipped entirely when reduced motion is requested;
+   3. gives each crystal-figure dot the offset of its own arrow.
+   Without this script, or with reduced motion, every figure stays the static drawing. */
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+
+  var NS = 'http://www.w3.org/2000/svg';
+  function add(svg, tag, attrs){
+    var n = document.createElementNS(NS, tag);
+    for (var k in attrs){ if (Object.prototype.hasOwnProperty.call(attrs, k)) n.setAttribute(k, attrs[k]); }
+    n.setAttribute('aria-hidden', 'true');
+    svg.appendChild(n);
+    return n;
+  }
+  function dot(svg, cls, r){
+    return add(svg, 'circle', { 'class': 'fa-extra ' + cls, cx: 0, cy: 0, r: r });
+  }
+
+  var setup = {
+    'fig-cloud': null,
+    'fig-worlds': null,
+    'fig-slit': null,
+    'fig-entropy': null,
+    'fig-balance': null,
+
+    // Photon dots for the quantum-eraser layout.
+    'fig-eraser': function(svg){
+      dot(svg, 'fa-ph1 f-steel k-ink w15', 4.5);
+      dot(svg, 'fa-ph1a f-steel k-ink w1', 3.2);
+      dot(svg, 'fa-ph1b f-steel k-ink w1', 3.2);
+      dot(svg, 'fa-ph2 f-steel k-ink w15', 4.5);
+    },
+
+    // Playhead and two trace-following dots for the half-wave rectification.
+    'fig-rectify': function(svg){
+      add(svg, 'line', { 'class': 'fa-extra fa-rect-head k-ink w1 dash-s', x1: 0, y1: 40, x2: 0, y2: 250 });
+      dot(svg, 'fa-rect-top f-steel k-ink w15', 4.5);
+      dot(svg, 'fa-rect-bot f-steel k-ink w15', 4.5);
+    },
+
+    // Each ordinary-matter dot is followed by its arrow: M x1 y1 L x2 y2.
+    // Send the dot to the arrow's tip.
+    'fig-crystal': function(svg){
+      var dots = svg.querySelectorAll('circle[r="3.2"]');
+      for (var i = 0; i < dots.length; i++){
+        var d = dots[i], arrow = d.nextElementSibling;
+        if (!arrow || arrow.tagName.toLowerCase() !== 'path') continue;
+        var n = (arrow.getAttribute('d') || '').match(/-?\d+(?:\.\d+)?/g);
+        if (!n || n.length < 4) continue;
+        var dx = parseFloat(n[2]) - parseFloat(d.getAttribute('cx'));
+        var dy = parseFloat(n[3]) - parseFloat(d.getAttribute('cy'));
+        d.style.setProperty('--fa-dx', dx.toFixed(1) + 'px');
+        d.style.setProperty('--fa-dy', dy.toFixed(1) + 'px');
+      }
+    }
+  };
+
+  var figs = [];
+  Object.keys(setup).forEach(function(id){
+    var fig = document.getElementById(id);
+    if (!fig || fig.tagName.toLowerCase() !== 'figure') return;
+    var svg = fig.querySelector('svg');
+    if (svg && setup[id] && !svg.getAttribute('data-fa')){
+      svg.setAttribute('data-fa', '1');
+      setup[id](svg);
+    }
+    figs.push(fig);
+  });
+  if (!figs.length) return;
+
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        entry.target.classList[entry.isIntersecting ? 'add' : 'remove']('is-inview');
+      });
+    }, { threshold: 0.25 });
+    figs.forEach(function(fig){ io.observe(fig); });
+  } else {
+    figs.forEach(function(fig){ fig.classList.add('is-inview'); });
+  }
 })();

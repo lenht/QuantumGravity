@@ -21,13 +21,24 @@
   <div class="nav-row">
     <a class="wordmark" href="../index.html#top">Elementary Spaces <small>a guide to Sky Darmos's quantum gravity</small></a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle menu"><span></span></button>
-    <nav class="primary-nav" id="primaryNav">
-      <a href="../index.html#theories">Theories</a>
-      <a href="../index.html#problems">Problems</a>
-      <a href="../index.html#timeline">Timeline</a>
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+      <div class="has-dropdown">
+        <button type="button" class="dropdown-toggle is-current" id="theoriesToggle" aria-expanded="false" aria-haspopup="true" aria-controls="theoriesMenu">Theories</button>
+        <ul class="dropdown" id="theoriesMenu" aria-labelledby="theoriesToggle">
+          <li><a href="swi.html">Similar-Worlds Interpretation</a></li>
+          <li><a href="spd.html">Space Particle Dualism</a></li>
+          <li><a href="cmd.html">Charge Mass Dualism</a></li>
+          <li><a href="eec.html">Entropic Expansion Cosmology</a></li>
+          <li><a href="cst.html" aria-current="page">Conscious Set Theory</a></li>
+          <li><a href="chromo.html">Chromogravity &amp; Electrogravity</a></li>
+          <li class="dropdown-all"><a href="../index.html#theories">All theories overview</a></li>
+        </ul>
+      </div>
+      <a href="../problems.html">Problems</a>
+      <a href="../timeline.html">Timeline</a>
       <a href="../index.html#concepts">Concepts</a>
-      <a href="../index.html#formulae">Formulae</a>
-      <a href="../index.html#about">About</a>
+      <a href="../formulae.html">Formulae</a>
+      <a href="../about.html">About</a>
     </nav>
   </div>
 </header>
@@ -61,21 +72,6 @@
         <div class="cta-row">
           <a class="btn btn-primary" href="#core-idea">Read the core idea</a>
           <a class="subhero-back" href="../index.html#theories">&larr; Back to the six theories</a>
-        </div>
-
-        <div class="framing-box compact">
-          <strong>A note on what's below.</strong> This is the most wide-ranging page on the site, and the
-          caveats grow with the reach of the ideas &mdash; not because the reasoning weakens, but because the
-          subject moves further from anything physics has instruments for. The opening move, consciousness as
-          a Frege-style set of experiences, is serious, unconventional philosophy of mind. From there the
-          chapter moves through psychokinesis claims involving named, individually tested practitioners; a
-          proposed mechanism for reincarnation and for Rupert Sheldrake's morphic resonance stretched across
-          cosmic eons &mdash; the piece Entropic Expansion Cosmology's closing section left for this page; and,
-          finally, Darmos's furthest reach: claimed contact with named deceased individuals through electronic
-          devices, and a proposed engineering path toward psychokinesis-enabled faster-than-light
-          communication. Each section carries a caveat matched to what its claims call for. A page this
-          ambitious deserves careful reading rather than dismissal &mdash; but the honesty doesn't lighten just
-          because the tone does.
         </div>
       </div>
 
@@ -966,11 +962,11 @@
       <a class="wordmark" href="../index.html#top" style="color:var(--cream)">Elementary Spaces</a>
       <nav class="footer-nav" aria-label="Footer">
         <a href="../index.html#theories">Theories</a>
-        <a href="../index.html#problems">Problems</a>
-        <a href="../index.html#timeline">Timeline</a>
+        <a href="../problems.html">Problems</a>
+        <a href="../timeline.html">Timeline</a>
         <a href="../index.html#concepts">Concepts</a>
-        <a href="../index.html#formulae">Formulae</a>
-        <a href="../index.html#about">About</a>
+        <a href="../formulae.html">Formulae</a>
+        <a href="../about.html">About</a>
       </nav>
     </div>
     <p class="footer-note">An independent companion guide to Sky Darmos's <em>The Complete Guide to Quantum

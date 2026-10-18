@@ -21,13 +21,24 @@
   <div class="nav-row">
     <a class="wordmark" href="../index.html#top">Elementary Spaces <small>a guide to Sky Darmos's quantum gravity</small></a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle menu"><span></span></button>
-    <nav class="primary-nav" id="primaryNav">
-      <a href="../index.html#theories">Theories</a>
-      <a href="../index.html#problems">Problems</a>
-      <a href="../index.html#timeline">Timeline</a>
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+      <div class="has-dropdown">
+        <button type="button" class="dropdown-toggle is-current" id="theoriesToggle" aria-expanded="false" aria-haspopup="true" aria-controls="theoriesMenu">Theories</button>
+        <ul class="dropdown" id="theoriesMenu" aria-labelledby="theoriesToggle">
+          <li><a href="swi.html">Similar-Worlds Interpretation</a></li>
+          <li><a href="spd.html">Space Particle Dualism</a></li>
+          <li><a href="cmd.html">Charge Mass Dualism</a></li>
+          <li><a href="eec.html" aria-current="page">Entropic Expansion Cosmology</a></li>
+          <li><a href="cst.html">Conscious Set Theory</a></li>
+          <li><a href="chromo.html">Chromogravity &amp; Electrogravity</a></li>
+          <li class="dropdown-all"><a href="../index.html#theories">All theories overview</a></li>
+        </ul>
+      </div>
+      <a href="../problems.html">Problems</a>
+      <a href="../timeline.html">Timeline</a>
       <a href="../index.html#concepts">Concepts</a>
-      <a href="../index.html#formulae">Formulae</a>
-      <a href="../index.html#about">About</a>
+      <a href="../formulae.html">Formulae</a>
+      <a href="../about.html">About</a>
     </nav>
   </div>
 </header>
@@ -51,10 +62,6 @@
         <div class="cta-row">
           <a class="btn btn-primary" href="#core-idea">Read the core idea</a>
           <a class="subhero-back" href="../index.html#theories">&larr; Back to the six theories</a>
-        </div>
-
-        <div class="framing-box compact">
-          <strong>A note on what's below.</strong> The core mechanism &mdash; entropy density, not total entropy, held constant &mdash; is argued in mainstream terms and yields checkable numbers. Its headline conclusion, though, rejects one of modern cosmology's best-measured quantities, the age of the universe, outright. The section on entanglement and the Fermi paradox goes further than anything elsewhere on this site: it extends contested parapsychology claims from a lab experiment up to the large-scale structure of the observable universe. The closing section leans on Rupert Sheldrake's morphic resonance and a reincarnation-like continuity between cosmic eons. Both are labeled again, more strongly, where they come up.
         </div>
       </div>
 
@@ -767,11 +774,11 @@
       <a class="wordmark" href="../index.html#top" style="color:var(--cream)">Elementary Spaces</a>
       <nav class="footer-nav" aria-label="Footer">
         <a href="../index.html#theories">Theories</a>
-        <a href="../index.html#problems">Problems</a>
-        <a href="../index.html#timeline">Timeline</a>
+        <a href="../problems.html">Problems</a>
+        <a href="../timeline.html">Timeline</a>
         <a href="../index.html#concepts">Concepts</a>
-        <a href="../index.html#formulae">Formulae</a>
-        <a href="../index.html#about">About</a>
+        <a href="../formulae.html">Formulae</a>
+        <a href="../about.html">About</a>
       </nav>
     </div>
     <p class="footer-note">An independent companion guide to Sky Darmos's <em>The Complete Guide to Quantum

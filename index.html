@@ -21,13 +21,24 @@
   <div class="nav-row">
     <a class="wordmark" href="#top">Elementary Spaces <small>a guide to Sky Darmos's quantum gravity</small></a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle menu"><span></span></button>
-    <nav class="primary-nav" id="primaryNav">
-      <a href="#theories">Theories</a>
-      <a href="#problems">Problems</a>
-      <a href="#timeline">Timeline</a>
-      <a href="#concepts">Concepts</a>
-      <a href="#formulae">Formulae</a>
-      <a href="#about">About</a>
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+      <div class="has-dropdown">
+        <button type="button" class="dropdown-toggle" id="theoriesToggle" aria-expanded="false" aria-haspopup="true" aria-controls="theoriesMenu">Theories</button>
+        <ul class="dropdown" id="theoriesMenu" aria-labelledby="theoriesToggle">
+          <li><a href="theories/swi.html">Similar-Worlds Interpretation</a></li>
+          <li><a href="theories/spd.html">Space Particle Dualism</a></li>
+          <li><a href="theories/cmd.html">Charge Mass Dualism</a></li>
+          <li><a href="theories/eec.html">Entropic Expansion Cosmology</a></li>
+          <li><a href="theories/cst.html">Conscious Set Theory</a></li>
+          <li><a href="theories/chromo.html">Chromogravity &amp; Electrogravity</a></li>
+          <li class="dropdown-all"><a href="index.html#theories">All theories overview</a></li>
+        </ul>
+      </div>
+      <a href="problems.html">Problems</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="index.html#concepts">Concepts</a>
+      <a href="formulae.html">Formulae</a>
+      <a href="about.html">About</a>
     </nav>
   </div>
 </header>
@@ -50,18 +61,6 @@
       <div class="cta-row">
         <a class="btn btn-primary" href="#theories">Explore the six theories</a>
         <a class="btn btn-outline" href="#problems">See what it sets out to solve</a>
-      </div>
-
-      <div class="framing-box">
-        <strong>A note on what this is.</strong> This site is a guide to one physicist's independent work,
-        not a summary of settled science. Sky Darmos has spent over twenty years building this framework
-        largely on his own, outside any university or peer-review process, and he describes it as still
-        evolving. Some of what he proposes reaches well beyond where mainstream cosmology and particle
-        physics currently stand &mdash; a universe far older than 13.8 billion years, gravity that varies
-        slightly with what you're weighing, a role for psychokinesis and telepathy that goes further than even
-        parapsychology's own literature usually does. Those departures are part of what makes the work
-        distinctive, and we point them out where they come up so you can weigh them yourself. The aim of this
-        guide is to walk through Darmos's reasoning on its own terms, the way he built it.
       </div>
     </div>
 
@@ -944,12 +943,12 @@
     <div class="footer-row">
       <a class="wordmark" href="#top" style="color:var(--cream)">Elementary Spaces</a>
       <nav class="footer-nav" aria-label="Footer">
-        <a href="#theories">Theories</a>
-        <a href="#problems">Problems</a>
-        <a href="#timeline">Timeline</a>
-        <a href="#concepts">Concepts</a>
-        <a href="#formulae">Formulae</a>
-        <a href="#about">About</a>
+        <a href="index.html#theories">Theories</a>
+        <a href="problems.html">Problems</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="index.html#concepts">Concepts</a>
+        <a href="formulae.html">Formulae</a>
+        <a href="about.html">About</a>
       </nav>
     </div>
     <p class="footer-note">An independent companion guide to Sky Darmos's <em>The Complete Guide to Quantum

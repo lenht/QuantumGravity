@@ -21,13 +21,24 @@
   <div class="nav-row">
     <a class="wordmark" href="../index.html#top">Elementary Spaces <small>a guide to Sky Darmos's quantum gravity</small></a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle menu"><span></span></button>
-    <nav class="primary-nav" id="primaryNav">
-      <a href="../index.html#theories">Theories</a>
-      <a href="../index.html#problems">Problems</a>
-      <a href="../index.html#timeline">Timeline</a>
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+      <div class="has-dropdown">
+        <button type="button" class="dropdown-toggle is-current" id="theoriesToggle" aria-expanded="false" aria-haspopup="true" aria-controls="theoriesMenu">Theories</button>
+        <ul class="dropdown" id="theoriesMenu" aria-labelledby="theoriesToggle">
+          <li><a href="swi.html">Similar-Worlds Interpretation</a></li>
+          <li><a href="spd.html">Space Particle Dualism</a></li>
+          <li><a href="cmd.html">Charge Mass Dualism</a></li>
+          <li><a href="eec.html">Entropic Expansion Cosmology</a></li>
+          <li><a href="cst.html">Conscious Set Theory</a></li>
+          <li><a href="chromo.html" aria-current="page">Chromogravity &amp; Electrogravity</a></li>
+          <li class="dropdown-all"><a href="../index.html#theories">All theories overview</a></li>
+        </ul>
+      </div>
+      <a href="../problems.html">Problems</a>
+      <a href="../timeline.html">Timeline</a>
       <a href="../index.html#concepts">Concepts</a>
-      <a href="../index.html#formulae">Formulae</a>
-      <a href="../index.html#about">About</a>
+      <a href="../formulae.html">Formulae</a>
+      <a href="../about.html">About</a>
     </nav>
   </div>
 </header>
@@ -58,16 +69,6 @@
         <div class="cta-row">
           <a class="btn btn-primary" href="#core-idea">Read the core idea</a>
           <a class="subhero-back" href="../index.html#theories">&larr; Back to the six theories</a>
-        </div>
-
-        <div class="framing-box compact">
-          <strong>A note on what's below.</strong> Darmos's central claim contradicts the equivalence
-          principle, one of the most precisely tested principles in physics. Unlike earlier pages, most of
-          this chapter's claims are quantitative and checkable, so the quality of the analysis, not
-          just the idea, is what to watch. This page marks which tests others ran and which the author
-          ran. Take most care where Darmos reclassifies well-studied
-          objects (binary pulsars) and where analysis turns into proposed engineering, both
-          near the end.
         </div>
       </div>
 
@@ -1331,7 +1332,7 @@
       <span class="pfn-label">All theories</span>
       &larr; Back to the six theories
     </a>
-    <a href="../index.html#about">
+    <a href="../about.html">
       <span class="pfn-label">After the six &middot; the author</span>
       About Sky Darmos &rarr;
     </a>
@@ -1346,11 +1347,11 @@
       <a class="wordmark" href="../index.html#top" style="color:var(--cream)">Elementary Spaces</a>
       <nav class="footer-nav" aria-label="Footer">
         <a href="../index.html#theories">Theories</a>
-        <a href="../index.html#problems">Problems</a>
-        <a href="../index.html#timeline">Timeline</a>
+        <a href="../problems.html">Problems</a>
+        <a href="../timeline.html">Timeline</a>
         <a href="../index.html#concepts">Concepts</a>
-        <a href="../index.html#formulae">Formulae</a>
-        <a href="../index.html#about">About</a>
+        <a href="../formulae.html">Formulae</a>
+        <a href="../about.html">About</a>
       </nav>
     </div>
     <p class="footer-note">An independent companion guide to Sky Darmos's <em>The Complete Guide to Quantum

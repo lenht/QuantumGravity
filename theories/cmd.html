@@ -21,13 +21,24 @@
   <div class="nav-row">
     <a class="wordmark" href="../index.html#top">Elementary Spaces <small>a guide to Sky Darmos's quantum gravity</small></a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle menu"><span></span></button>
-    <nav class="primary-nav" id="primaryNav">
-      <a href="../index.html#theories">Theories</a>
-      <a href="../index.html#problems">Problems</a>
-      <a href="../index.html#timeline">Timeline</a>
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+      <div class="has-dropdown">
+        <button type="button" class="dropdown-toggle is-current" id="theoriesToggle" aria-expanded="false" aria-haspopup="true" aria-controls="theoriesMenu">Theories</button>
+        <ul class="dropdown" id="theoriesMenu" aria-labelledby="theoriesToggle">
+          <li><a href="swi.html">Similar-Worlds Interpretation</a></li>
+          <li><a href="spd.html">Space Particle Dualism</a></li>
+          <li><a href="cmd.html" aria-current="page">Charge Mass Dualism</a></li>
+          <li><a href="eec.html">Entropic Expansion Cosmology</a></li>
+          <li><a href="cst.html">Conscious Set Theory</a></li>
+          <li><a href="chromo.html">Chromogravity &amp; Electrogravity</a></li>
+          <li class="dropdown-all"><a href="../index.html#theories">All theories overview</a></li>
+        </ul>
+      </div>
+      <a href="../problems.html">Problems</a>
+      <a href="../timeline.html">Timeline</a>
       <a href="../index.html#concepts">Concepts</a>
-      <a href="../index.html#formulae">Formulae</a>
-      <a href="../index.html#about">About</a>
+      <a href="../formulae.html">Formulae</a>
+      <a href="../about.html">About</a>
     </nav>
   </div>
 </header>
@@ -51,10 +62,6 @@
         <div class="cta-row">
           <a class="btn btn-primary" href="#core-idea">Read the core idea</a>
           <a class="subhero-back" href="../index.html#theories">&larr; Back to the six theories</a>
-        </div>
-
-        <div class="framing-box compact">
-          <strong>A note on what's below.</strong> The core hypothesis &mdash; that a particle's mass is entirely its own electromagnetic self-energy &mdash; is a genuine, historically mainstream idea (J. J. Thomson, 1881; Hendrik Lorentz and others through 1904), not a fringe invention; it fell out of favor for reasons Darmos disputes. Keep in mind that several headline numbers below, especially the muon and tauon mass predictions, were reached through correction terms &mdash; for binding energy, emitted positrons, spin, and "flavor mixing" &mdash; added one at a time, each moving the result closer to an already-known target. That makes the fit weaker evidence than a single blind prediction, even at 99.9% agreement. The chapter's speculative reach into deriving special relativity is also labeled where it comes up; it's the one place Darmos admits outright that he hasn't shown his argument rigorously.
         </div>
       </div>
 
@@ -511,11 +518,11 @@
       <a class="wordmark" href="../index.html#top" style="color:var(--cream)">Elementary Spaces</a>
       <nav class="footer-nav" aria-label="Footer">
         <a href="../index.html#theories">Theories</a>
-        <a href="../index.html#problems">Problems</a>
-        <a href="../index.html#timeline">Timeline</a>
+        <a href="../problems.html">Problems</a>
+        <a href="../timeline.html">Timeline</a>
         <a href="../index.html#concepts">Concepts</a>
-        <a href="../index.html#formulae">Formulae</a>
-        <a href="../index.html#about">About</a>
+        <a href="../formulae.html">Formulae</a>
+        <a href="../about.html">About</a>
       </nav>
     </div>
     <p class="footer-note">An independent companion guide to Sky Darmos's <em>The Complete Guide to Quantum
