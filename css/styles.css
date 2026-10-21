@@ -869,8 +869,10 @@ body[style*="--acc-chromo"] .hero-art svg > :nth-child(6) {
 }
 
 /* ==========================================================================
-   FIGURE ANIMATIONS — eight diagram loops on the theory pages
+   FIGURE ANIMATIONS — fifteen diagram loops on the theory pages and homepage
    Append to the end of css/styles.css, after the HERO ANIMATIONS block.
+   (If you already pasted the first version of this block, replace everything
+   from this comment to the "end figure animations" line with this file.)
    Pairs with the figure-animation snippet in js/script.js.
 
    - Keyframes are prefixed fa- (the hero ones are ha-). No new colours: the
@@ -879,10 +881,12 @@ body[style*="--acc-chromo"] .hero-art svg > :nth-child(6) {
      .is-inview when the figure is visible and removes it when it leaves.
    - Everything is inside prefers-reduced-motion: no-preference. With reduced
      motion (or without script) the figures are the plain static drawings.
-   - Figures: swi #fig-cloud #fig-worlds #fig-eraser
-              spd #fig-slit #fig-rectify
-              eec #fig-entropy #fig-crystal
-              chromo #fig-balance
+   - Figures: swi   #fig-cloud #fig-worlds #fig-clocks #fig-eraser #fig-delay
+              spd   #fig-spaces #fig-slit #fig-rectify
+              cmd   #fig-zigzag
+              eec   #fig-entropy #fig-crystal
+              chromo #fig-balance #fig-massgap
+              home  #fig-c_cloud #fig-c_entropy
    ========================================================================== */
 .fa-extra{display:none;}
 
@@ -1254,5 +1258,261 @@ body[style*="--acc-chromo"] .hero-art svg > :nth-child(6) {
       84%{transform:translate(1.04px,10.89px);}
       100%{transform:translate(-0.00px,-0.00px);}
     }
+
+  /* ======================================================================
+     SECOND SET — five more theory-page loops and the two homepage cards
+     ====================================================================== */
+
+  /* ---- swi · fig-clocks: a time cursor sweeps the half second --------------
+     A dashed cursor crosses the timeline once per loop; each tick pops (gets
+     briefly thicker) as the cursor reaches it, so you see 40 per second
+     against 20 per second. script.js injects the cursor and gives every tick
+     its own --fa-d delay from its x position. Time is stretched about 20x. */
+  figure#fig-clocks.is-inview .fa-clk-head{animation:fa-clk-head 10s linear infinite;}
+  figure#fig-clocks.is-inview path.k-steel.w2{
+    animation:fa-clk-sub 10s linear infinite; animation-delay:var(--fa-d,0s);
+  }
+  figure#fig-clocks.is-inview path.k-ink.w3{
+    animation:fa-clk-con 10s linear infinite; animation-delay:var(--fa-d,0s);
+  }
+  @keyframes fa-clk-head{
+    0%      {transform:translateX(40px);  opacity:0;}
+    2%      {opacity:.6;}
+    96%     {transform:translateX(600px); opacity:.6;}
+    99%,100%{transform:translateX(600px); opacity:0;}
+  }
+  @keyframes fa-clk-sub{
+    0%      {stroke-width:5px;}
+    7%,100% {stroke-width:2px;}
+  }
+  @keyframes fa-clk-con{
+    0%      {stroke-width:7px;}
+    9%,100% {stroke-width:3px;}
+  }
+
+  /* ---- swi · fig-delay: three ways to hold a photon -------------------------
+     Coil: the dot on the outer ring circles. Slow light: a pulse crosses the
+     cloud fast outside it, then slows and narrows inside. Crystal: a photon
+     goes in, is held while the control beam stays on, then is released. */
+  figure#fig-delay.is-inview circle[cx="141"][cy="59"]{
+    transform-box:view-box; transform-origin:110px 90px;
+    animation:fa-del-orbit 6s linear infinite;
+  }
+  figure#fig-delay.is-inview .fa-del-sl{animation:fa-del-sl 9s linear infinite;}
+  figure#fig-delay.is-inview .fa-del-cr{animation:fa-del-cr 9s linear infinite;}
+  figure#fig-delay.is-inview circle[cx="530"][cy="92"]{animation:fa-del-held 9s ease-in-out infinite;}
+  figure#fig-delay.is-inview path[d^="M530 44"]{animation:fa-del-ctrl 9s ease-in-out infinite;}
+  @keyframes fa-del-orbit{
+    from{transform:rotate(0deg);}
+    to  {transform:rotate(360deg);}
+  }
+  @keyframes fa-del-sl{
+    0%      {transform:translate(232px,92px) scale(1,1);   opacity:0;}
+    3%      {transform:translate(253.4px,92px) scale(1,1); opacity:1;}
+    7%      {transform:translate(282px,92px) scale(1,1);   opacity:1;}
+    9%      {transform:translate(290px,92px) scale(.5,1);  opacity:1;}
+    80%     {transform:translate(408px,92px) scale(.5,1);  opacity:1;}
+    84%     {transform:translate(414px,92px) scale(1,1);   opacity:1;}
+    88%,100%{transform:translate(414px,92px) scale(1,1);   opacity:0;}
+  }
+  @keyframes fa-del-cr{
+    0%      {transform:translate(442px,92px); opacity:0;}
+    4%      {transform:translate(459.3px,92px); opacity:1;}
+    18%     {transform:translate(520px,92px); opacity:1;}
+    21%     {transform:translate(530px,92px); opacity:0;}
+    68%     {transform:translate(530px,92px); opacity:0;}
+    69%     {transform:translate(530px,92px); opacity:1;}
+    90%     {transform:translate(618px,92px); opacity:1;}
+    93%,100%{transform:translate(618px,92px); opacity:0;}
+  }
+  @keyframes fa-del-held{
+    0%,18%  {opacity:.25;}
+    22%,66% {opacity:1;}
+    72%,100%{opacity:.25;}
+  }
+  @keyframes fa-del-ctrl{
+    0%,18%  {opacity:.2;}
+    24%,64% {opacity:1;}
+    70%,100%{opacity:.2;}
+  }
+
+  /* ---- spd · fig-spaces: the patchwork closes up ----------------------------
+     Right panel only. Every circle grows from a smaller size to its drawn
+     size, left to right (script.js sets each circle's --fa-d), so the gaps
+     close into the gapless patchwork the caption describes. */
+  figure#fig-spaces.is-inview g[clip-path$="spaces-c1)"] circle{
+    transform-box:fill-box; transform-origin:center;
+    vector-effect:non-scaling-stroke;
+    animation:fa-spc-grow 10s ease-in-out infinite backwards;
+    animation-delay:var(--fa-d,0s);
+  }
+  @keyframes fa-spc-grow{
+    0%,6%   {transform:scale(.45);}
+    40%,82% {transform:scale(1);}
+    96%,100%{transform:scale(.45);}
+  }
+
+  /* ---- cmd · fig-zigzag: a race the zig-zag always loses --------------------
+     Both dots move at the same speed; the zig-zag one has further to go, so
+     it arrives later. The drawing exaggerates the detour by about 36 orders of
+     magnitude (as the caption says). Dots injected by script.js; the zig-zag
+     waypoints are the drawn polyline's vertices, timed by segment length. */
+  figure#fig-zigzag.is-inview .fa-zz-s{animation:fa-zz-straight 9s linear infinite, fa-zz-op 9s linear infinite;}
+  figure#fig-zigzag.is-inview .fa-zz-w{animation:fa-zz-wave 9s linear infinite, fa-zz-op 9s linear infinite;}
+  @keyframes fa-zz-op{
+    0%      {opacity:0;}
+    3%,86%  {opacity:1;}
+    94%,100%{opacity:0;}
+  }
+  @keyframes fa-zz-wave{
+      0%{transform:translate(20px,88px);}
+      4.15%{transform:translate(62px,108px);}
+      9.35%{transform:translate(108px,72px);}
+      14.20%{transform:translate(152px,104px);}
+      19.16%{transform:translate(196px,70px);}
+      24.34%{transform:translate(240px,108px);}
+      29.54%{transform:translate(286px,72px);}
+      34.39%{transform:translate(330px,104px);}
+      39.35%{transform:translate(374px,70px);}
+      44.53%{transform:translate(418px,108px);}
+      49.59%{transform:translate(462px,72px);}
+      54.44%{transform:translate(506px,104px);}
+      59.29%{transform:translate(550px,72px);}
+      63.85%{transform:translate(594px,98px);}
+      66.00%{transform:translate(616px,88px);}
+      100%{transform:translate(616px,88px);}
+    }
+  @keyframes fa-zz-straight{
+      0%{transform:translate(20px,88px);}
+      53.12%{transform:translate(616px,88px);}
+      100%{transform:translate(616px,88px);}
+    }
+
+  /* ---- chromo · fig-massgap: the rescaling, applied --------------------------
+     The lower bars start laid out like the general-relativity bars above, then
+     slide and stretch into Darmos's rescaled positions as the arrows appear.
+     Bars scale about their left edge (non-scaling strokes keep outlines even). */
+  figure#fig-massgap.is-inview rect[y="150"]{
+    transform-box:fill-box; transform-origin:0 50%;
+    vector-effect:non-scaling-stroke;
+  }
+  figure#fig-massgap.is-inview rect[y="150"].f-steel{animation:fa-mg-ns 12s ease-in-out infinite;}
+  figure#fig-massgap.is-inview rect[y="150"].f-none {animation:fa-mg-gap 12s ease-in-out infinite;}
+  figure#fig-massgap.is-inview rect[y="150"].f-ink  {animation:fa-mg-bh 12s ease-in-out infinite;}
+  figure#fig-massgap.is-inview path[d^="M338.2"],
+  figure#fig-massgap.is-inview path[d^="M571"],
+  figure#fig-massgap.is-inview text[x="297.3"],
+  figure#fig-massgap.is-inview text[x="450.3"]{animation:fa-mg-arrow 12s ease-in-out infinite;}
+  figure#fig-massgap.is-inview text[x="284.3"]{animation:fa-mg-label 12s ease-in-out infinite;}
+  @keyframes fa-mg-ns{
+    0%,16%  {transform:scaleX(1.8474); opacity:1;}
+    50%,88% {transform:none;           opacity:1;}
+    94%     {transform:none;           opacity:0;}
+    94.1%   {transform:scaleX(1.8474); opacity:0;}
+    100%    {transform:scaleX(1.8474); opacity:1;}
+  }
+  @keyframes fa-mg-gap{
+    0%,16%  {transform:translateX(95.5px) scaleX(2.7947); opacity:1;}
+    50%,88% {transform:none;                              opacity:1;}
+    94%     {transform:none;                              opacity:0;}
+    94.1%   {transform:translateX(95.5px) scaleX(2.7947); opacity:0;}
+    100%    {transform:translateX(95.5px) scaleX(2.7947); opacity:1;}
+  }
+  @keyframes fa-mg-bh{
+    0%,16%  {transform:translateX(245px) scaleX(.16667); opacity:1;}
+    50%,88% {transform:none;                              opacity:1;}
+    94%     {transform:none;                              opacity:0;}
+    94.1%   {transform:translateX(245px) scaleX(.16667);  opacity:0;}
+    100%    {transform:translateX(245px) scaleX(.16667);  opacity:1;}
+  }
+  @keyframes fa-mg-arrow{
+    0%,6%   {opacity:0;}
+    16%,88% {opacity:1;}
+    94%,100%{opacity:0;}
+  }
+  @keyframes fa-mg-label{
+    0%,46%  {opacity:0;}
+    56%,88% {opacity:1;}
+    94%,100%{opacity:0;}
+  }
+
+  /* ---- home · fig-c_cloud (the superposition card) ---------------------------
+     Same idea as swi's fig-cloud: after the measurement the inner ellipse
+     closes on the solid dots and the hollow ones fade. */
+  figure#fig-c_cloud.is-inview ellipse[rx="44"]{
+    transform-box:fill-box; transform-origin:center;
+    animation:fa-ccl-shrink 10s ease-in-out infinite;
+  }
+  figure#fig-c_cloud.is-inview circle.f-none.k-steel{
+    animation:fa-ccl-drop 10s ease-in-out infinite;
+  }
+  @keyframes fa-ccl-shrink{
+    0%,30%  {transform:translate(-22px,8px) scale(1.5909,1.5152); opacity:1;}
+    55%,88% {transform:none; opacity:1;}
+    94%     {transform:none; opacity:0;}
+    94.1%   {transform:translate(-22px,8px) scale(1.5909,1.5152); opacity:0;}
+    100%    {transform:translate(-22px,8px) scale(1.5909,1.5152); opacity:1;}
+  }
+  @keyframes fa-ccl-drop{
+    0%,30%  {opacity:1;  stroke-opacity:1;}
+    55%,88% {opacity:1;  stroke-opacity:.5;}
+    94%     {opacity:0;  stroke-opacity:.5;}
+    94.1%   {opacity:0;  stroke-opacity:1;}
+    100%    {opacity:1;  stroke-opacity:1;}
+  }
+
+  /* ---- home · fig-c_entropy (the black-hole entropy card) --------------------
+     The S-proportional-to-M-squared curve draws itself, then the M guide and
+     dot appear, then the 2M guide and dot, so "double the mass, four times the
+     entropy" is read in order. Shape only, as the caption says. */
+  figure#fig-c_entropy.is-inview path.k-steel.w3{
+    stroke-dasharray:360;
+    animation:fa-cen-curve 12s ease-in-out infinite;
+  }
+  figure#fig-c_entropy.is-inview text[x="262"]{animation:fa-cen-eq 12s ease-in-out infinite;}
+  figure#fig-c_entropy.is-inview path[d^="M150 190"],
+  figure#fig-c_entropy.is-inview text[x="150"],
+  figure#fig-c_entropy.is-inview text[x="44"][y="179"]{animation:fa-cen-m 12s ease-in-out infinite;}
+  figure#fig-c_entropy.is-inview circle[cx="150"]{
+    transform-box:fill-box; transform-origin:center;
+    animation:fa-cen-dot1 12s ease-in-out infinite;
+  }
+  figure#fig-c_entropy.is-inview path[d^="M250 190"],
+  figure#fig-c_entropy.is-inview text[x="250"],
+  figure#fig-c_entropy.is-inview text[x="44"][y="134"]{animation:fa-cen-2m 12s ease-in-out infinite;}
+  figure#fig-c_entropy.is-inview circle[cx="250"]{
+    transform-box:fill-box; transform-origin:center;
+    animation:fa-cen-dot2 12s ease-in-out infinite;
+  }
+  @keyframes fa-cen-curve{
+    0%      {stroke-dashoffset:360; opacity:1;}
+    32%,92% {stroke-dashoffset:0;   opacity:1;}
+    98%,100%{stroke-dashoffset:0;   opacity:0;}
+  }
+  @keyframes fa-cen-eq{
+    0%,30%  {opacity:0;}
+    38%,92% {opacity:1;}
+    98%,100%{opacity:0;}
+  }
+  @keyframes fa-cen-m{
+    0%,36%  {opacity:0;}
+    42%,92% {opacity:1;}
+    98%,100%{opacity:0;}
+  }
+  @keyframes fa-cen-dot1{
+    0%,36%  {opacity:0; transform:scale(.2);}
+    44%,92% {opacity:1; transform:scale(1);}
+    98%,100%{opacity:0; transform:scale(1);}
+  }
+  @keyframes fa-cen-2m{
+    0%,58%  {opacity:0;}
+    64%,92% {opacity:1;}
+    98%,100%{opacity:0;}
+  }
+  @keyframes fa-cen-dot2{
+    0%,58%  {opacity:0; transform:scale(.2);}
+    66%,92% {opacity:1; transform:scale(1);}
+    98%,100%{opacity:0; transform:scale(1);}
+  }
 }
 /* ===== end figure animations ===== */
