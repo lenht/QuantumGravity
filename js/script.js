@@ -88,12 +88,15 @@
 })();
 
 /* ---- Figure animations (pairs with the FIGURE ANIMATIONS block in styles.css) ----
-   Append after the closing })(); of js/script.js. Does three things:
+   Append after the closing })(); of js/script.js. (If you already pasted the
+   first version of this snippet, replace it with this one.) Does four things:
    1. adds .is-inview to an animated figure while it is on screen (and removes it
       when it leaves), so loops only run when someone can see them;
    2. injects the few moving shapes the static SVGs do not contain (photon dots,
       playhead and trace dots), skipped entirely when reduced motion is requested;
-   3. gives each crystal-figure dot the offset of its own arrow.
+   3. gives each crystal-figure dot the offset of its own arrow, each clock tick
+      and each patchwork circle its own start delay.
+   4. works on the homepage too: its two concept-card figures are in the list.
    Without this script, or with reduced motion, every figure stays the static drawing. */
 (function(){
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -111,8 +114,16 @@
     return add(svg, 'circle', { 'class': 'fa-extra ' + cls, cx: 0, cy: 0, r: r });
   }
 
+  function num(str, re){
+    var m = (str || '').match(re);
+    return m ? parseFloat(m[1]) : NaN;
+  }
+
   var setup = {
     'fig-cloud': null,
+    'fig-c_cloud': null,
+    'fig-c_entropy': null,
+    'fig-massgap': null,
     'fig-worlds': null,
     'fig-slit': null,
     'fig-entropy': null,
@@ -131,6 +142,42 @@
       add(svg, 'line', { 'class': 'fa-extra fa-rect-head k-ink w1 dash-s', x1: 0, y1: 40, x2: 0, y2: 250 });
       dot(svg, 'fa-rect-top f-steel k-ink w15', 4.5);
       dot(svg, 'fa-rect-bot f-steel k-ink w15', 4.5);
+    },
+
+    // Time cursor for the two clocks; each tick starts its pop when the cursor
+    // reaches it (x runs 40-600, the cursor takes 96% of the 10 s loop).
+    'fig-clocks': function(svg){
+      add(svg, 'line', { 'class': 'fa-extra fa-clk-head k-ink w1 dash-s', x1: 0, y1: 72, x2: 0, y2: 240 });
+      var ticks = svg.querySelectorAll('path.k-steel.w2, path.k-ink.w3');
+      for (var i = 0; i < ticks.length; i++){
+        var x = num(ticks[i].getAttribute('d'), /^M\s*(-?\d+(?:\.\d+)?)/);
+        if (isNaN(x)) continue;
+        var t = Math.max(0, Math.min(1, (x - 40) / 560)) * 9.6;
+        ticks[i].style.setProperty('--fa-d', t.toFixed(2) + 's');
+      }
+    },
+
+    // A pulse for the slow-light panel and a photon for the crystal panel.
+    'fig-delay': function(svg){
+      dot(svg, 'fa-del-sl f-steel k-ink w15', 4.5);
+      dot(svg, 'fa-del-cr f-steel k-ink w15', 4.5);
+    },
+
+    // Straight-line dot (hollow) and zig-zag dot (solid).
+    'fig-zigzag': function(svg){
+      dot(svg, 'fa-zz-s f-cream k-ink w15', 4.5);
+      dot(svg, 'fa-zz-w f-steel k-ink w15', 4.5);
+    },
+
+    // Right-panel circles start growing left to right.
+    'fig-spaces': function(svg){
+      var circles = svg.querySelectorAll('g[clip-path$="spaces-c1)"] circle');
+      for (var i = 0; i < circles.length; i++){
+        var cx = parseFloat(circles[i].getAttribute('cx'));
+        if (isNaN(cx)) continue;
+        var t = Math.max(0, Math.min(1, (cx - 330) / 300)) * 1.6;
+        circles[i].style.setProperty('--fa-d', t.toFixed(2) + 's');
+      }
     },
 
     // Each ordinary-matter dot is followed by its arrow: M x1 y1 L x2 y2.
